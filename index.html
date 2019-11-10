@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>フォント神経衰弱WEB TOP</title>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="script/SendData.js" defer="defer"></script>
+  <script>
+      (function(d) {
+        var config = {
+          kitId: 'lpc4ask',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+   <link rel="stylesheet" href="css\top.css"> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  
+    <h2>フォント神経衰弱WEB</h2> <h3>α版</h3>
+  <div class="container">
+    <div class = "StartMenu">
+        <div class="PlayerName">
+            <p>Name</p>
+            <div  class="InputPlayerName">
+                <input type="text" id="IdPlayerName"  >
+            </div>
+          </div>
+            <div class="startButton">
+              <button id="startButton"type="button" name="startButton" onclick="SetName(); ">START!</button>
+            </div>
+            <div class="exButton">
+              <button id="openModal">遊び方</button>
+            </div> 
+          </div>
+    </div>
+  <div id="modal"></div>
+      <!-- モーダルエリアここから -->
+      <section id="modalArea" class="modalArea">
+        <div id="modalBg" class="modalBg"></div>
+        <div class="modalWrapper">
+          <div class="modalContents">
+            <h1>フォント神経衰弱の遊び方</h1>
+            <p>料理名の書かれたカードの中に、同じ書体で名前が書かれたものが2組ずつあるよ。すべての組を見つけてみよう！</p>
+          </div>
+          <div id="closeModal" class="closeModal">
+            ×
+          </div>
+        </div>
+      </section>
+
+      <script>
+          (function () {
+          const modalArea = document.getElementById('modalArea');
+          const openModal = document.getElementById('openModal');
+          const closeModal = document.getElementById('closeModal');
+          const modalBg = document.getElementById('modalBg');
+          const toggle = [openModal,closeModal,modalBg];
+          
+          
+            for(let i=0, len=toggle.length ; i<len ; i++){
+            toggle[i].addEventListener('click',function(){
+              modalArea.classList.toggle('is-show');
+            },false);
+          }
+        }());
+        </script>
+      <!-- モーダルエリアここまで -->
+  </div>
+  
+  
+  <!--<script src="script/ncmbController.js"></script>-->
+  <!-- SDKの読み込み -->
+  <script type="text/javascript" src="script/ncmb.min.js" charset="utf-8"></script>
+  
+</body>
+
+</html>

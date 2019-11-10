@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>フォント神経衰弱WEB</title>
+  
+  <link rel="stylesheet" href="css\style.css">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script>
+      (function(d) {
+        var config = {
+          kitId: 'bpz7hqo',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body >
+  <!--<h2>フォント神経衰弱WEB α版</h2>-->
+  <div class="container">
+    <div class="time">
+      Time
+      <span id="score">0.00</span>
+    </div>
+    <div id="stage">
+      <!--<div class="card-container">
+          <div class="card">
+            <div class="card-front">1</div>
+            <div class="card-back">?</div>
+          </div>
+      </div>-->
+    </div>
+  </div>
+  <div class="botton_wapper">
+    <a href="" id="restart" class="inactive">RESTART</a>
+  </div>
+  <!-- モーダルエリアここから -->
+   
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1>クリア！</h1>
+        <p><span id = "ModalPlayerName">あなた</span>のタイムは<span id="scoreResult">0.00</span></p>
+        <p>今回の順位は<span id = "ModalPlayerRank"></span>位でした!</p>
+       <!-- <input type="button" id="closeBtn" value="close">-->
+        <div id="closeBtn" class="closeModal">
+            ×
+        </div>
+        <div class="modalBottons">
+            <a href="" id="modalRestart" class="modalRestart">RESTART</a>
+            <a href="index.html" id="returnTop" class="returnTop">TOP</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- モーダルエリアここまで -->
+  
+  <script src="script\game.js"></script>
+  
+  <!-- <script src="script/ncmbController.js"></script>-->
+  <script src="script/SendData.js"></script>
+ <!-- SDKの読み込み -->
+  <script type="text/javascript" src="script/ncmb.min.js" charset="utf-8"></script>
+  
+</body>
+
+</html>

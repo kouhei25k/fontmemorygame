@@ -1,0 +1,181 @@
+html{
+  height: 100%;
+  
+}
+  body {
+      position: fixed;
+      width: 100%;
+      height:100%;
+      background-color:rgb(255, 255, 255);
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: auto;
+  }
+  .container {
+    width: auto;
+    height: 100%;
+    margin: auto;
+    position:  relative;  
+    padding: 0px;
+  }
+  h2 {
+    text-align: center;
+    color: #3d3d3d; 
+    font-family: vdl-megamaru, sans-serif;
+    font-size: 60px;
+    line-height: 0px;
+    margin-top: 120px;
+  }
+  h3{
+    text-align: center;
+    color: #3d3d3d;
+    font-family: vdl-megamaru, sans-serif;
+    
+  }
+  @media screen and (max-width: 705px) {
+    h2 {
+      font-size: 150%;
+    }
+    }
+    @media screen and (max-width: 480px) {
+        h2 {
+          text-align: center;
+          margin-top: 100px;
+        }}
+  /* モーダルCSSここから */
+  .modalArea {
+    visibility: hidden; /* displayではなくvisibility */
+    opacity : 0;
+    position: fixed;
+    z-index: 10; /* サイトによってここの数値は調整 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+  }
+  
+  .modalBg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  .modalWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    width: 70%;
+    max-width: 500px;
+    padding: 10px 30px;
+    background-color: #fff;
+  }
+  
+  .closeModal {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+  
+  .is-show { /* モーダル表示用クラス */
+    visibility: visible;
+    opacity : 1;
+  }
+  /* モーダルCSSここまで */
+  
+  
+  /* 以下ボタンスタイル */
+  .StartMenu {
+    position: absolute;
+      width: 80%;
+      top: 10%;
+      
+      right: 0px;
+      left: 0px;
+      margin: auto;
+      font-size: 20px;
+  }
+  
+  .PlayerName {
+    box-sizing: border-box;
+    height:100px;
+    width: 100%;
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    margin-bottom: 15px;
+    background-color: #fff;
+    font-size: 20px;
+  }
+  .PlayerName p{
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .InputPlayerName{
+    display: inline-block;
+    left: 50%;
+    height: 30px;
+    width: 100%;
+    font-size: 20px;
+    border: solid 1px #67c5ff;
+  }
+  #IdPlayerName{
+    border:none;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+  }
+  #startButton {
+    height:100px;
+    width: 100%;
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    margin-bottom: 15px;
+    background-color: #fff;
+    font-size: 20px;
+    box-sizing: border-box;
+  }
+  .startButton p{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  #openModal {
+    height:100px;
+    width: 100%;
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    margin-bottom: 15px;
+    background-color: #fff;
+    font-size: 20px;
+    box-sizing: border-box;
+  }
+  #modal {
+    display: none;
+  }
+  /*#openModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+  }*/
+  
