@@ -60,16 +60,41 @@ html{
     height: 100%;
     background-color: rgba(0,0,0,0.8);
   }
-  
-  .modalWrapper {
-    position: absolute;
+  .topmodal{
+    position: fixed;
+    height: 50%;
+    width: 80%;
     top: 50%;
     left: 50%;
     transform:translate(-50%,-50%);
-    width: 70%;
+    margin:0 auto;
     max-width: 500px;
-    padding: 10px 30px;
+    
+    
+  }
+  
+  .modalWrapper {
+    box-sizing: border-box;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform:translate(-50%,0%);
+    width: 100%;
+    height: 90%;
+    max-width: 500px;
+    padding: 10px 40px;
     background-color: #fff;
+  }
+  .modalTab {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 10%;
+    width: 100%;
+    max-width: 500px;
+    padding: 0px;
+    box-sizing: border-box;
   }
   
   .closeModal {
@@ -178,4 +203,41 @@ html{
     left: 50%;
     transform:translate(-50%,-50%);
   }*/
-  
+  .tab{
+    font-size: 0px;
+    height: 100%;
+    margin: 0px;
+    overflow:hidden;
+    list-style: none;
+    padding: 0px;
+    background-color: none;
+   
+  }
+  .tab li{
+    box-sizing: border-box;
+    font-size: 16px;
+    background:#ccc;
+    width: 32%;
+    height: 100%;
+    
+    padding: 6px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .tab li.select{
+    background:#eee;
+    
+  }
+  .content{
+    padding: 0px;
+  }
+  .content li{
+    list-style: none;
+  }
+  .content li{
+    font-size: 18px;
+  }
+  .hide {
+    display:none;
+  }

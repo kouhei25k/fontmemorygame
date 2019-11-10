@@ -45,19 +45,44 @@
             </div> 
           </div>
     </div>
-  <div id="modal"></div>
+  
       <!-- モーダルエリアここから -->
       <section id="modalArea" class="modalArea">
         <div id="modalBg" class="modalBg"></div>
-        <div class="modalWrapper">
-          <div class="modalContents">
-            <h1>フォント神経衰弱の遊び方</h1>
-            <p>料理名の書かれたカードの中に、同じ書体で名前が書かれたものが2組ずつあるよ。すべての組を見つけてみよう！</p>
-          </div>
-          <div id="closeModal" class="closeModal">
-            ×
-          </div>
+        <div class="topmodal">
+          <div class="modalWrapper"> 
+            <div class="modalContents">
+                
+                  <ul class="content">
+                    <li>
+                      <h3>フォント神経衰弱<br>の遊び方</h3>
+                      <p>料理名の書かれたカードの中に、同じ書体で名前が書かれたものが2組ずつあるよ。すべての組を見つけてみよう！</p>
+                    </li>
+                    <li class="hide">
+                      <h3>Adobe Fonts</h3>
+                      <p>coming soon</p>
+                    </li>
+                 <!--   <li class="hide">新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。</li>
+                    <li class="hide">弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。</li>-->
+                  </ul>
+              
+            </div>
+            <div id="closeModal" class="closeModal">
+              ×
+            </div>
+            
         </div>
+        <div class = "modalTab">
+            <ul class="tab">
+                <li class="select">遊び方</li>
+                <li>使用フォント</li>
+               <!-- <li>タブ3</li>
+                <li>タブ4</li>-->
+              </ul>
+          </div>
+      </div>
+
+        
       </section>
 
       <script>
@@ -75,6 +100,28 @@
             },false);
           }
         }());
+
+        $(function() {
+            //クリックしたときのファンクションをまとめて指定
+            $('.tab li').click(function() {
+
+              //.index()を使いクリックされたタブが何番目かを調べ、
+              //indexという変数に代入します。
+              var index = $('.tab li').index(this);
+
+              //コンテンツを一度すべて非表示にし、
+              $('.content li').css('display','none');
+
+              //クリックされたタブと同じ順番のコンテンツを表示します。
+              $('.content li').eq(index).css('display','block');
+
+              //一度タブについているクラスselectを消し、
+              $('.tab li').removeClass('select');
+
+              //クリックされたタブのみにクラスselectをつけます。
+              $(this).addClass('select')
+            });
+          });
         </script>
       <!-- モーダルエリアここまで -->
   </div>
