@@ -47,7 +47,7 @@
     
   ]
   //カードの枚数
-  var pairs = 1;
+  var pairs = 12;
   var sheet = pairs * 2
   var cards = [];
 
