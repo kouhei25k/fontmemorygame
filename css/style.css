@@ -260,48 +260,7 @@ h2 {
   box-shadow: none;
   margin-top: 10px;
 }
-.modalRestart {
-  text-decoration: none;
-  display: block;
-  color: rgb(200, 67, 10);
-  border: solid 3px rgb(200, 67, 10);
-  height: 40px;
-  width: 40%;
-  border-radius: 10px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 18px;
-  margin-top: 15px;
-  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
-  margin-left: auto;
-  margin-right: 30px;
-}
 
-
-.returnTop {
-  text-decoration: none;
-  display: block;
-  color: #67c5ff;
-  border: solid 3px #67c5ff;
-  height: 40px;
-  width: 40%;
-  border-radius: 10px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 18px;
-  margin-top: 15px;
-  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
-  margin-left: 30px;
-  margin-right: auto;
-}
-.modalRestart:active{
-  box-shadow: none;
-  transform: translate3d(0, 5px, 0);
-}
-.returnTop:active{
-  box-shadow: none;
-  transform: translate3d(0, 5px, 0);
-}
 
 /* モーダルCSSここから */
 .modal {
@@ -315,17 +274,43 @@ h2 {
   overflow: auto;
   background-color: rgba(0,0,0,0.8);
   }
-  
-  .modal-content{
-    position: absolute;
+
+  .topmodal{
+    position: fixed;
+    height: 50%;
+    width: 80%;
     top: 50%;
     left: 50%;
     transform:translate(-50%,-50%);
-    width: 70%;
+    margin:0 auto;
+    max-width: 500px; 
+  }
+  
+  .modalWrapper {
+    box-sizing: border-box;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform:translate(-50%,0%);
+    width: 100%;
+    height: 90%;
     max-width: 500px;
-    padding: 10px 30px;
+    padding: 10px 40px;
     background-color: #fff;
   }
+
+  .modalTab {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 10%;
+    width: 100%;
+    max-width: 500px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
   .closeModal {
     position: absolute;
     top: 0.5rem;
@@ -333,12 +318,104 @@ h2 {
     cursor: pointer;
   }
   .modalBottons {
-    display: flex;
+    font-size: 18px;
+    height: 40%;
+    width: 100%;
+    bottom: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+    position: relative;
   }
 
+  .modalRestart {
+    text-decoration: none;
+    display: block;
+    color: rgb(200, 67, 10);
+    border: solid 2px rgb(200, 67, 10);
+    
+    width: 100%;
+    border-radius: 10px;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 60px;
+    box-sizing: border-box;
+  }
   
   
-  
+  .returnTop {
+    position: absolute;
+    text-decoration: none;
+    display: block;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    
+    width: 100%;
+    border-radius: 10px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 15px;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+   
+  }
+  .modalRestart:active{
+    box-shadow: none;
+    transform: translate3d(0, 5px, 0);
+  }
+  .returnTop:active{
+    box-shadow: none;
+    transform: translate3d(0, 5px, 0);
+  }
+
+.tab{
+    font-size: 0px;
+    height: 100%;
+    margin: 0px;
+    overflow:hidden;
+    list-style: none;
+    padding: 0px;
+    background-color: none;
+   
+  }
+  .tab li{
+    box-sizing: border-box;
+    font-size: 16px;
+    background:#ccc;
+    width: 1%;
+    height: 100%;
+    
+    padding: 6px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .tab li.select{
+    background:#eee;
+    
+  }
+  .content{
+    padding: 0px;
+  }
+  .content li{
+    list-style: none;
+  }
+  .content li{
+    font-size: 18px;
+  }
+  .hide {
+    display:none;
+  }
+  #ranking{
+    padding: 0px;
+  }
+  #ranking li{
+    display: block;
+    padding: 0px;
+  }
+  .mrg-10{
+    margin-left: 50px;
+  }
 /* モーダルCSSここまで */
 
 .type-number1,

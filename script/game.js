@@ -145,6 +145,7 @@
         clearTimeout(timeoutId);
         SendData()
         modal();
+        
       }
     }
     secondCard.removeEventListener('transitionend', check);
@@ -255,9 +256,42 @@ function modal() {
           
           var ModalPlayerName = document.getElementById("ModalPlayerName");
           ModalPlayerName.innerHTML = PlayerName; 
+      
+          function getRanking (){
+            var highScore = ncmb.DataStore("HighScore");
+                highScore.order("score").order("name")
+                        .limit(10)
+                        .fetchAll()
+                        .then(function(results){
+                            //ランキング取得後の処理
+                            if(results.length > 0){
+                              for(var i=0; i<results.length; i++){
+                                  var ranking = results[i];
+                                  var rank = i + 1;
+                                  var rankingScore = ranking.score;
+                                  var rankingName = ranking.name;
+                                  
+                                  var UlRanking = document.getElementById("ranking");
+                                  var rankingli = "<li>"+rank + "位"+"<span class = "+"mrg-10"+">"+rankingName+"</span>"+"<span class = "+"mrg-10"+">"+rankingScore+"</span></li>";
+                                  UlRanking.insertAdjacentHTML('beforeend',rankingli);
+                                  
+                        
+                                  console.log(rank + ": " + rankingName+"-"+rankingScore);
+                              }
+                          } else {
+                              console.log("スコアデータがありません");
+                          }
+                          })
+                        .catch(function(err){
+                            //エラー時の処理
+                            console.log(err);
+                          });
+          }           
           
+          getRanking();
         })
       }
+  
   
   init();
 

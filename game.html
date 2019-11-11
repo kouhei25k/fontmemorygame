@@ -47,22 +47,75 @@
   <!-- モーダルエリアここから -->
    
   <div id="modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-body">
-        <h1>クリア！</h1>
-        <p><span id = "ModalPlayerName">あなた</span>のタイムは<span id="scoreResult">0.00</span></p>
-        <p>今回の順位は<span id = "ModalPlayerRank"></span>位でした!</p>
+    <div class="topmodal">
+      <div class="modalWrapper">
+            <div class="modalContents"> 
+                <ul class="content">
+                <li>
+                    <h3>クリア！</h3>
+                    <p><span id = "ModalPlayerName">あなた</span>のタイムは<span id="scoreResult">0.00</span></p>
+                    <p>今回の順位は<span id = "ModalPlayerRank"></span>位でした!</p>
+                    <div class="modalBottons">
+                        <a href="" id="modalRestart" class="modalRestart">RESTART</a>
+                        <a href="index.html" id="returnTop" class="returnTop">TOP</a>
+                    </div>
+                  </li>
+                  <li class="hide">
+                    <h3>ランキング</h3>
+                    <ul id="ranking">
+                      
+                    </ul>
+                  </li>
+               <!--   <li class="hide">新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。</li>
+                  <li class="hide">弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。</li>-->
+                </ul>
+            </div>
+              
+        
        <!-- <input type="button" id="closeBtn" value="close">-->
         <div id="closeBtn" class="closeModal">
             ×
         </div>
-        <div class="modalBottons">
-            <a href="" id="modalRestart" class="modalRestart">RESTART</a>
-            <a href="index.html" id="returnTop" class="returnTop">TOP</a>
-        </div>
+        
       </div>
+      <div class = "modalTab">
+          <ul class="tab">
+              <li class="select">スコア</li>
+              <li>ランキング</li>
+             <!-- <li>タブ3</li>
+              <li>タブ4</li>-->
+            </ul>
+        </div>
     </div>
   </div>
+
+  
+
+    <script>
+        
+
+      $(function() {
+          //クリックしたときのファンクションをまとめて指定
+          $('.tab li').click(function() {
+
+            //.index()を使いクリックされたタブが何番目かを調べ、
+            //indexという変数に代入します。
+            var index = $('.tab li').index(this);
+
+            //コンテンツを一度すべて非表示にし、
+            $('.content li').css('display','none');
+
+            //クリックされたタブと同じ順番のコンテンツを表示します。
+            $('.content li').eq(index).css('display','block');
+            $('#ranking li').css('display','block');
+            //一度タブについているクラスselectを消し、
+            $('.tab li').removeClass('select');
+
+            //クリックされたタブのみにクラスselectをつけます。
+            $(this).addClass('select')
+          });
+        });
+      </script>
  
   <!-- モーダルエリアここまで -->
   
