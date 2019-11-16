@@ -1,90 +1,114 @@
-html{
-  height: 100%;
-  
+html {
+    height: 100%;
 }
-  body {
-      position: fixed;
-      width: 100%;
-      height:100%;
-      background-color:rgb(255, 255, 255);
-      font-size: 20px;
-      font-family: Arial, Helvetica, sans-serif;
-      margin: auto;
-  }
-  .container {
+
+body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+}
+
+.container {
     width: auto;
     height: 100%;
     margin: auto;
-    position:  relative;  
+    position: relative;
     padding: 0px;
-  }
-  h2 {
+}
+
+h2 {
     text-align: center;
-    color: #3d3d3d; 
+    color: #3d3d3d;
     font-family: vdl-megamaru, sans-serif;
     font-size: 60px;
     line-height: 0px;
     margin-top: 120px;
-  }
-  h3{
+}
+
+h3 {
     text-align: center;
     color: #3d3d3d;
     font-family: vdl-megamaru, sans-serif;
-    
-  }
-  @media screen and (max-width: 705px) {
+}
+
+@media screen and (max-width: 705px) {
     h2 {
-      font-size: 150%;
+        font-size: 150%;
     }
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        text-align: center;
+        margin-top: 100px;
     }
-    @media screen and (max-width: 480px) {
-        h2 {
-          text-align: center;
-          margin-top: 100px;
-        }}
-  /* モーダルCSSここから */
-  .modalArea {
-    visibility: hidden; /* displayではなくvisibility */
-    opacity : 0;
+}
+
+@media screen and (max-width: 3200px) {
+    h2 {
+        text-align: center;
+        margin-top: 60px;
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* モーダルCSSここから */
+
+.modalArea {
+    visibility: hidden;
+    /* displayではなくvisibility */
+    opacity: 0;
     position: fixed;
-    z-index: 10; /* サイトによってここの数値は調整 */
+    z-index: 10;
+    /* サイトによってここの数値は調整 */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     transition: .4s;
-  }
-  
-  .modalBg {
+}
+
+.modalBg {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
-  }
-  .topmodal{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.topmodal {
     position: fixed;
-    height: 50%;
+    height: 70%;
     width: 80%;
     top: 50%;
     left: 50%;
-    transform:translate(-50%,-50%);
-    margin:0 auto;
-    max-width: 500px; 
-  }
-  
-  .modalWrapper {
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.modalWrapper {
     box-sizing: border-box;
     display: inline-block;
     position: absolute;
     top: 0px;
     left: 50%;
-    transform:translate(-50%,0%);
+    transform: translate(-50%, 0%);
     width: 100%;
     height: 90%;
     max-width: 500px;
-    padding: 10px 40px;
+    padding: 10px 30px;
     background-color: #fff;
-  }
-  .modalTab {
+}
+
+.modalTab {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -93,149 +117,240 @@ html{
     max-width: 500px;
     padding: 0px;
     box-sizing: border-box;
-  }
-  
-  .closeModal {
+}
+
+.closeModal {
     position: absolute;
     top: 0.5rem;
     right: 1rem;
     cursor: pointer;
-  }
-  
-  .is-show { /* モーダル表示用クラス */
+}
+
+.is-show {
+    /* モーダル表示用クラス */
     visibility: visible;
-    opacity : 1;
-  }
-  /* モーダルCSSここまで */
-  
-  
-  /* 以下ボタンスタイル */
-  .StartMenu {
+    opacity: 1;
+}
+
+
+/* モーダルCSSここまで */
+
+
+/* 以下ボタンスタイル */
+
+.StartMenu {
     position: absolute;
-      width: 80%;
-      top: 10%;
-      
-      right: 0px;
-      left: 0px;
-      margin: auto;
-      font-size: 20px;
-  }
-  
-  .PlayerName {
+    width: 80%;
+    top: 10%;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    font-size: 20px;
+}
+
+.PlayerName {
     box-sizing: border-box;
-    height:100px;
+    height: 100px;
     width: 100%;
     display: inline-block;
     padding: 0.3em 1em;
     text-decoration: none;
-    color: #67c5ff;
-    border: solid 2px #67c5ff;
+    color: hsl(157, 84%, 46%);
+    border: solid 2px hsl(157, 84%, 46%);
     border-radius: 3px;
     transition: .4s;
     margin-bottom: 15px;
     background-color: #fff;
     font-size: 20px;
-  }
-  .PlayerName p{
-    
+}
+
+.PlayerName p {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
-  }
-  .InputPlayerName{
+}
+
+.InputPlayerName {
     display: inline-block;
     left: 50%;
     height: 30px;
     width: 100%;
     font-size: 20px;
-    border: solid 1px #67c5ff;
-  }
-  #IdPlayerName{
-    border:none;
+    border: solid 1px hsl(157, 84%, 46%);
+}
+
+#IdPlayerName {
+    border: none;
     box-sizing: border-box;
     height: 100%;
     width: 100%;
     font-size: 20px;
-  }
-  #startButton {
-    height:100px;
+}
+
+#startButton {
+    height: 100px;
     width: 100%;
     display: inline-block;
     padding: 0.3em 1em;
     text-decoration: none;
-    color: #67c5ff;
-    border: solid 2px #67c5ff;
+    color: hsl(157, 84%, 46%);
+    border: solid 2px hsl(157, 84%, 46%);
     border-radius: 3px;
     transition: .4s;
     margin-bottom: 15px;
     background-color: #fff;
     font-size: 20px;
     box-sizing: border-box;
-  }
-  .startButton p{
+}
+
+.startButton p {
     margin-top: 5px;
     margin-bottom: 10px;
     text-align: center;
-  }
-  #openModal {
-    height:100px;
+}
+
+#openModal {
+    height: 100px;
     width: 100%;
     display: inline-block;
     padding: 0.3em 1em;
     text-decoration: none;
-    color: #67c5ff;
-    border: solid 2px #67c5ff;
+    color: hsl(157, 84%, 46%);
+    border: solid 2px hsl(157, 84%, 46%);
     border-radius: 3px;
     transition: .4s;
     margin-bottom: 15px;
     background-color: #fff;
     font-size: 20px;
     box-sizing: border-box;
-  }
-  #modal {
+}
+
+#modal {
     display: none;
-  }
-  /*#openModal {
+}
+
+
+/*#openModal {
     position: absolute;
     top: 50%;
     left: 50%;
     transform:translate(-50%,-50%);
   }*/
-  .tab{
+
+.tab {
     font-size: 0px;
     height: 100%;
     margin: 0px;
-    overflow:hidden;
+    overflow: hidden;
     list-style: none;
     padding: 0px;
     background-color: none;
-   
-  }
-  .tab li{
+}
+
+.tab li {
     box-sizing: border-box;
-    font-size: 16px;
-    background:#ccc;
+    font-size: 14px;
+    background: #ccc;
     width: 1%;
     height: 100%;
-    
     padding: 6px;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-  }
-  .tab li.select{
-    background:#eee;
-    
-  }
-  .content{
+}
+
+.tab li.select {
+    background: #eee;
+}
+
+.content {
     padding: 0px;
-  }
-  .content li{
+}
+
+.content li {
+    font-size: 15px;
     list-style: none;
-  }
-  .content li{
-    font-size: 18px;
-  }
-  .hide {
-    display:none;
-  }
+}
+
+.hide {
+    display: none;
+}
+
+.content h3 {
+    margin: 5px;
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+
+table {
+    font-size: 15px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table tr {
+    border-bottom: solid 1px #eee;
+    cursor: pointer;
+}
+
+table tr:hover {
+    background-color: #d4f0fd;
+}
+
+table th,
+table td {
+    text-align: center;
+    padding: 3px 0;
+}
+
+.fontlist {
+    font-size: 12px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table tr {
+    border-bottom: solid 1px #eee;
+    cursor: pointer;
+}
+
+table tr:hover {
+    background-color: #d4f0fd;
+}
+
+.fontlist th,
+.fontlist td {
+    text-align: left;
+    padding: 3px 0;
+}
+
+@media screen and (max-width: 320px) {
+    .tab li {
+        font-size: 12px;
+    }
+    .content h3 {
+        margin: 5px;
+        margin-bottom: 10px;
+        line-height: 25px;
+        font-size: 18px;
+    }
+    table {
+        font-size: 12px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+    .fontlist {
+        font-size: 10px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+    .fontlist th,
+    .fontlist td {
+        text-align: left;
+        padding: 2px 0;
+    }
+}

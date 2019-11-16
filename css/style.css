@@ -1,91 +1,113 @@
+/* color #67c5ff */
+
+html {
+    visibility: hidden;
+}
+
+html.wf-active {
+    visibility: visible;
+}
+
 body {
-  background-color:rgb(255, 255, 255);
-  font-size: 20px;
-  margin: 0 auto 0 auto;
-  font-family: 'Open Sans', sans-serif;
+    background-color: rgb(246, 246, 246);
+    font-size: 20px;
+    margin: 0 auto 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    color: #3d3d3d;
 }
 
 h2 {
-  text-align: center;
-  color: #3d3d3d;
-  font-family: "FOT-スランプ Std DB";
-  font-size: 40px;
-  line-height: 0px;
+    text-align: center;
+    color: #3d3d3d;
+    font-family: "FOT-スランプ Std DB";
+    font-size: 40px;
+    line-height: 0px;
 }
 
 .container {
-  width: auto;
-  margin: auto;
+    width: auto;
+    margin: auto;
 }
 
 #stage {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .card-container {
-  perspective: 100px;
-  width: 220px;
-  height: 130px;
-  margin: 5px;
-  perspective: none;
+    perspective: 100px;
+    width: 220px;
+    height: 130px;
+    margin: 5px;
+    perspective: none;
 }
 
 .card {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  transition: 0.5s;
-  position: relative;
-  transform-style: preserve-3d;
-
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    position: relative;
+    transform-style: preserve-3d;
 }
 
 .card-front,
 .card-back {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  line-height: 114px;
-  border-radius: 3px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;/* Safari */
-  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
-  box-sizing: border-box
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 130px;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .card-back {
-  font-size: 25px;
-  background: #fff;
-  color: #000;
-  border: solid 7px rgb(25, 115, 78);
+    font-size: 25px;
+    background: #fff;
+    color: #3d3d3d;
+    border: solid 0px rgb(25, 115, 78);
 }
 
 .card-front {
-  font-size: 20px;
-  background: #fff;
-  color: #000;
-  transform: rotateX(180deg);
-  border: solid 7px rgb(200, 67, 10);
+    font-size: 20px;
+    color: #fff;
+    background-color: #13d88c;
+    transform: rotateX(180deg);
+    border: solid 0px rgb(200, 67, 10);
 }
 
 .open {
-  transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+.toptitle {
+    font-size: 12px;
+    color: #3d3d3d;
+    font-family: vdl-megamaru, sans-serif;
+    text-align: right;
+    margin-top: 5px;
+    margin-right: 10px;
 }
 
 .time {
-  font-size: 20px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  margin-left: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #67c5ff;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #13d88c;
 }
+
+
 /* .card-front.type-number11,
 .card-front.type-number12 {
   font-size: 18px;
@@ -95,128 +117,93 @@ h2 {
 .card-front.type-number18 {
   font-size: 15px;
 } */
+
 @media screen and (max-width: 1024px) {
-  h2 {
-    font-size: 150%;
-  }
-  .card-container {
-    height: 100px;
-  }
-  .card-front,
-  .card-back {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  line-height: 90px;
-  }
-  .card-back {
-    font-size: 25px;
-    background: #fff;
-    color: #000;
-    border: solid 5px rgb(25, 115, 78);
-  }
-  
-  .card-front {
-    font-size: 20px;
-    background: #fff;
-    color: #000;
-    transform: rotateX(180deg);
-    border: solid 5px rgb(200, 67, 10);
-  }
-  #restart {
-    
-    margin-top: 10px;
-    margin-bottom: 10px;
-    
-  }
+    h2 {
+        font-size: 150%;
+    }
+    .card-container {
+        height: 100px;
+    }
+    .card-front,
+    .card-back {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 100px;
+    }
+    .card-back {
+        font-size: 25px;
+    }
+    .card-front {
+        font-size: 20px;
+    }
+    #restart {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
 
 @media screen and (max-width: 705px) {
-  h2 {
-    font-size: 150%;
-  }
-  .card-container {
-    width: 30%;
-    
-  }
-
-  .card-back {
-    font-size: 3.5vw;
-    border: solid 5px rgb(25, 115, 78);
-  }
-
-  .card-front {
-    font-size: 2.9vw;
-    border: solid 5px rgb(200, 67, 10);
-  }
-  /* .card-front.type-number21,
-  .card-front.type-number22 {
-    font-size: 2.6vw;
-  }
-  .card-front.type-number11,
-  .card-front.type-number12 {
-    font-size: 2.5vw;
-  }
-
-  .card-front.type-number17,
-  .card-front.type-number18 {
-    font-size: 2vw;
-  } */
+    h2 {
+        font-size: 150%;
+    }
+    .card-container {
+        width: 30%;
+    }
+    .card-back {
+        font-size: 3.5vw;
+        ;
+    }
+    .card-front {
+        font-size: 2.9vw;
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .card-container {
-    height: 100px;
-  }
-
-  .card-front,
-  .card-back {
-    line-height: 50%;
-    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
-  }
-
+    .card-container {
+        height: 100px;
+    }
+    .card-front,
+    .card-back {
+        box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.1);
+    }
 }
 
 @media screen and (max-width: 480px) {
-  h2 {
-    font-size: 110%;
-  }
-
-  .card-container {
-    perspective: 100px;
-    height: 60px;
-    margin: 2.8px;
-    perspective: none;
-  }
-
-  .card-front {
-    font-size: 2.6vw;
-    border: solid 3px rgb(200, 67, 10);
-  }
-
-  .time {
-    font-size: 20px;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    margin-left: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #67c5ff;
-    
-
-  }
-
-  .card-back {
-    font-size: 3.3vw;
-    border: solid 3px #218d60;
-  }
-
-  .card-front,
-  .card-back {
-    line-height: 54px;
-    box-shadow: 0 2.7px 0 rgba(0, 0, 0, 0.2);
-  }
-
-  /* .card-front.type-number11,
+    h2 {
+        font-size: 110%;
+    }
+    .card-container {
+        perspective: 100px;
+        height: 60px;
+        margin: 2.8px;
+        perspective: none;
+    }
+    .card-front {
+        font-size: 3vw;
+        /**/
+    }
+    .card-back {
+        color: #3d3d3d;
+        font-size: 3.3vw;
+    }
+    .card-front,
+    .card-back {
+        line-height: 60px;
+        /*54*/
+        /* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); */
+        box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.1);
+        /*2.7*/
+    }
+    .time {
+        font-size: 20px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        margin-left: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    /* .card-front.type-number11,
   .card-front.type-number12 {
     font-size: 2.2vw;
   }
@@ -224,88 +211,97 @@ h2 {
   .card-front.type-number18 {
     font-size: 2.1vw;
   } */
-
-
 }
 
 @media screen and (max-width: 380px) {
-  .card-container {
-    margin: 2.5px;
-  }
-
+    .card-container {
+        margin: 2.5px;
+    }
 }
 
-
+@media screen and (max-height: 600px) {
+    .card-container {
+        perspective: 100px;
+        height: 50px;
+        margin: 2.8px;
+        perspective: none;
+    }
+    .card-front,
+    .card-back {
+        line-height: 50px;
+    }
+}
 
 #restart {
-  text-decoration: none;
-  display: block;
-  color: rgb(200, 67, 10);
-  border: solid 3px rgb(200, 67, 10);
-  height: 40px;
-  width: 30%;
-  border-radius: 10px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 18px;
-  margin-top: 15px;
-  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
-  margin-left: auto;
-  margin-right: auto;
+    text-decoration: none;
+    display: block;
+    color: #D93514;
+    border: solid 2px #D93514;
+    height: 40px;
+    width: 40%;
+    border-radius: 10px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 15px;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #restart.inactive {
-  cursor: default;
-  opacity: 0.4;
-  box-shadow: none;
-  margin-top: 10px;
+    cursor: default;
+    opacity: 0.4;
+    box-shadow: none;
+    margin-top: 10px;
 }
 
 
 /* モーダルCSSここから */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
-  }
 
-  .topmodal{
+.modal {
+    display: none;
     position: fixed;
-    height: 60%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.topmodal {
+    position: fixed;
+    height: 70%;
     width: 80%;
     top: 50%;
     left: 50%;
-    transform:translate(-50%,-50%);
-    margin:0 auto;
-    max-width: 500px; 
-  }
-  
-  .modalWrapper {
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.modalWrapper {
     box-sizing: border-box;
     display: inline-block;
     position: absolute;
     top: 0px;
     left: 50%;
-    transform:translate(-50%,0%);
+    transform: translate(-50%, 0%);
     width: 100%;
     height: 90%;
     max-width: 500px;
-    padding: 10px 40px;
+    padding: 10px 30px;
     background-color: #fff;
-  }
+}
 
-
-.content{
-  height: 100%;
+.content {
+    height: 100%;
     width: 100%;
 }
-  .modalTab {
+
+.modalTab {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -314,15 +310,16 @@ h2 {
     max-width: 500px;
     padding: 0px;
     box-sizing: border-box;
-  }
-  
-  .closeModal {
+}
+
+.closeModal {
     position: absolute;
     top: 0.5rem;
     right: 1rem;
     cursor: pointer;
-  }
-  .modalBottons {
+}
+
+.modalBottons {
     font-size: 18px;
     height: 40%;
     width: 100%;
@@ -330,14 +327,13 @@ h2 {
     box-sizing: border-box;
     margin: 0px;
     position: relative;
-  }
+}
 
-  .modalRestart {
+.modalRestart {
     text-decoration: none;
     display: block;
-    color: rgb(200, 67, 10);
-    border: solid 2px rgb(200, 67, 10);
-    
+    color: #D93514;
+    border: solid 2px #D93514;
     width: 100%;
     border-radius: 10px;
     line-height: 36px;
@@ -345,16 +341,15 @@ h2 {
     box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
     margin-top: 40px;
     box-sizing: border-box;
-  }
-  
-  
-  .returnTop {
+}
+
+.returnTop {
     position: absolute;
     text-decoration: none;
     display: block;
-    color: #67c5ff;
-    border: solid 2px #67c5ff;
-    
+    color: #13d88c;
+    /* border: solid 2px #67c5ff; */
+    border: solid 2px #13d88c;
     width: 100%;
     border-radius: 10px;
     line-height: 36px;
@@ -362,150 +357,153 @@ h2 {
     margin-top: 15px;
     box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-   
-  }
-  .modalRestart:active{
-    box-shadow: none;
-    transform: translate3d(0, 5px, 0);
-  }
-  .returnTop:active{
-    box-shadow: none;
-    transform: translate3d(0, 5px, 0);
-  }
+}
 
-.tab{
+.modalRestart:active {
+    box-shadow: none;
+    transform: translate3d(0, 5px, 0);
+}
+
+.returnTop:active {
+    box-shadow: none;
+    transform: translate3d(0, 5px, 0);
+}
+
+.tab {
     font-size: 0px;
     height: 100%;
     margin: 0px;
-    overflow:hidden;
+    overflow: hidden;
     list-style: none;
     padding: 0px;
     background-color: none;
-   
-  }
-  .tab li{
+}
+
+.tab li {
     box-sizing: border-box;
     font-size: 16px;
-    background:#ccc;
+    background: #ccc;
     width: 1%;
     height: 100%;
-    
     padding: 6px;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-  }
-  .tab li.select{
-    background:#eee;
-    
-  }
-  .content{
+}
+
+.tab li.select {
+    background: #eee;
+}
+
+.content {
     padding: 0px;
-  }
-  .content li{
+}
+
+.content li {
     list-style: none;
-  }
-  .content li{
+}
+
+.content li {
     font-size: 18px;
-  }
-  .hide {
-    display:none;
-  }
-  #ranking{
-    padding: 0px;
-  }
-  #ranking li{
-    display: block;
-    padding: 0px;
-  }
-  .mrg-10{
-    margin-left: 20px;
-  }
+}
+
+.hide {
+    display: none;
+}
+
+.content h3 {
+    text-align: center;
+    margin: 5px;
+    font-family: vdl-megamaru, sans-serif;
+}
+
+
 /* モーダルCSSここまで */
 
 .type-number1,
 .type-number2 {
-  font-family: fot-matisse-pron, sans-serif;
-  font-weight: 500;
-  font-style: normal;
+    font-family: fot-matisse-pron, sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .type-number3,
 .type-number4 {
-  font-family: source-han-serif-japanese, serif;
-  font-weight: 700;
-  font-style: normal;
+    font-family: source-han-serif-japanese, serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .type-number5,
 .type-number6 {
-  font-family: a-otf-gothic-bbb-pr6n, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: a-otf-gothic-bbb-pr6n, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .type-number7,
 .type-number8 {
-  font-family: a-otf-midashi-go-mb31-pr6n, sans-serif;
-  font-weight: 600;
-  font-style: normal;
+    font-family: a-otf-midashi-go-mb31-pr6n, sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .type-number9,
 .type-number10 {
-  font-family: fot-tsukuardgothic-std, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: fot-tsukuardgothic-std, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .type-number11,
 .type-number12 {
-  font-family: tbcinergothic-std, sans-serif;
-  font-weight: 600;
-  font-style: normal;
+    font-family: tbcinergothic-std, sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .type-number13,
 .type-number14 {
-  font-family: vdl-pengentle, sans-serif;
-  font-weight: 700;
-  font-style: normal;
+    font-family: vdl-pengentle, sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .type-number15,
 .type-number16 {
-  font-family: kan415typos-std, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: kan415typos-std, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .type-number17,
 .type-number18 {
-  font-family: ro-brush-std, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: ro-brush-std, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .type-number19,
 .type-number20 {
-  font-family: vdl-logojrblack, sans-serif;
-  font-weight: 900;
-  font-style: normal;
+    font-family: vdl-logojrblack, sans-serif;
+    font-weight: 900;
+    font-style: normal;
 }
 
 .type-number21,
 .type-number22 {
-  font-family: vdl-lineg, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: vdl-lineg, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .type-number23,
 .type-number24 {
-  font-family: ta-hougan-k500, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: ta-hougan-k500, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
+
 
 /*.type-number25,
 .type-number26 {
@@ -521,3 +519,75 @@ h2 {
 .type-number30 {
   font-family: "FOT-ライラ Std DB";
 }*\
+/*タイマーアニメーション*/
+
+#score {
+    display: inline-block;
+}
+
+.buruburu {
+    animation-name: hurueru;
+    animation-duration: 0.3s;
+    color: rgb(200, 67, 10);
+}
+
+@keyframes hurueru {
+    0% {
+        transform: translate(0px, 0px) rotateZ(0deg)
+    }
+    25% {
+        transform: translate(2px, 2px) rotateZ(1deg)
+    }
+    50% {
+        transform: translate(0px, 2px) rotateZ(0deg)
+    }
+    75% {
+        transform: translate(2px, 0px) rotateZ(-1deg)
+    }
+    100% {
+        transform: translate(0px, 0px) rotateZ(0deg)
+    }
+}
+
+table {
+    font-size: 15px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table tr {
+    border-bottom: solid 1px #eee;
+    cursor: pointer;
+}
+
+table tr:hover {
+    background-color: #d4f0fd;
+}
+
+table th,
+table td {
+    text-align: center;
+    padding: 3px 0;
+}
+
+@media screen and (max-width: 320px) {
+    .tab li {
+        font-size: 12px;
+    }
+    .content h3 {
+        margin: 5px;
+        margin-bottom: 10px;
+        line-height: 25px;
+        font-size: 18px;
+    }
+    .content p {
+        font-size: 15px;
+    }
+    table {
+        font-size: 12px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+}

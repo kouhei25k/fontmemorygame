@@ -2,135 +2,256 @@
 <html lang="ja">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>フォント神経衰弱WEB TOP</title>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-  <script src="script/SendData.js" defer="defer"></script>
-  <script>
-      (function(d) {
-        var config = {
-          kitId: 'lpc4ask',
-          scriptTimeout: 3000,
-          async: true
-        },
-        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-      })(document);
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>フォント神経衰弱WEB TOP</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="script/SendData.js" defer="defer"></script>
+    <script type="text/javascript" src="script/ncmb.min.js" charset="utf-8"></script>
+    <script>
+        (function(d) {
+            var config = {
+                    kitId: 'lpc4ask',
+                    scriptTimeout: 3000,
+                    async: true
+                },
+                h = d.documentElement,
+                t = setTimeout(function() {
+                    h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                }, config.scriptTimeout),
+                tk = d.createElement("script"),
+                f = false,
+                s = d.getElementsByTagName("script")[0],
+                a;
+            h.className += " wf-loading";
+            tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function() {
+                a = this.readyState;
+                if (f || a &&
+                    a != "complete" && a != "loaded") return;
+                f = true;
+                clearTimeout(t);
+                try {
+                    Typekit.load(config)
+                } catch (e) {}
+            };
+            s.parentNode.insertBefore(tk, s)
+        })(document);
     </script>
-   <link rel="stylesheet" href="css\top.css"> 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css\top.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-  
-    <h2>フォント神経衰弱WEB</h2> <h3>α版</h3>
-  <div class="container">
-    <div class = "StartMenu">
-        <div class="PlayerName">
-            <p>Name</p>
-            <div  class="InputPlayerName">
-                <input type="text" id="IdPlayerName"  >
+
+    <h2>フォント神経衰弱WEB</h2>
+    <h3>α版</h3>
+    <div class="container">
+        <div class="StartMenu">
+            <div class="PlayerName">
+                <p>Name</p>
+                <div class="InputPlayerName">
+                    <input type="text" id="IdPlayerName">
+                </div>
             </div>
-          </div>
             <div class="startButton">
-              <button id="startButton"type="button" name="startButton" onclick="SetName(); ">START!</button>
+                <button id="startButton" type="button" name="startButton" onclick="SetName(); ">START!</button>
             </div>
             <div class="exButton">
-              <button id="openModal">遊び方</button>
-            </div> 
-          </div>
+                <button id="openModal">遊び方</button>
+            </div>
+            <!-- ランキングボタン
+              <div class="rankingButton">
+                <button id="openRanking" onclick="getRanking();">ランキング</button>
+            </div>
+          -->
+        </div>
     </div>
-  
-      <!-- モーダルエリアここから -->
-      <section id="modalArea" class="modalArea">
+
+    <!-- モーダルエリアここから -->
+    <section id="modalArea" class="modalArea">
         <div id="modalBg" class="modalBg"></div>
         <div class="topmodal">
-          <div class="modalWrapper"> 
-            <div class="modalContents">
-                
-                  <ul class="content">
-                    <li>
-                      <h3>フォント神経衰弱<br>の遊び方</h3>
-                      <p>料理名の書かれたカードの中に、同じ書体で名前が書かれたものが2組ずつあるよ。すべての組を見つけてみよう！</p>
-                    </li>
-                    <li class="hide">
-                      <h3>Adobe Fonts</h3>
-                      <p>coming soon</p>
-                    </li>
-                 <!--   <li class="hide">新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。</li>
-                    <li class="hide">弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。</li>-->
-                  </ul>
-              
+            <div class="modalWrapper">
+                <div class="modalContents">
+
+                    <ul class="content">
+                        <li>
+                            <h3>フォント神経衰弱<br>の遊び方</h3>
+                            <p>料理名の書かれたカードの中から同じ書体書かれたペアを見つけよう。</p>
+                            <p>ペアを間違えるとスコアタイムに＋３秒。正確性も大事です。</p>
+                        </li>
+                        <li class="hide">
+                            <h3>使用フォント一覧</h3>
+                            <table class="fontlist">
+                                <tr>
+                                    <th>フォント名</th>
+                                    <th>説明</th>
+                                </tr>
+                                <tr>
+                                    <th>マティスM</th>
+                                    <th>明朝体</th>
+                                </tr>
+                                <tr>
+                                    <th>源ノ明朝B</th>
+                                    <th>明朝体</th>
+                                </tr>
+                                <tr>
+                                    <th>中ゴシックBBB</th>
+                                    <th>角ゴシック体</th>
+                                </tr>
+                                <tr>
+                                    <th>見出しゴMB31</th>
+                                    <th>角ゴシック体</th>
+                                </tr>
+                                <tr>
+                                    <th>筑紫A丸ゴシックR</th>
+                                    <th>丸ゴシック体</th>
+                                </tr>
+                                <tr>
+                                    <th>シネマ丸ゴシックM</th>
+                                    <th>丸ゴシック体</th>
+                                </tr>
+                                <tr>
+                                    <th>ペンジェントルB</th>
+                                    <th>ペン書体</th>
+                                </tr>
+                                <tr>
+                                    <th>漢字タイポス415</th>
+                                    <th>デザイン書体</th>
+                                </tr>
+                                <tr>
+                                    <th>ぶらっしゅ</th>
+                                    <th>デザイン書体</th>
+                                </tr>
+                                <tr>
+                                    <th>ロゴjrブラック</th>
+                                    <th>デザイン書体</th>
+                                </tr>
+                                <tr>
+                                    <th>ラインG</th>
+                                    <th>デザイン書体</th>
+                                </tr>
+                                <tr>
+                                    <th>方眼K500</th>
+                                    <th>デザイン書体</th>
+                                </tr>
+                            </table>
+
+                        </li>
+                        <li class="hide">
+                            <h3>ランキング</h3>
+                            <table id="ranking">
+                                <tr>
+                                    <th>順位</th>
+                                    <th>名前</th>
+                                    <th>スコア</th>
+                                </tr>
+                            </table>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div id="closeModal" class="closeModal">
+                    ×
+                </div>
+
             </div>
-            <div id="closeModal" class="closeModal">
-              ×
-            </div>
-            
-        </div>
-        <div class = "modalTab">
-            <ul class="tab">
-                <li class="select">遊び方</li>
-                <li>使用フォント</li>
-               <!-- <li>タブ3</li>
+            <div class="modalTab">
+                <ul class="tab">
+                    <li class="select">遊び方</li>
+                    <li>使用フォント</li>
+                    <li>ランキング</li>
+                    <!-- <li>タブ3</li>
                 <li>タブ4</li>-->
-              </ul>
-          </div>
-      </div>
+                </ul>
+            </div>
+        </div>
 
-        
-      </section>
 
-      <script>
-          (function () {
-          const modalArea = document.getElementById('modalArea');
-          const openModal = document.getElementById('openModal');
-          const closeModal = document.getElementById('closeModal');
-          const modalBg = document.getElementById('modalBg');
-          const toggle = [openModal,closeModal,modalBg];
-          
-          
-            for(let i=0, len=toggle.length ; i<len ; i++){
-            toggle[i].addEventListener('click',function(){
-              modalArea.classList.toggle('is-show');
-            },false);
-          }
+    </section>
+
+    <script>
+        (function() {
+            const modalArea = document.getElementById('modalArea');
+            const openModal = document.getElementById('openModal');
+            const closeModal = document.getElementById('closeModal');
+            const modalBg = document.getElementById('modalBg');
+            const toggle = [openModal, closeModal, modalBg];
+
+
+            for (let i = 0, len = toggle.length; i < len; i++) {
+                toggle[i].addEventListener('click', function() {
+                    modalArea.classList.toggle('is-show');
+                }, false);
+            }
         }());
 
         $(function() {
             //クリックしたときのファンクションをまとめて指定
             $('.tab li').click(function() {
 
-              //.index()を使いクリックされたタブが何番目かを調べ、
-              //indexという変数に代入します。
-              var index = $('.tab li').index(this);
+                //.index()を使いクリックされたタブが何番目かを調べ、
+                //indexという変数に代入します。
+                var index = $('.tab li').index(this);
 
-              //コンテンツを一度すべて非表示にし、
-              $('.content li').css('display','none');
+                //コンテンツを一度すべて非表示にし、
+                $('.content li').css('display', 'none');
 
-              //クリックされたタブと同じ順番のコンテンツを表示します。
-              $('.content li').eq(index).css('display','block');
+                //クリックされたタブと同じ順番のコンテンツを表示します。
+                $('.content li').eq(index).css('display', 'block');
+                $('#ranking li').css('display', 'block');
+                //一度タブについているクラスselectを消し、
+                $('.tab li').removeClass('select');
 
-              //一度タブについているクラスselectを消し、
-              $('.tab li').removeClass('select');
-
-              //クリックされたタブのみにクラスselectをつけます。
-              $(this).addClass('select')
+                //クリックされたタブのみにクラスselectをつけます。
+                $(this).addClass('select')
             });
-          });
-        </script>
-      <!-- モーダルエリアここまで -->
-  </div>
-  
-  
-  <!--<script src="script/ncmbController.js"></script>-->
-  <!-- SDKの読み込み -->
-  <script type="text/javascript" src="script/ncmb.min.js" charset="utf-8"></script>
-  
+        });
+
+        window.onload = function getRanking() {
+            const ApplicationKey = "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";　
+            const ClientKey = "2f6a85ad0e93f1ef98ff6a8c79d927bb7a6fec24cc136516572fbe73abf043c7";
+            var ncmb = new NCMB(ApplicationKey, ClientKey);
+            var highScore = ncmb.DataStore("HighScore ");
+            highScore.order("score ").order("name ")
+                .limit(10)
+                .fetchAll()
+                .then(function(results) {
+                    //ランキング取得後の処理
+                    if (results.length > 0) {
+                        for (var i = 0; i < results.length; i++) {
+                            var ranking = results[i];
+                            var rank = i + 1;
+                            var rankingScore = ranking.score;
+                            var rankingName = ranking.name;
+
+                            var UlRanking = document.getElementById("ranking");
+                            //var rankingli = "<li>" + rank + "位" + "<span class=" + "mrg-10" + ">" + rankingName + "</span>" + "<span class=" + "mrg-10" + ">" + rankingScore + "</span></li>";
+                            var rankingli = "<tr><td>" + rank + "</td><td>" + rankingName + "</td><td>" + rankingScore + "</td></tr>";
+                            UlRanking.insertAdjacentHTML('beforeend', rankingli);
+                            console.log(rank + ": " + rankingName + "-" + rankingScore);
+                        }
+                    } else {
+                        console.log("スコアデータがありません");
+                    }
+                }).catch(function(err) { //エラー時の処理 
+                    console.log(err);
+                });
+        }
+    </script>
+    <!-- モーダルエリアここまで -->
+    </div>
+
+
+    <!--<script src="script/ncmbController.js"></script>-->
+    <!-- SDKの読み込み -->
+
+
 </body>
 
 </html>
