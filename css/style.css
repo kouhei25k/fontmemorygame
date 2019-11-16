@@ -270,6 +270,17 @@ h2 {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
 }
+.modal2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
 .topmodal {
     position: fixed;
@@ -281,6 +292,17 @@ h2 {
     margin: 0 auto;
     max-width: 500px;
 }
+.topmodal2 {
+    position: fixed;
+    height: 30%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    max-width: 500px;
+}
+
 
 .modalWrapper {
     box-sizing: border-box;
@@ -295,12 +317,37 @@ h2 {
     padding: 10px 30px;
     background-color: #fff;
 }
+.modalWrapper2 {
+    box-sizing: border-box;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 100%;
+    height: 90%;
+    max-width: 500px;
+    padding: auto;
+    background-color: #fff;
+    
+}
 
 .content {
     height: 100%;
     width: 100%;
+    
 }
-
+.content2 {
+   
+    text-align: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    
+}
+.content2 h3 {
+    font-family: vdl-megamaru, sans-serif;
+}
 .modalTab {
     position: absolute;
     bottom: 0px;
@@ -341,6 +388,26 @@ h2 {
     box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
     margin-top: 40px;
     box-sizing: border-box;
+}
+.startBtn {
+    position: absolute;
+    display: table;
+    color: #D93514;
+    border: solid 2px #D93514;
+    height: 30%;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%,-50%);
+    padding: 5px;
+    margin-top: 5px;
+}
+.startBtn p{
+    display: table-cell;
 }
 
 .returnTop {

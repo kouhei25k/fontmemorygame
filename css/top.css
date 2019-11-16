@@ -48,7 +48,7 @@ h3 {
     }
 }
 
-@media screen and (max-width: 3200px) {
+@media screen and (max-width: 320px) {
     h2 {
         text-align: center;
         margin-top: 60px;
@@ -157,7 +157,7 @@ h3 {
     text-decoration: none;
     color: hsl(157, 84%, 46%);
     border: solid 2px hsl(157, 84%, 46%);
-    border-radius: 3px;
+    border-radius: 5px;
     transition: .4s;
     margin-bottom: 15px;
     background-color: #fff;
@@ -195,7 +195,7 @@ h3 {
     text-decoration: none;
     color: hsl(157, 84%, 46%);
     border: solid 2px hsl(157, 84%, 46%);
-    border-radius: 3px;
+    border-radius: 5px;
     transition: .4s;
     margin-bottom: 15px;
     background-color: #fff;
@@ -217,7 +217,7 @@ h3 {
     text-decoration: none;
     color: hsl(157, 84%, 46%);
     border: solid 2px hsl(157, 84%, 46%);
-    border-radius: 3px;
+    border-radius: 5px;
     transition: .4s;
     margin-bottom: 15px;
     background-color: #fff;

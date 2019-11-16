@@ -105,8 +105,8 @@
                 return;
             }
             isRunning = true;
-            startTime = Date.now();
-            runTimer();
+            //startTime = Date.now();
+            //runTimer(); //スタートモーダルに移動
             document.getElementById('restart').className = '';
         });
         container = document.createElement('div');
@@ -161,6 +161,7 @@
     }
     //タイマー
     function runTimer() {
+        
         time = ((Date.now() - startTime) / 1000 + penaltyTime).toFixed(2);
         document.getElementById('score').textContent = time;
         timeoutId = setTimeout(function() {
@@ -236,7 +237,20 @@
             modal.style.display = 'none';
         })
     }
+    window.onload = function modal2() {
+        var btn = document.getElementById('btn');
+        var modal2 = document.getElementById('modal2');
+        modal2.style.display = 'block';
 
+        var startBtn = document.getElementById('startBtn');
+        startBtn.addEventListener('click', function() {
+            modal2.style.display = 'none';
+            startTime = Date.now();
+            runTimer();//タイマースタート
+        })
+        
+    }
+//send date to DB
     function SendData() {
         var urlPN = location.search.split('=').pop();
         var PlayerName = decodeURIComponent(urlPN);
