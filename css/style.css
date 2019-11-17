@@ -270,6 +270,7 @@ h2 {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 .modal2 {
     display: none;
     position: fixed;
@@ -292,6 +293,7 @@ h2 {
     margin: 0 auto;
     max-width: 500px;
 }
+
 .topmodal2 {
     position: fixed;
     height: 30%;
@@ -302,7 +304,6 @@ h2 {
     margin: 0 auto;
     max-width: 500px;
 }
-
 
 .modalWrapper {
     box-sizing: border-box;
@@ -317,6 +318,7 @@ h2 {
     padding: 10px 30px;
     background-color: #fff;
 }
+
 .modalWrapper2 {
     box-sizing: border-box;
     display: inline-block;
@@ -329,25 +331,24 @@ h2 {
     max-width: 500px;
     padding: auto;
     background-color: #fff;
-    
 }
 
 .content {
     height: 100%;
     width: 100%;
-    
 }
+
 .content2 {
-   
     text-align: center;
     position: relative;
     height: 100%;
     width: 100%;
-    
 }
+
 .content2 h3 {
     font-family: vdl-megamaru, sans-serif;
 }
+
 .modalTab {
     position: absolute;
     bottom: 0px;
@@ -389,6 +390,7 @@ h2 {
     margin-top: 40px;
     box-sizing: border-box;
 }
+
 .startBtn {
     position: absolute;
     display: table;
@@ -400,13 +402,14 @@ h2 {
     text-align: center;
     font-size: 25px;
     box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
-    top : 50%;
-    left : 50%;
-    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 5px;
     margin-top: 5px;
 }
-.startBtn p{
+
+.startBtn p {
     display: table-cell;
 }
 

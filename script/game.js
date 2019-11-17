@@ -161,7 +161,7 @@
     }
     //タイマー
     function runTimer() {
-        
+
         time = ((Date.now() - startTime) / 1000 + penaltyTime).toFixed(2);
         document.getElementById('score').textContent = time;
         timeoutId = setTimeout(function() {
@@ -238,19 +238,19 @@
         })
     }
     window.onload = function modal2() {
-        var btn = document.getElementById('btn');
-        var modal2 = document.getElementById('modal2');
-        modal2.style.display = 'block';
+            var btn = document.getElementById('btn');
+            var modal2 = document.getElementById('modal2');
+            modal2.style.display = 'block';
 
-        var startBtn = document.getElementById('startBtn');
-        startBtn.addEventListener('click', function() {
-            modal2.style.display = 'none';
-            startTime = Date.now();
-            runTimer();//タイマースタート
-        })
-        
-    }
-//send date to DB
+            var startBtn = document.getElementById('startBtn');
+            startBtn.addEventListener('click', function() {
+                modal2.style.display = 'none';
+                startTime = Date.now();
+                runTimer(); //タイマースタート
+            })
+
+        }
+        //send date to DB
     function SendData() {
         var urlPN = location.search.split('=').pop();
         var PlayerName = decodeURIComponent(urlPN);
