@@ -44,7 +44,7 @@
     </script>
     <link rel="stylesheet" href="css\top.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
 </head>
@@ -193,6 +193,7 @@
                                     <div class="swiper-slide">Slide 10</div>
                                 </div>
                                 <!-- Add Pagination -->
+
                                 <div class="swiper-pagination"></div>
                             </div>
                         </li>
@@ -246,9 +247,16 @@
                 $('.content li').css('height', '0');
                 //クリックされたタブと同じ順番のコンテンツを表示します。
                 $('.content li').eq(index).css('visibility', 'visible');
-
-                $('#ranking li').css('visibility', 'visible');
+                //$('.content li').css('height', '100%');
+                //$('#ranking li').css('visibility', 'visible');
                 $('#rainkingtop').css('height', '80%');
+                $('.swiper-pagination-bullet').css('width', '17px');
+                $('.swiper-pagination-bullet').css('height', '17px');
+                // $('.swiper-pagination-bullet').css('opacity', '1');
+                // $('.swiper-pagination-bullet').css('background-color', '#d1d1d1');
+                // $('.swiper-pagination-bullet-active').css('background-color', '#007aff');
+
+
                 //一度タブについているクラスselectを消し、
                 $('.tab li').removeClass('select');
 
