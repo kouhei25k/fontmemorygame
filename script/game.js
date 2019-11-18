@@ -230,13 +230,18 @@
         document.getElementById("scoreResult").innerHTML = myScore;
         var btn = document.getElementById('btn');
         var modal = document.getElementById('modal');
-        modal.style.display = 'block';
+        //modal.style.display = 'block';
+        modal.classList.add('is-show');
 
         var closeBtn = document.getElementById('closeBtn');
         closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
+            // modal.style.display = 'none';
+            modal.classList.remove('is-show');
         })
     }
+
+
+
     window.onload = function modal2() {
             var btn = document.getElementById('btn');
             var modal2 = document.getElementById('modal2');
@@ -280,9 +285,12 @@
                 ModalPlayerName.innerHTML = PlayerName;
 
                 function getRanking() {
+                    const ApplicationKey = "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
+                    const ClientKey = "2f6a85ad0e93f1ef98ff6a8c79d927bb7a6fec24cc136516572fbe73abf043c7";
+                    var ncmb = new NCMB(ApplicationKey, ClientKey);
                     var highScore = ncmb.DataStore("HighScore");
                     highScore.order("score").order("name")
-                        .limit(10)
+                        .limit(100)
                         .fetchAll()
                         .then(function(results) {
                             //ランキング取得後の処理
@@ -292,13 +300,16 @@
                                     var rank = i + 1;
                                     var rankingScore = ranking.score;
                                     var rankingName = ranking.name;
-
-                                    var UlRanking = document.getElementById("ranking");
+                                    var rankingScore = ranking.score;
+                                    var rankingName = ranking.name;
+                                    var number = Math.floor(i / 10) + 1;
+                                    var rankingNumber = "ranking" + number;
+                                    var UlRanking = document.getElementById(rankingNumber);
                                     var rankingli = "<tr><td>" + rank + "</td><td>" + rankingName + "</td><td>" + rankingScore + "</td></tr>";
                                     UlRanking.insertAdjacentHTML('beforeend', rankingli);
 
 
-                                    //console.log(rank + ": " + rankingName + "-" + rankingScore);
+                                    console.log(rank + ": " + rankingName + "-" + rankingScore);
                                 }
                             } else {
                                 console.log("スコアデータがありません");
@@ -309,6 +320,9 @@
                             console.log(err);
                         });
                 }
+
+
+
 
                 getRanking();
             })

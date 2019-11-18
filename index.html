@@ -7,7 +7,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>フォント神経衰弱WEB TOP</title>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="script/SendData.js" defer="defer"></script>
     <script type="text/javascript" src="script/ncmb.min.js" charset="utf-8"></script>
@@ -44,7 +43,6 @@
     </script>
     <link rel="stylesheet" href="css\top.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
 </head>
@@ -81,14 +79,13 @@
         <div class="topmodal">
             <div class="modalWrapper">
                 <div class="modalContents">
-
                     <ul class="content">
-                        <li>
+                        <li class="innerContent">
                             <h3>フォント神経衰弱<br>の遊び方</h3>
                             <p>料理名の書かれたカードの中から同じ書体書かれたペアを見つけよう。</p>
                             <p>ペアを間違えるとスコアタイムに＋３秒。正確性も大事です。</p>
                         </li>
-                        <li class="hide">
+                        <li class="hide innerContent">
                             <h3>使用フォント一覧</h3>
                             <table class="fontlist">
                                 <tr>
@@ -146,51 +143,58 @@
                             </table>
 
                         </li>
-                        <li class="hide" id="rainkingtop">
+                        <li class="hide2" id="rainkingtop">
                             <h3>ランキング</h3>
-                            <!-- <div class="rankingList">
-                                <div>
-                                    <table id="ranking">
-                                        <tr>
-                                            <th>順位</th>
-                                            <th>名前</th>
-                                            <th>スコア</th>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div>
-                                    <table id="ranking">
-                                        <tr>
-                                            <th>順位</th>
-                                            <th>名前</th>
-                                            <th>スコア</th>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div>
-                                    <table id="ranking">
-                                        <tr>
-                                            <th>順位</th>
-                                            <th>名前</th>
-                                            <th>スコア</th>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </li> -->
+                            <table>
+                                <tr>
+                                    <th class="th1">順位</th>
+                                    <th>名前</th>
+                                    <th>スコア</th>
+                                </tr>
+                            </table>
                             <!-- Swiper -->
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">Slide 1</div>
-                                    <div class="swiper-slide">Slide 2</div>
-                                    <div class="swiper-slide">Slide 3</div>
-                                    <div class="swiper-slide">Slide 4</div>
-                                    <div class="swiper-slide">Slide 5</div>
-                                    <div class="swiper-slide">Slide 6</div>
-                                    <div class="swiper-slide">Slide 7</div>
-                                    <div class="swiper-slide">Slide 8</div>
-                                    <div class="swiper-slide">Slide 9</div>
-                                    <div class="swiper-slide">Slide 10</div>
+                                    <div class="swiper-slide">
+                                        <table class="ranking" id="ranking1">
+                                        </table>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <table class="ranking" id="ranking2">
+                                        </table>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <table class="ranking" id="ranking3">
+                                        </table>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <table class="ranking" id="ranking4">
+                                        </table>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <table class="ranking" id="ranking5">
+                                        </table>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <table class="ranking" id="ranking6">
+                                        </table>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <table class="ranking" id="ranking7">
+                                        </table>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <table class="ranking" id="ranking8">
+                                        </table>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <table class="ranking" id="ranking9">
+                                        </table>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <table class="ranking" id="ranking10">
+                                        </table>
+                                    </div>
                                 </div>
                                 <!-- Add Pagination -->
 
@@ -210,8 +214,6 @@
                     <li class="select">遊び方</li>
                     <li>使用フォント</li>
                     <li>ランキング</li>
-                    <!-- <li>タブ3</li>
-                <li>タブ4</li>-->
                 </ul>
             </div>
         </div>
@@ -243,19 +245,14 @@
                 //indexという変数に代入します。
                 var index = $('.tab li').index(this);
                 //コンテンツを一度すべて非表示にし、
-                $('.content li').css('visibility', 'hidden');
-                $('.content li').css('height', '0');
+                $('.content li').css('display', 'none');
                 //クリックされたタブと同じ順番のコンテンツを表示します。
-                $('.content li').eq(index).css('visibility', 'visible');
-                //$('.content li').css('height', '100%');
-                //$('#ranking li').css('visibility', 'visible');
-                $('#rainkingtop').css('height', '80%');
-                $('.swiper-pagination-bullet').css('width', '17px');
-                $('.swiper-pagination-bullet').css('height', '17px');
-                // $('.swiper-pagination-bullet').css('opacity', '1');
-                // $('.swiper-pagination-bullet').css('background-color', '#d1d1d1');
-                // $('.swiper-pagination-bullet-active').css('background-color', '#007aff');
 
+                // $('#rainkingtop').addClass('hide');
+                $('.content li').eq(index).css('display', 'block');
+                $('#rainkingtop').removeClass('hide2');
+                // $('.swiper-pagination-bullet').css('width', '17px');
+                // $('.swiper-pagination-bullet').css('height', '17px');
 
                 //一度タブについているクラスselectを消し、
                 $('.tab li').removeClass('select');
@@ -267,13 +264,13 @@
 
 
 
-        function getRanking() {
+        window.onload = function getRanking() {
             const ApplicationKey = "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
             const ClientKey = "2f6a85ad0e93f1ef98ff6a8c79d927bb7a6fec24cc136516572fbe73abf043c7";
             var ncmb = new NCMB(ApplicationKey, ClientKey);
             var highScore = ncmb.DataStore("HighScore ");
             highScore.order("score ").order("name ")
-                .limit(10)
+                .limit(100)
                 .fetchAll()
                 .then(function(results) {
                     //ランキング取得後の処理
@@ -283,12 +280,14 @@
                             var rank = i + 1;
                             var rankingScore = ranking.score;
                             var rankingName = ranking.name;
-
-                            var UlRanking = document.getElementById("ranking");
-                            //var rankingli = "<li>" + rank + "位" + "<span class=" + "mrg-10" + ">" + rankingName + "</span>" + "<span class=" + "mrg-10" + ">" + rankingScore + "</span></li>";
-                            var rankingli = "<tr><td>" + rank + "</td><td>" + rankingName + "</td><td>" + rankingScore + "</td></tr>";
+                            var number = Math.floor(i / 10) + 1;
+                            var rankingNumber = "ranking" + number;
+                            var UlRanking = document.getElementById(rankingNumber);
+                            var rankingli = "<tr><td class ='td1'>" + rank + "</td><td>" + rankingName + "</td><td>" + rankingScore + "</td></tr>";
                             UlRanking.insertAdjacentHTML('beforeend', rankingli);
-                            console.log(rank + ": " + rankingName + "-" + rankingScore);
+                            // console.log(rank + ": " + rankingName + "-" + rankingScore);
+                            // console.log(number)
+                            // console.log(rankingNumber)
                         }
                     } else {
                         console.log("スコアデータがありません");
@@ -299,21 +298,24 @@
         }
     </script>
     <!-- モーダルエリアここまで -->
-    </div>
+
 
 
     <!--<script src="script/ncmbController.js"></script>-->
 
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                renderBullet: function(index, className) {
-                    return '<span class="' + className + '">' + (index + 1) + '</span>';
+        $(function() {
+            var swiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    renderBullet: function(index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                    },
                 },
-            },
-        });
+            });
+
+        })
     </script>
 
 

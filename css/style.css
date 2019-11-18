@@ -1,12 +1,13 @@
 /* color hsl(157, 84%, 46%) */
 
-html {
+
+/* html {
     visibility: hidden;
 }
 
 html.wf-active {
     visibility: visible;
-}
+} */
 
 body {
     background-color: rgb(246, 246, 246);
@@ -260,7 +261,8 @@ h2 {
 /* モーダルCSSここから */
 
 .modal {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -269,6 +271,12 @@ h2 {
     width: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.is-show {
+    /* モーダル表示用クラス */
+    visibility: visible;
+    opacity: 1;
 }
 
 .modal2 {
@@ -315,8 +323,13 @@ h2 {
     width: 100%;
     height: 90%;
     max-width: 500px;
-    padding: 10px 30px;
+    padding: 10px 10px;
     background-color: #fff;
+}
+
+.modalContents {
+    width: 100%;
+    height: 96%;
 }
 
 .modalWrapper2 {
@@ -471,20 +484,14 @@ h2 {
 
 .content li {
     list-style: none;
-}
-
-.content li {
-    font-size: 18px;
-}
-
-.hide {
-    display: none;
+    font-size: 15px;
 }
 
 .content h3 {
     text-align: center;
     margin: 5px;
-    font-family: vdl-megamaru, sans-serif;
+    margin-bottom: 15px;
+    line-height: 30px;
 }
 
 
@@ -575,20 +582,6 @@ h2 {
 }
 
 
-/*.type-number25,
-.type-number26 {
-  font-family: "FOT-ロダン ProN DB";
-}
-
-.type-number27,
-.type-number28 {
-  font-family: "FOT-スーラ ProN M";
-}
-
-.type-number29,
-.type-number30 {
-  font-family: "FOT-ライラ Std DB";
-}*\
 /*タイマーアニメーション*/
 
 #score {
@@ -660,4 +653,66 @@ table td {
         border-spacing: 0;
         width: 100%;
     }
+}
+
+.ranking {
+    position: absolute;
+    top: 0px
+}
+
+.swiper-container {
+    width: 100%;
+    height: 85%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.swiper-pagination-bullet {
+    width: 17px !important;
+    height: 17px !important;
+    text-align: center;
+    line-height: 17px;
+    font-size: 11px;
+    color: #000;
+    background-color: #d1d1d1;
+    opacity: 1;
+    margin: 0 3px;
+    bottom: 0px;
+}
+
+.swiper-pagination-bullet-active {
+    color: #fff;
+    background: #007aff;
+}
+
+.hide {
+    display: none;
+    /* visibility: hidden; */
+}
+
+.hide2 {
+    visibility: hidden;
+}
+
+#rainkingtop {
+    width: 100%;
+    height: 97%;
 }
