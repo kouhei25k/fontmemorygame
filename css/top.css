@@ -1,441 +1,526 @@
-html {
-    height: 100%;
-}
-
-body {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: auto;
-}
-
-.container {
-    width: auto;
-    height: 100%;
-    margin: auto;
-    position: relative;
-    padding: 0px;
-}
-
-h2 {
-    text-align: center;
-    color: #3d3d3d;
-    font-family: vdl-megamaru, sans-serif;
-    font-size: 60px;
-    line-height: 0px;
-    margin-top: 120px;
-}
-
-h3 {
-    text-align: center;
-    color: #3d3d3d;
-    font-family: vdl-megamaru, sans-serif;
-}
-
-@media screen and (max-width: 705px) {
-    h2 {
-        font-size: 150%;
+    html {
+        height: 100%;
     }
-}
-
-@media screen and (max-width: 480px) {
+    
+    body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: auto;
+    }
+    
+    .container {
+        width: auto;
+        height: 100%;
+        margin: auto;
+        position: relative;
+        padding: 0px;
+    }
+    
     h2 {
         text-align: center;
-        margin-top: 100px;
+        color: #3d3d3d;
+        font-family: vdl-megamaru, sans-serif;
+        font-size: 60px;
+        line-height: 0px;
+        margin-top: 120px;
     }
-}
-
-@media screen and (max-width: 320px) {
-    h2 {
-        text-align: center;
-        margin-top: 60px;
-        font-size: 25px;
-    }
+    
     h3 {
         text-align: center;
-        font-size: 20px;
-        margin-bottom: 10px;
+        color: #3d3d3d;
+        font-family: vdl-megamaru, sans-serif;
     }
-}
-
-
-/* モーダルCSSここから */
-
-.modalArea {
-    visibility: hidden;
-    /* displayではなくvisibility */
-    opacity: 0;
-    position: fixed;
-    z-index: 10;
-    /* サイトによってここの数値は調整 */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: .4s;
-}
-
-.modalBg {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.topmodal {
-    position: fixed;
-    height: 70%;
-    width: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
-    max-width: 500px;
-}
-
-.modalWrapper {
-    box-sizing: border-box;
-    display: inline-block;
-    position: absolute;
-    top: 0px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    width: 100%;
-    height: 90%;
-    max-width: 500px;
-    padding: 10px 10px;
-    background-color: #fff;
-}
-
-.modalContents {
-    width: 100%;
-    height: 96%;
-}
-
-.content {
-    width: 100%;
-    height: 100%;
-}
-
-.modalTab {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    height: 10%;
-    width: 100%;
-    max-width: 500px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-.closeModal {
-    position: absolute;
-    top: 0.5rem;
-    right: 1rem;
-    cursor: pointer;
-}
-
-.is-show {
-    /* モーダル表示用クラス */
-    visibility: visible;
-    opacity: 1;
-}
-
-#rainkingtop {
-    width: 100%;
-    height: 97%;
-}
-
-
-/* モーダルCSSここまで */
-
-
-/* 以下ボタンスタイル */
-
-.StartMenu {
-    position: absolute;
-    width: 80%;
-    top: 10%;
-    right: 0px;
-    left: 0px;
-    margin: auto;
-    font-size: 20px;
-}
-
-.PlayerName {
-    box-sizing: border-box;
-    height: 100px;
-    width: 100%;
-    display: inline-block;
-    padding: 0.3em 1em;
-    text-decoration: none;
-    color: hsl(157, 84%, 46%);
-    border: solid 2px hsl(157, 84%, 46%);
-    border-radius: 5px;
-    transition: .4s;
-    margin-bottom: 15px;
-    background-color: #fff;
-    font-size: 20px;
-}
-
-.PlayerName p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.InputPlayerName {
-    display: inline-block;
-    left: 50%;
-    height: 30px;
-    width: 100%;
-    font-size: 20px;
-    border: solid 1px hsl(157, 84%, 46%);
-}
-
-#IdPlayerName {
-    border: none;
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    font-size: 20px;
-}
-
-#startButton {
-    height: 100px;
-    width: 100%;
-    display: inline-block;
-    padding: 0.3em 1em;
-    text-decoration: none;
-    color: hsl(157, 84%, 46%);
-    border: solid 2px hsl(157, 84%, 46%);
-    border-radius: 5px;
-    transition: .4s;
-    margin-bottom: 15px;
-    background-color: #fff;
-    font-size: 20px;
-    box-sizing: border-box;
-}
-
-.startButton p {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-#openModal {
-    height: 100px;
-    width: 100%;
-    display: inline-block;
-    padding: 0.3em 1em;
-    text-decoration: none;
-    color: hsl(157, 84%, 46%);
-    border: solid 2px hsl(157, 84%, 46%);
-    border-radius: 5px;
-    transition: .4s;
-    margin-bottom: 15px;
-    background-color: #fff;
-    font-size: 20px;
-    box-sizing: border-box;
-}
-
-#modal {
-    display: none;
-}
-
-
-/*#openModal {
+    
+    @media screen and (max-width: 705px) {
+        h2 {
+            font-size: 150%;
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        h2 {
+            text-align: center;
+            margin-top: 100px;
+        }
+    }
+    
+    @media screen and (max-width: 320px) {
+        h2 {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 25px;
+        }
+        h3 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    }
+    /* モーダルCSSここから */
+    
+    .modalArea {
+        visibility: hidden;
+        /* displayではなくvisibility */
+        opacity: 0;
+        position: fixed;
+        z-index: 10;
+        /* サイトによってここの数値は調整 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: .4s;
+    }
+    
+    .modalBg {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .topmodal {
+        position: fixed;
+        height: 70%;
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        max-width: 500px;
+    }
+    
+    .modalWrapper {
+        box-sizing: border-box;
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        width: 100%;
+        height: 90%;
+        max-width: 500px;
+        padding: 10px 10px;
+        background-color: #fff;
+    }
+    
+    .modalContents {
+        width: 100%;
+        height: 96%;
+    }
+    
+    .content {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalTab {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        height: 10%;
+        width: 100%;
+        max-width: 500px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    .closeModal {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        cursor: pointer;
+    }
+    
+    .is-show {
+        /* モーダル表示用クラス */
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    #rainkingtop {
+        width: 100%;
+        height: 97%;
+    }
+    /* モーダルCSSここまで */
+    /* 以下ボタンスタイル */
+    
+    .StartMenu {
+        position: absolute;
+        width: 80%;
+        top: 10%;
+        right: 0px;
+        left: 0px;
+        margin: auto;
+        font-size: 20px;
+    }
+    
+    .PlayerName {
+        box-sizing: border-box;
+        height: 100px;
+        width: 100%;
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        color: hsl(157, 84%, 46%);
+        border: solid 2px hsl(157, 84%, 46%);
+        border-radius: 5px;
+        transition: .4s;
+        margin-bottom: 15px;
+        background-color: #fff;
+        font-size: 20px;
+    }
+    
+    .PlayerName p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .InputPlayerName {
+        display: inline-block;
+        left: 50%;
+        height: 30px;
+        width: 100%;
+        font-size: 19px;
+        border: solid 1px hsl(157, 84%, 46%);
+        line-height: normal;
+    }
+    
+    #IdPlayerName {
+        border: none;
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        font-size: 19px;
+        line-height: normal;
+    }
+    
+    #startButton {
+        height: 100px;
+        width: 100%;
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        color: hsl(157, 84%, 46%);
+        border: solid 2px hsl(157, 84%, 46%);
+        border-radius: 5px;
+        transition: .4s;
+        margin-bottom: 15px;
+        background-color: #fff;
+        font-size: 20px;
+        box-sizing: border-box;
+    }
+    
+    .startButton p {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    #openModal {
+        height: 100px;
+        width: 100%;
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        color: hsl(157, 84%, 46%);
+        border: solid 2px hsl(157, 84%, 46%);
+        border-radius: 5px;
+        transition: .4s;
+        margin-bottom: 15px;
+        background-color: #fff;
+        font-size: 20px;
+        box-sizing: border-box;
+    }
+    
+    #modal {
+        display: none;
+    }
+    /*#openModal {
     position: absolute;
     top: 50%;
     left: 50%;
     transform:translate(-50%,-50%);
   }*/
-
-.tab {
-    font-size: 0px;
-    height: 100%;
-    margin: 0px;
-    overflow: hidden;
-    list-style: none;
-    padding: 0px;
-    background-color: none;
-}
-
-.tab li {
-    box-sizing: border-box;
-    font-size: 14px;
-    background: #ccc;
-    width: 1%;
-    height: 100%;
-    padding: 6px;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.tab li.select {
-    background: #eee;
-}
-
-.content {
-    padding: 0px;
-}
-
-.content li {
-    font-size: 15px;
-    list-style: none;
-}
-
-.hide {
-    display: none;
-    /* visibility: hidden; */
-}
-
-.hide2 {
-    visibility: hidden;
-}
-
-.innerContent {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.content h3 {
-    margin: 5px;
-    margin-bottom: 15px;
-    line-height: 30px;
-}
-
-table {
-    font-size: 15px;
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-}
-
-table tr {
-    border-bottom: solid 1px #eee;
-    cursor: pointer;
-}
-
-table tr:hover {
-    background-color: #d4f0fd;
-}
-
-table th,
-table td {
-    text-align: center;
-    padding: 3px 0;
-    width: 40%;
-}
-
-.th1,
-.td1 {
-    width: 20%;
-}
-
-.fontlist {
-    font-size: 12px;
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-}
-
-.fontlist th,
-.fontlist td {
-    text-align: left;
-    padding: 3px 0;
-}
-
-@media screen and (max-width: 320px) {
-    .tab li {
-        font-size: 12px;
+    
+    .tab {
+        font-size: 0px;
+        height: 100%;
+        margin: 0px;
+        overflow: hidden;
+        list-style: none;
+        padding: 0px;
+        background-color: none;
     }
+    
+    .tab li {
+        box-sizing: border-box;
+        font-size: 14px;
+        background: #ccc;
+        width: 1%;
+        height: 100%;
+        padding: 6px;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .tab li.select {
+        background: #eee;
+    }
+    
+    .content {
+        padding: 0px;
+    }
+    
+    .content li {
+        font-size: 15px;
+        list-style: none;
+    }
+    
+    .hide {
+        display: none;
+        /* visibility: hidden; */
+    }
+    
+    .hide2 {
+        visibility: hidden;
+    }
+    
+    .innerContent {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
     .content h3 {
         margin: 5px;
-        margin-bottom: 10px;
-        line-height: 25px;
-        font-size: 18px;
+        margin-bottom: 15px;
+        line-height: 30px;
     }
+    
     table {
+        font-size: 15px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+    
+    table tr {
+        border-bottom: solid 1px #eee;
+        cursor: pointer;
+    }
+    
+    table tr:hover {
+        background-color: #d4f0fd;
+    }
+    
+    table th,
+    table td {
+        height: 28px;
+        box-sizing: border-box;
+        text-align: center;
+        width: 40%;
+    }
+    
+    .th1,
+    .td1 {
+        width: 20%;
+    }
+    
+    .fontlist {
         font-size: 12px;
         border-collapse: collapse;
         border-spacing: 0;
         width: 100%;
     }
-    .fontlist {
-        font-size: 10px;
-        border-collapse: collapse;
-        border-spacing: 0;
-        width: 100%;
-    }
+    
     .fontlist th,
     .fontlist td {
         text-align: left;
-        padding: 2px 0;
+        height: 25px;
     }
-}
-
-
-/* swiper */
-
-.ranking {
-    position: absolute;
-    top: 0px
-}
-
-.swiper-container {
-    width: 100%;
-    height: 85%;
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    position: relative;
-}
-
-.swiper-pagination-bullet {
-    width: 17px !important;
-    height: 17px !important;
-    text-align: center;
-    line-height: 17px;
-    font-size: 11px;
-    color: #000;
-    background-color: #d1d1d1;
-    opacity: 1;
-    margin: 0 3px;
-    bottom: 0px;
-}
-
-.swiper-pagination-bullet {
-    width: 17px;
-    height: 17px;
-}
-
-.swiper-pagination-bullet-active {
-    color: #fff;
-    background: #007aff;
-}
-
-
-/* .swiper-pagination {
+    
+    @media screen and (max-width: 320px) {
+        .tab li {
+            font-size: 12px;
+        }
+        .content h3 {
+            margin: 5px;
+            margin-bottom: 10px;
+            line-height: 25px;
+            font-size: 18px;
+        }
+        table {
+            font-size: 12px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+        .fontlist {
+            font-size: 10px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+        .fontlist th,
+        .fontlist td {
+            text-align: left;
+        }
+    }
+    
+    @media screen and (max-height: 650px) {
+        .fontlist {
+            font-size: 10px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+        table {
+            font-size: 14px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+        table th,
+        table td {
+            height: 25px;
+        }
+        .fontlist th,
+        .fontlist td {
+            text-align: left;
+            height: 23px;
+        }
+    }
+    
+    @media screen and (max-height: 600px) {
+        h2 {
+            margin-top: 80px;
+        }
+        table {
+            font-size: 13px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+        table th,
+        table td {
+            height: 23px;
+        }
+        .fontlist th,
+        .fontlist td {
+            text-align: left;
+            height: 22px;
+        }
+    }
+    
+    @media screen and (max-height: 565px) {
+        .StartMenu {
+            top: 0%;
+        }
+        .content h3 {
+            margin: 0px;
+            margin-bottom: 5px;
+            line-height: 25px;
+            font-size: 15px;
+        }
+        table {
+            font-size: 12px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+        .fontlist {
+            font-size: 11px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+        .fontlist th,
+        .fontlist td {
+            text-align: left;
+        }
+        .swiper-pagination {
+            bottom: 4px !important;
+        }
+        table th,
+        table td {
+            height: 22px;
+        }
+        .fontlist th,
+        .fontlist td {
+            text-align: left;
+            height: 21px;
+        }
+    }
+    /* swiper */
+    
+    .ranking {
+        position: absolute;
+        top: 0px
+    }
+    
+    .swiper-container {
+        width: 100%;
+        height: 85%;
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 17px !important;
+        height: 17px !important;
+        text-align: center;
+        line-height: 17px;
+        font-size: 11px;
+        color: #000;
+        background-color: #d1d1d1;
+        opacity: 1;
+        margin: 0 3px !important;
+        bottom: 0px;
+    }
+    
+    @media screen and (max-width: 320px) {
+        .swiper-pagination-bullet {
+            width: 17px !important;
+            height: 17px !important;
+            text-align: center;
+            line-height: 17px;
+            font-size: 11px;
+            color: #000;
+            background-color: #d1d1d1;
+            opacity: 1;
+            margin: 0 2px !important;
+            bottom: 0px;
+        }
+    }
+    
+    .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
+    }
+    /* .swiper-pagination {
     width: 50%;
     height: 10%;
 } */

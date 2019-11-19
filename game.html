@@ -48,24 +48,27 @@
 
 <body>
     <!--<h2>フォント神経衰弱WEB α版</h2>-->
-    <div class="container">
-        <div class="toptitle">
-            フォント神経衰弱WEB</div>
-        <div class="time">
-            Time
-            <span id="score">0.00</span>
-        </div>
-        <div id="stage">
-            <!--<div class="card-container">
+    <div class="gamearea" id="gamearea">
+        <div class="container">
+            <div class="toptitle">
+                フォント神経衰弱WEB</div>
+            <div class="time">
+                Time
+                <span id="score">0.00</span>
+            </div>
+            <div id="stage">
+                <!--<div class="card-container">
           <div class="card">
             <div class="card-front">1</div>
             <div class="card-back">?</div>
           </div>
       </div>-->
+            </div>
         </div>
-    </div>
-    <div class="botton_wapper">
-        <a href="" id="restart" class="inactive">RESTART</a>
+
+        <div class="botton_wapper">
+            <a href="" id="restart" class="inactive">RESTART</a>
+        </div>
     </div>
     <!-- モーダルエリアここから -->
 
@@ -75,7 +78,7 @@
             <div class="modalWrapper">
                 <div class="modalContents">
                     <ul class="content">
-                        <li>
+                        <li class="result">
                             <h3>クリア！</h3>
                             <p><span id="ModalPlayerName">あなた</span>のタイムは<span id="scoreResult">0.00</span></p>
                             <p>今回の順位は<span id="ModalPlayerRank"></span>位でした!</p>
@@ -168,7 +171,7 @@
                     <div class="startBtn">
                         <p id="startBtn">START</p>
                     </div>
-                </div>>
+                </div>
             </div>
         </div>
     </div>

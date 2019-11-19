@@ -20,7 +20,6 @@ body {
 h2 {
     text-align: center;
     color: #3d3d3d;
-    font-family: "FOT-スランプ Std DB";
     font-size: 40px;
     line-height: 0px;
 }
@@ -270,7 +269,7 @@ h2 {
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .is-show {
@@ -288,7 +287,11 @@ h2 {
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.gamearea {
+    filter: blur(4px);
 }
 
 .topmodal {
@@ -332,6 +335,11 @@ h2 {
     height: 96%;
 }
 
+.result {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .modalWrapper2 {
     box-sizing: border-box;
     display: inline-block;
@@ -340,7 +348,7 @@ h2 {
     left: 50%;
     transform: translate(-50%, 0%);
     width: 100%;
-    height: 90%;
+    height: 100%;
     max-width: 500px;
     padding: auto;
     background-color: #fff;
@@ -387,43 +395,37 @@ h2 {
     bottom: 0px;
     box-sizing: border-box;
     margin: 0px;
-    position: relative;
+}
+
+#startBtn {
+    position: absolute;
+    display: inline-block;
+    color: #D93514;
+    border: solid 2px #D93514;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%);
+    padding: 10px;
 }
 
 .modalRestart {
+    position: absolute;
     text-decoration: none;
     display: block;
     color: #D93514;
     border: solid 2px #D93514;
-    width: 100%;
+    width: 80%;
     border-radius: 10px;
     line-height: 36px;
     text-align: center;
     box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
     margin-top: 40px;
     box-sizing: border-box;
-}
-
-.startBtn {
-    position: absolute;
-    display: table;
-    color: #D93514;
-    border: solid 2px #D93514;
-    height: 30%;
-    width: 50%;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 25px;
-    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 5px;
-    margin-top: 5px;
-}
-
-.startBtn p {
-    display: table-cell;
+    transform: translate(-50%, 0%);
 }
 
 .returnTop {
@@ -433,13 +435,15 @@ h2 {
     color: #13d88c;
     /* border: solid 2px #67c5ff; */
     border: solid 2px #13d88c;
-    width: 100%;
+    width: 80%;
     border-radius: 10px;
     line-height: 36px;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 100px;
     box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
 
 .modalRestart:active {
@@ -630,8 +634,9 @@ table tr:hover {
 
 table th,
 table td {
+    height: 28px;
     text-align: center;
-    padding: 3px 0;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 320px) {
@@ -699,8 +704,23 @@ table td {
 }
 
 .swiper-pagination-bullet-active {
-    color: #fff;
+    color: #fff !important;
     background: #007aff;
+}
+
+@media screen and (max-width: 320px) {
+    .swiper-pagination-bullet {
+        width: 17px !important;
+        height: 17px !important;
+        text-align: center;
+        line-height: 17px;
+        font-size: 11px;
+        color: #000;
+        background-color: #d1d1d1;
+        opacity: 1;
+        margin: 0 2px !important;
+        bottom: 0px;
+    }
 }
 
 .hide {
@@ -715,4 +735,76 @@ table td {
 #rainkingtop {
     width: 100%;
     height: 97%;
+}
+
+@media screen and (max-width: 320px) {
+    .tab li {
+        font-size: 12px;
+    }
+    .content h3 {
+        margin: 5px;
+        margin-bottom: 10px;
+        line-height: 25px;
+        font-size: 18px;
+    }
+    table {
+        font-size: 12px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-height: 650px) {
+    table {
+        font-size: 14px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+    table th,
+    table td {
+        height: 25px;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    h2 {
+        margin-top: 80px;
+    }
+    table {
+        font-size: 13px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+    table th,
+    table td {
+        height: 23px;
+    }
+}
+
+@media screen and (max-height: 565px) {
+    .StartMenu {
+        top: 0%;
+    }
+    .content h3 {
+        margin: 0px;
+        margin-bottom: 5px;
+        line-height: 25px;
+        font-size: 15px;
+    }
+    table {
+        font-size: 12px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+    .swiper-pagination {
+        bottom: 4px !important;
+    }
+    table th,
+    table td {
+        height: 22px;
+    }
 }

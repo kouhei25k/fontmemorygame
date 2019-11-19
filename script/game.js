@@ -47,7 +47,7 @@
 
         ]
         //カードの枚数
-    var pairs = 1;
+    var pairs = 12;
     var sheet = pairs * 2
     var cards = [];
 
@@ -150,8 +150,9 @@
 
             if (correctCount === pairs) {
                 clearTimeout(timeoutId);
-                SendData()
+
                 modal();
+                SendData();
 
             }
         }
@@ -246,10 +247,11 @@
             var btn = document.getElementById('btn');
             var modal2 = document.getElementById('modal2');
             modal2.style.display = 'block';
-
+            var blur = document.getElementById('gamearea');
             var startBtn = document.getElementById('startBtn');
             startBtn.addEventListener('click', function() {
                 modal2.style.display = 'none';
+                blur.classList.toggle('gamearea');
                 startTime = Date.now();
                 runTimer(); //タイマースタート
             })
@@ -260,7 +262,6 @@
         var urlPN = location.search.split('=').pop();
         var PlayerName = decodeURIComponent(urlPN);
         var myScore = document.getElementById("score").textContent;
-        Number(myScore);
         const ApplicationKey = "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
         const ClientKey = "2f6a85ad0e93f1ef98ff6a8c79d927bb7a6fec24cc136516572fbe73abf043c7";
         var ncmb = new NCMB(ApplicationKey, ClientKey);
@@ -271,7 +272,7 @@
             .save()
             .then(function(score) {
                 //alert(PlayerName);
-                ScoreClass.lessThan("score", myScore)
+                ScoreClass.lessThan("score", Number(myScore))
                     .count() // 件数を結果に含める
                     .fetchAll()
                     .then(function(scores) {
