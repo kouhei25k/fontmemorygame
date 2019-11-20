@@ -29,24 +29,38 @@
         "根菜のリゾット",
         "醤油ラーメン",
         "なめこの味噌汁",
-    ]
+    ];
 
+    // const fonts = [0,
+    //     "マティス M",
+    //     "源ノ明朝 B",
+    //     "中ゴシックBBB",
+    //     "見出しゴMB31",
+    //     "筑紫A丸ゴシック R",
+    //     "シネマ丸ゴシック M",
+    //     "ペンジェントル B",
+    //     "漢字タイポス415",
+    //     "ぶらっしゅ",
+    //     "ロゴjrブラック",
+    //     "ラインG",
+    //     "方眼K500",
+
+    // ];
     const fonts = [0,
-            "マティス M",
-            "源ノ明朝 B",
-            "中ゴシックBBB",
-            "見出しゴMB31",
-            "筑紫A丸ゴシック R",
-            "シネマ丸ゴシック M",
-            "ペンジェントル B",
-            "漢字タイポス415",
-            "ぶらっしゅ",
-            "ロゴjrブラック",
-            "ラインG",
-            "方眼K500",
-
-        ]
-        //カードの枚数
+        { 'fontname': "マティスM", 'fontcss': "fot-matisse-pron" },
+        { 'fontname': "源ノ明朝B", 'fontcss': "source-han-serif-japanese" },
+        { 'fontname': "中ゴシックBBB", 'fontcss': "a-otf-gothic-bbb-pr6n" },
+        { 'fontname': "見出しゴMB31", 'fontcss': "a-otf-midashi-go-mb31-pr6n" },
+        { 'fontname': "筑紫A丸ゴシックR", 'fontcss': "fot-tsukuardgothic-std" },
+        { 'fontname': "シネマ丸ゴシックM", 'fontcss': "tbcinergothic-std" },
+        { 'fontname': "ペンジェントルB", 'fontcss': "vdl-pengentle" },
+        { 'fontname': "漢字タイポス415", 'fontcss': "kan415typos-std" },
+        { 'fontname': "ぶらっしゅ", 'fontcss': "ro-brush-std" },
+        { 'fontname': "ロゴjrブラック", 'fontcss': "vdl-logojrblack" },
+        { 'fontname': "ラインG", 'fontcss': "vdl-lineg" },
+        { 'fontname': "方眼K500", 'fontcss': "ta-hougan-k500" }
+    ];
+    //カードの枚数
     var pairs = 12;
     var sheet = pairs * 2
     var cards = [];
@@ -73,10 +87,8 @@
         for (i = 1; i <= sheet; i++) {
             typeNumber.push(i);
             cards.push(createCard(words[i]));
-            //cards.push(createCard(words[i]));
+            // fontSet();
 
-            //document.getElementById('stage').appendChild(createCard(i));
-            //document.getElementById('stage').appendChild(createCard(i));
         }
         while (cards.length) {
             card = cards.splice(Math.floor(Math.random() * cards.length), 1)[0];
@@ -92,10 +104,9 @@
         var card;
         var inner;
         var typeNumberLen = typeNumber[typeNumber.length - 1];
-
         fontSet();
-        inner = '<div class="card-front type-number' + typeNumberLen + '">' + font +
-            '</div><div class="card-back type-number' + typeNumberLen + '">' + words + '</div>';
+
+        inner = `<div class="card-front type-number${typeNumberLen}">${font}</div><div class="card-back type-number${typeNumberLen}">${words}</div>`;
         card = document.createElement('div');
         card.innerHTML = inner;
         card.className = 'card';
@@ -105,13 +116,13 @@
                 return;
             }
             isRunning = true;
-            //startTime = Date.now();
             //runTimer(); //スタートモーダルに移動
             document.getElementById('restart').className = '';
         });
         container = document.createElement('div');
         container.className = 'card-container';
         container.appendChild(card);
+
         return container;
     }
 
@@ -130,7 +141,6 @@
         } else {
             secondCard = card;
             secondCard.addEventListener('transitionend', check);
-
         }
     }
     //正誤判定
@@ -150,10 +160,8 @@
 
             if (correctCount === pairs) {
                 clearTimeout(timeoutId);
-
                 modal();
                 SendData();
-
             }
         }
         secondCard.removeEventListener('transitionend', check);
@@ -169,50 +177,32 @@
             runTimer();
         }, 10);
     }
-    //fontセット
+    // fontセット
+
     function fontSet() {
-        switch (typeNumber.length) {
-            case 1 || 2:
-                font = fonts[1];
-                break;
 
-            case 3 || 4:
-                font = fonts[2];
-                break;
-            case 5 || 6:
-                font = fonts[3];
-                break;
-            case 7 || 8:
-                font = fonts[4];
-                break;
-            case 9 || 10:
-                font = fonts[5];
-                break;
-            case 11 || 12:
-                font = fonts[6];
-                break;
-            case 13 || 14:
-                font = fonts[7];
-                break;
-            case 15 || 16:
-                font = fonts[8];
-                break;
-            case 17 || 18:
-                font = fonts[9];
-                break;
-            case 19 || 20:
-                font = fonts[10];
-                break;
-            case 21 || 22:
-                font = fonts[11];
-                break;
-            case 23 || 24:
-                font = fonts[12];
-                break;
+        for (var i = 1; i <= sheet; i++) {
+            let halfi = Math.ceil(i / 2);
+            let typenumberi = ".type-number" + i;
+            var fontscss
+            switch (typeNumber.length) {
+                case i:
+                    font = fonts[halfi]['fontname'];
+                    fontscss = fonts[halfi]['fontcss'];
+                    console.log(i)
+                    console.log(typenumberi)
+                    console.log(font)
+                    console.log(fontscss)
 
-
+                    $(function() {
+                        $(typenumberi).css("font-family", fontscss);
+                    })
+                    break;
+            }
         }
     }
+
+
     //シャッフル
     function arrShuffle(words) {
         // ここに#buttonをクリックしたら発生させる処理を記述する
@@ -231,12 +221,9 @@
         document.getElementById("scoreResult").innerHTML = myScore;
         var btn = document.getElementById('btn');
         var modal = document.getElementById('modal');
-        //modal.style.display = 'block';
         modal.classList.add('is-show');
-
         var closeBtn = document.getElementById('closeBtn');
         closeBtn.addEventListener('click', function() {
-            // modal.style.display = 'none';
             modal.classList.remove('is-show');
         })
     }
@@ -304,13 +291,13 @@
                                     var rankingScore = ranking.score;
                                     var rankingName = ranking.name;
                                     var number = Math.floor(i / 10) + 1;
-                                    var rankingNumber = "ranking" + number;
+                                    var rankingNumber = `${ranking}${number}`;
                                     var UlRanking = document.getElementById(rankingNumber);
-                                    var rankingli = "<tr><td>" + rank + "</td><td>" + rankingName + "</td><td>" + rankingScore + "</td></tr>";
+                                    var rankingli = `<tr><td>${rank}</td><td>${rankingName}</td><td>${rankingScore}</td></tr>`;
                                     UlRanking.insertAdjacentHTML('beforeend', rankingli);
 
 
-                                    console.log(rank + ": " + rankingName + "-" + rankingScore);
+                                    console.log(`${rank} : ${rankingName} - ${rankingScore}`);
                                 }
                             } else {
                                 console.log("スコアデータがありません");
@@ -321,15 +308,9 @@
                             console.log(err);
                         });
                 }
-
-
-
-
                 getRanking();
             })
     }
-
-
     init();
 
 }());
