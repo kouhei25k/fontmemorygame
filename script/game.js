@@ -31,21 +31,6 @@
         "なめこの味噌汁",
     ];
 
-    // const fonts = [0,
-    //     "マティス M",
-    //     "源ノ明朝 B",
-    //     "中ゴシックBBB",
-    //     "見出しゴMB31",
-    //     "筑紫A丸ゴシック R",
-    //     "シネマ丸ゴシック M",
-    //     "ペンジェントル B",
-    //     "漢字タイポス415",
-    //     "ぶらっしゅ",
-    //     "ロゴjrブラック",
-    //     "ラインG",
-    //     "方眼K500",
-
-    // ];
     const fonts = [0,
         { 'fontname': "マティスM", 'fontcss': "fot-matisse-pron" },
         { 'fontname': "源ノ明朝B", 'fontcss': "source-han-serif-japanese" },
@@ -61,7 +46,7 @@
         { 'fontname': "方眼K500", 'fontcss': "ta-hougan-k500" }
     ];
     //カードの枚数
-    var pairs = 12;
+    var pairs = 1;
     var sheet = pairs * 2
     var cards = [];
 
@@ -189,10 +174,10 @@
                 case i:
                     font = fonts[halfi]['fontname'];
                     fontscss = fonts[halfi]['fontcss'];
-                    console.log(i)
-                    console.log(typenumberi)
-                    console.log(font)
-                    console.log(fontscss)
+                    // console.log(i)
+                    // console.log(typenumberi)
+                    // console.log(font)
+                    // console.log(fontscss)
 
                     $(function() {
                         $(typenumberi).css("font-family", fontscss);
@@ -232,7 +217,7 @@
 
     window.onload = function modal2() {
             var btn = document.getElementById('btn');
-            var modal2 = document.getElementById('modal2');
+            var modal2 = document.getElementById("modal2");
             modal2.style.display = 'block';
             var blur = document.getElementById('gamearea');
             var startBtn = document.getElementById('startBtn');
@@ -271,6 +256,20 @@
 
                 var ModalPlayerName = document.getElementById("ModalPlayerName");
                 ModalPlayerName.innerHTML = PlayerName;
+                tweet();
+
+                function tweet() {
+                    var level = "フォント達人級"
+                    var tweetPnMs = `&text=${PlayerName}さんは${level}！タイム：${myScore}`
+                    var tweethrefurl = "href=http://twitter.com/share?url=https://aoyamafont.yu-nagi.com/"
+                    var rel = `rel="noopener noreferrer"`
+                    var tweetContents = "<a" + tweethrefurl + tweetPnMs + "%0aフォント神経衰弱WEB&hashtags=フォント神経衰弱" + rel +">ツイート</a>"
+                    var tweethtml = document.getElementById("tweetbotton");
+                    console.log(tweetContents);
+                    // tweethtml.innerHTML = tweetContents;
+                }
+
+
 
                 function getRanking() {
                     const ApplicationKey = "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";

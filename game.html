@@ -21,13 +21,13 @@
                 },
                 h = d.documentElement,
                 t = setTimeout(function() {
-                    h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                    h.className = h.className.replace(/\bwf-loading\b/g, "") + "wf-inactive";
                 }, config.scriptTimeout),
                 tk = d.createElement("script"),
                 f = false,
                 s = d.getElementsByTagName("script")[0],
                 a;
-            h.className += " wf-loading";
+            h.className += "wf-loading";
             tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
             tk.async = true;
             tk.onload = tk.onreadystatechange = function() {
@@ -82,85 +82,90 @@
                             <h3>クリア！</h3>
                             <p><span id="ModalPlayerName">あなた</span>のタイムは<span id="scoreResult">0.00</span></p>
                             <p>今回の順位は<span id="ModalPlayerRank"></span>位でした!</p>
-                            <div class="modalBottons">
-                                <a href="" id="modalRestart" class="modalRestart">RESTART</a>
-                                <a href="index.html" id="returnTop" class="returnTop">TOP</a>
-                            </div>
-                        </li>
-                        <li class="hide2" id="rainkingtop">
-                            <h3>ランキング</h3>
-                            <table>
-                                <tr>
-                                    <th class="th1">順位</th>
-                                    <th>名前</th>
-                                    <th>スコア</th>
-                                </tr>
-                            </table>
-                            <!-- Swiper -->
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <table class="ranking" id="ranking1">
-                                        </table>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <table class="ranking" id="ranking2">
-                                        </table>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <table class="ranking" id="ranking3">
-                                        </table>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <table class="ranking" id="ranking4">
-                                        </table>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <table class="ranking" id="ranking5">
-                                        </table>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <table class="ranking" id="ranking6">
-                                        </table>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <table class="ranking" id="ranking7">
-                                        </table>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <table class="ranking" id="ranking8">
-                                        </table>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <table class="ranking" id="ranking9">
-                                        </table>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <table class="ranking" id="ranking10">
-                                        </table>
-                                    </div>
-                                </div>
-                                <!-- Add Pagination -->
-
-                                <div class="swiper-pagination"></div>
-                            </div>
-                        </li>
-                    </ul>
+                            <!-- <div　id="tweetbotton">
+                                <a href="http://twitter.com/share?url=https://aoyamafont.yu-nagi.com/&text=フォント太郎さんはフォント達人級！タイム：19.00%0aフォント神経衰弱WEB&hashtags=フォント神経衰弱" rel="noopener noreferrer">
+                                    ツイート
+                                </a>
+                            </div> -->
+                <div class="modalBottons">
+                    <a href="" id="modalRestart" class="modalRestart">RESTART</a>
+                    <a href="index.html" id="returnTop" class="returnTop">TOP</a>
                 </div>
+                </li>
+                <li class="hide2" id="rainkingtop">
+                    <h3>ランキング</h3>
+                    <table>
+                        <tr>
+                            <th class="th1">順位</th>
+                            <th>名前</th>
+                            <th>スコア</th>
+                        </tr>
+                    </table>
+                    <!-- Swiper -->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <table class="ranking" id="ranking1">
+                                </table>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="ranking" id="ranking2">
+                                </table>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="ranking" id="ranking3">
+                                </table>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="ranking" id="ranking4">
+                                </table>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="ranking" id="ranking5">
+                                </table>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="ranking" id="ranking6">
+                                </table>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="ranking" id="ranking7">
+                                </table>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="ranking" id="ranking8">
+                                </table>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="ranking" id="ranking9">
+                                </table>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="ranking" id="ranking10">
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
 
-                <!-- <input type="button" id="closeBtn" value="close">-->
-                <div id="closeBtn" class="closeModal">
-                    ×
-                </div>
-            </div>
-            <div class="modalTab">
-                <ul class="tab">
-                    <li class="select">スコア</li>
-                    <li>ランキング</li>
-
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </li>
                 </ul>
             </div>
+
+            <!-- <input type="button " id="closeBtn " value="close">-->
+            <div id="closeBtn" class="closeModal">
+                ×
+            </div>
         </div>
+        <div class="modalTab">
+            <ul class="tab">
+                <li class="select">スコア</li>
+                <li>ランキング</li>
+
+            </ul>
+        </div>
+    </div>
     </div>
 
     <div id="modal2" class="modal2">
@@ -211,7 +216,7 @@
                     el: '.swiper-pagination',
                     clickable: true,
                     renderBullet: function(index, className) {
-                        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                        return '<span class=" ' + className + '">' + (index + 1) + '</span>';
                     },
                 },
             });
@@ -223,7 +228,7 @@
 
 
     <!-- SDKの読み込み -->
-
+    <script async src="https://platform.twitter.com/widgets.js " charset="utf-8"></script>
     <script src="script\game.js"></script>
 </body>
 
