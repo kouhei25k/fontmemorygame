@@ -269,7 +269,7 @@ h2 {
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .is-show {
@@ -287,7 +287,7 @@ h2 {
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .gamearea {
@@ -336,8 +336,9 @@ h2 {
 }
 
 .result {
-    margin-left: 20px;
-    margin-right: 20px;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 .modalWrapper2 {
@@ -357,6 +358,7 @@ h2 {
 .content {
     height: 100%;
     width: 100%;
+    padding: 0px;
 }
 
 .content2 {
@@ -480,10 +482,6 @@ h2 {
 
 .tab li.select {
     background: #eee;
-}
-
-.content {
-    padding: 0px;
 }
 
 .content li {
@@ -723,4 +721,32 @@ table td {
     table td {
         height: 22px;
     }
+}
+
+
+/* twitter */
+
+.twitter {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 100%;
+    display: inline-block;
+}
+
+.tweetbotton {
+    text-align: center;
+    background-color: #55acee;
+    border: 2px solid #55acee;
+    color: #fff !important;
+    padding: 4px 32px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    text-decoration: none !important;
+    border-radius: 5px;
+}
+
+.tweetbotton:hover {
+    background-color: #fff;
+    color: #55acee;
 }
