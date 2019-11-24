@@ -46,7 +46,7 @@
     { fontname: "方眼K500", fontcss: "ta-hougan-k500" }
   ];
   //カードの枚数
-  var pairs = 12;
+  var pairs = 1;
   var sheet = pairs * 2;
   var cards = [];
 
@@ -270,7 +270,7 @@
           levelExplanation =
             "そこそこの力を持っています。<br>まだまだ伸びしろがありますよ。";
         } else if (myScore < 60) {
-          level = "【フォント初心級者】";
+          level = "【フォント初心者級】";
           levelExplanation =
             "太字のフォントや変わった形の<br>フォントから見つけるのがコツです。";
         } else {
