@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="startButton">
-                <button id="startButton" type="button" name="startButton" onclick="SetName();">START!</button>
+                <button id="startButton" type="button" name="startButton" onclick="SetName();">スタート</button>
             </div>
             <div class="exButton">
                 <button id="openModal">遊び方</button>
@@ -83,7 +83,7 @@
                         <li class="innerContent">
                             <h3>フォント神経衰弱<br>の遊び方</h3>
                             <p>料理名の書かれたカードの中から同じ書体書かれたペアを見つけよう。</p>
-                            <p>ペアを間違えるとスコアタイムに＋３秒。正確性も大事です。</p>
+                            <p>ペアを間違えるとスコアタイムに<span class="p-red">＋３秒</span>。正確性も大事です。</p>
                         </li>
                         <li class="hide innerContent">
                             <h3>使用フォント一覧</h3>
@@ -211,9 +211,9 @@
             </div>
             <div class="modalTab">
                 <ul class="tab">
-                    <li class="select">遊び方</li>
-                    <li>使用フォント</li>
-                    <li>ランキング</li>
+                    <li id="tab1" class="select">遊び方</li>
+                    <li id="tab2">使用フォント</li>
+                    <li id="tab3">ランキング</li>
                 </ul>
             </div>
         </div>
@@ -283,7 +283,7 @@
                             var number = Math.floor(i / 10) + 1;
                             var rankingNumber = "ranking" + number;
                             var UlRanking = document.getElementById(rankingNumber);
-                            var rankingli = "<tr><td class ='td1'>" + rank + "</td><td>" + rankingName + "</td><td>" + rankingScore + "</td></tr>";
+                            var rankingli = `<tr><td class ='td1'>${rank}</td><td>${rankingName}</td><td>${rankingScore}</td></tr>`;
                             UlRanking.insertAdjacentHTML('beforeend', rankingli);
                             // console.log(rank + ": " + rankingName + "-" + rankingScore);
                             // console.log(number)

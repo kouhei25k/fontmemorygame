@@ -46,7 +46,7 @@
     { fontname: "方眼K500", fontcss: "ta-hougan-k500" }
   ];
   //カードの枚数
-  var pairs = 1;
+  var pairs = 12;
   var sheet = pairs * 2;
   var cards = [];
 
@@ -321,7 +321,7 @@
                   var number = Math.floor(i / 10) + 1;
                   var rankingNumber = `ranking${number}`;
                   var UlRanking = document.getElementById(rankingNumber);
-                  var rankingli = `<tr><td>${rank}</td><td>${rankingName}</td><td>${rankingScore}</td></tr>`;
+                  var rankingli = `<tr><td class ='td1'>${rank}</td><td>${rankingName}</td><td>${rankingScore}</td></tr>`;
                   UlRanking.insertAdjacentHTML("beforeend", rankingli);
 
                   //console.log(`${rank} : ${rankingName} - ${rankingScore}`);

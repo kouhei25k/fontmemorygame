@@ -12,13 +12,13 @@ body {
   background-color: rgb(246, 246, 246);
   font-size: 20px;
   margin: 0 auto 0 auto;
-  color: #3d3d3d;
+  color: #2f2f2f;
   font-family: vdl-megamaru, sans-serif;
 }
 
 h2 {
   text-align: center;
-  color: #3d3d3d;
+  color: #2f2f2f;
   font-size: 40px;
   line-height: 0px;
 }
@@ -72,7 +72,7 @@ h2 {
 .card-back {
   font-size: 25px;
   background: #fff;
-  color: #3d3d3d;
+  color: #2f2f2f;
   border: solid 0px rgb(25, 115, 78);
 }
 
@@ -90,8 +90,7 @@ h2 {
 
 .toptitle {
   font-size: 12px;
-  color: #3d3d3d;
-  font-family: vdl-megamaru, sans-serif;
+  color: #2f2f2f;
   text-align: right;
   margin-top: 5px;
   margin-right: 10px;
@@ -102,7 +101,6 @@ h2 {
   margin-top: 15px;
   margin-bottom: 10px;
   margin-left: 50px;
-  font-family: Arial, Helvetica, sans-serif;
   color: #13d88c;
 }
 
@@ -182,7 +180,7 @@ h2 {
     /**/
   }
   .card-back {
-    color: #3d3d3d;
+    color: #2f2f2f;
     font-size: 3.3vw;
   }
   .card-front,
@@ -194,12 +192,12 @@ h2 {
     /*2.7*/
   }
   .time {
-    font-size: 20px;
-    margin-top: 0px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-top: -6px;
+    margin-bottom: 0px;
     margin-left: 15px;
-    font-family: Arial, Helvetica, sans-serif;
   }
+
   /* .card-front.type-number11,
   .card-front.type-number12 {
     font-size: 2.2vw;
@@ -228,12 +226,15 @@ h2 {
     line-height: 50px;
   }
 }
-
+.botton_wapper {
+  margin-top: 0px;
+}
 #restart {
   text-decoration: none;
   display: block;
-  color: #d93514;
+  color: #fff;
   border: solid 2px #d93514;
+  background-color: #d93514;
   height: 40px;
   width: 40%;
   border-radius: 10px;
@@ -241,7 +242,7 @@ h2 {
   text-align: center;
   font-size: 18px;
   margin-top: 15px;
-  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
   margin-left: auto;
   margin-right: auto;
 }
@@ -324,6 +325,7 @@ h2 {
   max-width: 500px;
   padding: 10px 10px;
   background-color: #fff;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .modalContents {
@@ -338,12 +340,10 @@ h2 {
 }
 
 .modalWrapper2 {
+  position: relative;
   box-sizing: border-box;
   display: inline-block;
-  position: absolute;
   top: 0px;
-  left: 50%;
-  transform: translate(-50%, 0%);
   width: 100%;
   height: 100%;
   max-width: 500px;
@@ -356,18 +356,18 @@ h2 {
   width: 100%;
   padding: 0px;
 }
-
 .content2 {
   text-align: center;
-  position: relative;
-  height: 100%;
+  position: absolute;
   width: 100%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
 }
-
 .content2 h3 {
-  font-family: vdl-megamaru, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 15px;
 }
-
 .modalTab {
   position: absolute;
   bottom: 0px;
@@ -392,19 +392,19 @@ h2 {
   text-align: center;
   box-sizing: border-box;
 }
-
-#startBtn {
-  position: absolute;
+.startBtn {
   display: inline-block;
-  color: #d93514;
+  color: #fff;
   border: solid 2px #d93514;
-  width: 50%;
+  background-color: #d93514;
   border-radius: 10px;
   text-align: center;
   font-size: 25px;
   box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
-  transform: translate(-50%, -50%);
-  padding: 10px;
+  width: 50%;
+}
+#startBtn {
+  margin: 5px;
 }
 
 .modalRestart {
@@ -415,6 +415,7 @@ h2 {
   border: solid 2px #d93514;
   background-color: #d93514;
   width: 48.5%;
+  max-width: 172.5px;
   border-radius: 5px;
   line-height: 36px;
   text-align: center;
@@ -428,6 +429,7 @@ h2 {
   background-color: #13d88c;
   border: solid 2px #13d88c;
   width: 48.5%;
+  max-width: 172.5px;
   border-radius: 5px;
   line-height: 36px;
   text-align: center;
@@ -458,11 +460,11 @@ h2 {
 
 .tab li {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 17px;
   background: #ccc;
   width: 1%;
   height: 100%;
-  padding: 6px;
+  padding: 5px;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
@@ -471,7 +473,12 @@ h2 {
 .tab li.select {
   background: #eee;
 }
-
+#tab1 {
+  border-radius: 0px 0px 0px 5px;
+}
+#tab2 {
+  border-radius: 0px 0px 5px 0px;
+}
 .content li {
   list-style: none;
 }
@@ -563,27 +570,11 @@ table td {
   height: 28px;
   text-align: center;
   box-sizing: border-box;
+  width: 40%;
 }
-
-@media screen and (max-width: 320px) {
-  .tab li {
-    font-size: 12px;
-  }
-  .content h3 {
-    margin: 5px;
-    margin-bottom: 10px;
-    line-height: 25px;
-    font-size: 18px;
-  }
-  .content p {
-    font-size: 15px;
-  }
-  table {
-    font-size: 12px;
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-  }
+.th1,
+.td1 {
+  width: 20%;
 }
 
 .ranking {
@@ -593,7 +584,7 @@ table td {
 
 .swiper-container {
   width: 100%;
-  height: 85%;
+  height: 83.5%;
 }
 
 .swiper-slide {
@@ -615,6 +606,9 @@ table td {
   align-items: center;
   position: relative;
 }
+.swiper-pagination {
+  bottom: 5px !important ;
+}
 
 .swiper-pagination-bullet {
   width: 17px !important;
@@ -622,7 +616,7 @@ table td {
   text-align: center;
   line-height: 17px;
   font-size: 11px;
-  color: #000;
+  color: #2f2f2f;
   background-color: #d1d1d1;
   opacity: 1;
   margin: 0 3px;
@@ -641,7 +635,7 @@ table td {
     text-align: center;
     line-height: 17px;
     font-size: 11px;
-    color: #000;
+    color: #2f2f2f;
     background-color: #d1d1d1;
     opacity: 1;
     margin: 0 2px !important;
@@ -679,6 +673,24 @@ table td {
     border-spacing: 0;
     width: 100%;
   }
+  .resultName {
+    font-size: 17px;
+    margin-bottom: -5px;
+  }
+  #ModalLevel {
+    font-size: 28px;
+    margin-top: -15px;
+  }
+  #ModalExplanation {
+    font-size: 11px !important;
+    margin-bottom: 10px;
+    line-height: 20px;
+  }
+  .resultTime p,
+  .resultRank p {
+    font-size: 19px;
+    margin-top: -10px;
+  }
 }
 @media screen and (max-height: 720px) {
   table {
@@ -691,8 +703,12 @@ table td {
 }
 
 @media screen and (max-height: 660px) {
+  .content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
   table {
-    font-size: 12px;
+    font-size: 11px;
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
@@ -701,22 +717,45 @@ table td {
   table td {
     height: 25px;
   }
+  #ModalExplanation {
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: center;
+  }
+  .resultTime p,
+  .resultRank p {
+    font-size: 20px;
+    margin-top: -10px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
 }
 
 @media screen and (max-height: 600px) {
   h2 {
     margin-top: 80px;
+    margin-bottom: 5px;
   }
-  /* table {
+  .resultName {
+    font-size: 17px;
+    margin-bottom: -5px;
+  }
+  #ModalLevel {
+    margin-top: -15px;
+  }
+  #ModalExplanation {
     font-size: 12px;
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
+    margin-bottom: 10px;
+    line-height: 20px;
   }
-  table th,
-  table td {
-    height: 23px;
-  } */
+  .resultTime p,
+  .resultRank p {
+    font-size: 19px;
+    margin-top: -10px;
+  }
 }
 
 @media screen and (max-height: 565px) {
@@ -727,13 +766,10 @@ table td {
     margin: 0px;
     margin-bottom: 5px;
     line-height: 25px;
-    font-size: 15px;
+    font-size: 18px;
   }
   table {
     font-size: 11px;
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
   }
   .swiper-pagination {
     bottom: 4px !important;
@@ -760,6 +796,7 @@ table td {
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
+  max-width: 350px;
   background-color: #55acee;
   border: 2px solid #55acee;
 
