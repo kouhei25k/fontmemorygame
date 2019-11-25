@@ -277,7 +277,7 @@ var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
         } else {
           level = "【フォント新人級】";
           levelExplanation =
-            "ゆっくりとフォントを見比べて見てください。<br>色々な違いを見つけられるはずです";
+            "ゆっくりと見比べて見てください。<br>色々な違いを見つけられるはずです";
         }
 
         var Modallevel = document.getElementById("ModalLevel");
