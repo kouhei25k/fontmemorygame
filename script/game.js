@@ -1,3 +1,4 @@
+var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
 (function() {
   "use strict";
 
@@ -46,7 +47,7 @@
     { fontname: "方眼K500", fontcss: "ta-hougan-k500" }
   ];
   //カードの枚数
-  var pairs = 1;
+  var pairs = 12;
   var sheet = pairs * 2;
   var cards = [];
 
@@ -227,10 +228,10 @@
     var urlPN = location.search.split("=").pop();
     var PlayerName = decodeURIComponent(urlPN);
     var myScore = document.getElementById("score").textContent;
+
     const ApplicationKey =
       "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
-    const ClientKey =
-      "2f6a85ad0e93f1ef98ff6a8c79d927bb7a6fec24cc136516572fbe73abf043c7";
+    const ClientKey = "dummy";
     var ncmb = new NCMB(ApplicationKey, ClientKey);
     var ScoreClass = ncmb.DataStore("NewScore");
     var score = new ScoreClass();
@@ -299,8 +300,7 @@
         function getRanking() {
           const ApplicationKey =
             "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
-          const ClientKey =
-            "2f6a85ad0e93f1ef98ff6a8c79d927bb7a6fec24cc136516572fbe73abf043c7";
+          const ClientKey = "aaaaaa";
           var ncmb = new NCMB(ApplicationKey, ClientKey);
           var highScore = ncmb.DataStore("HighScore");
           highScore
@@ -339,4 +339,42 @@
       });
   }
   init();
+
+  $(".swiper-pagination-bullet").css("width", "17px");
+  $(".swiper-pagination-bullet").css("height", "17px");
+  $(function() {
+    //クリックしたときのファンクションをまとめて指定
+    $(".tab li").click(function() {
+      //.index()を使いクリックされたタブが何番目かを調べ、
+      //indexという変数に代入します。
+      var index = $(".tab li").index(this);
+
+      //コンテンツを一度すべて非表示にし、
+      $(".content li").css("display", "none");
+
+      //クリックされたタブと同じ順番のコンテンツを表示します。
+      $(".content li")
+        .eq(index)
+        .css("display", "block");
+      $("#rainkingtop").removeClass("hide2");
+
+      //一度タブについているクラスselectを消し、
+      $(".tab li").removeClass("select");
+
+      //クリックされたタブのみにクラスselectをつけます。
+      $(this).addClass("select");
+    });
+  });
+
+  $(function() {
+    var swiper = new Swiper(".swiper-container", {
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function(index, className) {
+          return '<span class="' + className + '">' + (index + 1) + "</span>";
+        }
+      }
+    });
+  });
 })();

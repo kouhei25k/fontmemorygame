@@ -62,14 +62,9 @@
 }
 @media screen and (max-width: 331px) {
   .tab li {
-    font-size: 12px;
+    font-size: 12px !important;
   }
-  .content h3 {
-    margin: 5px;
-    margin-bottom: 10px;
-    line-height: 25px;
-    font-size: 18px;
-  }
+
   table {
     font-size: 12px;
     border-collapse: collapse;
@@ -89,11 +84,6 @@
     margin-bottom: 10px;
     line-height: 20px;
   }
-  .resultTime p,
-  .resultRank p {
-    font-size: 19px;
-    margin-top: -10px;
-  }
 }
 @media screen and (max-width: 320px) {
   .swiper-pagination-bullet {
@@ -102,11 +92,15 @@
     text-align: center;
     line-height: 17px;
     font-size: 11px;
-    color: #2f2f2f;
+    /* color: #2f2f2f; */
     background-color: #d1d1d1;
     opacity: 1;
     margin: 0 2px !important;
     bottom: 0px;
+  }
+
+  #ModalLevel {
+    font-size: 26px;
   }
 }
 

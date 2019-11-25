@@ -198,53 +198,6 @@
       </div>
     </div>
 
-    <script>
-      $(".swiper-pagination-bullet").css("width", "17px");
-      $(".swiper-pagination-bullet").css("height", "17px");
-      $(function() {
-        //クリックしたときのファンクションをまとめて指定
-        $(".tab li").click(function() {
-          //.index()を使いクリックされたタブが何番目かを調べ、
-          //indexという変数に代入します。
-          var index = $(".tab li").index(this);
-
-          //コンテンツを一度すべて非表示にし、
-          $(".content li").css("display", "none");
-
-          //クリックされたタブと同じ順番のコンテンツを表示します。
-          $(".content li")
-            .eq(index)
-            .css("display", "block");
-          $("#rainkingtop").removeClass("hide2");
-
-          //一度タブについているクラスselectを消し、
-          $(".tab li").removeClass("select");
-
-          //クリックされたタブのみにクラスselectをつけます。
-          $(this).addClass("select");
-        });
-      });
-    </script>
-
-    <script>
-      $(function() {
-        var swiper = new Swiper(".swiper-container", {
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            renderBullet: function(index, className) {
-              return (
-                '<span class="' + className + '">' + (index + 1) + "</span>"
-              );
-            }
-          }
-        });
-      });
-    </script>
-
-    <!-- モーダルエリアここまで -->
-
-    <!-- SDKの読み込み -->
     <script
       async
       src="https://platform.twitter.com/widgets.js"

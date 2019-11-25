@@ -1,13 +1,53 @@
-@media screen and (max-width: 705px) {
-  h2 {
-    font-size: 150%;
+@media screen and (max-width: 760px) {
+  .smalltitle {
+    font-size: 20px;
+  }
+  .title h2 {
+    font-size: 50px;
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .smalltitle {
+    font-size: 17px;
+  }
+  .title h2 {
+    font-size: 40px;
+    line-height: 36px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  h2 {
-    text-align: center;
-    margin-top: 100px;
+  .smalltitle {
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .title h2 {
+    font-size: 32px;
+    line-height: 30px;
+  }
+  .title h3 {
+    margin-top: -5px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .smalltitle {
+    font-size: 15px;
+    border-radius: 7px;
+  }
+  .title h2 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+  .title h3 {
+    margin-top: -5px;
+  }
+
+  .tab li {
+    font-size: 14px;
+  }
+  .fontlist {
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 331px) {
@@ -27,10 +67,7 @@
     width: 100%;
   }
   .fontlist {
-    font-size: 10px;
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
+    font-size: 10px !important;
   }
   .fontlist th,
   .fontlist td {
@@ -39,15 +76,17 @@
 }
 
 @media screen and (max-width: 320px) {
-  h2 {
-    text-align: center;
-    margin-top: 60px;
-    font-size: 25px;
+  .smalltitle {
+    font-size: 15px;
+    border-radius: 6px;
+    padding: 4px;
   }
-  h3 {
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 10px;
+  .title h2 {
+    font-size: 26px;
+    line-height: 28px;
+  }
+  .title h3 {
+    margin-top: -5px;
   }
   .swiper-pagination-bullet {
     width: 17px !important;
@@ -55,7 +94,7 @@
     text-align: center;
     line-height: 17px;
     font-size: 11px;
-    color: #2f2f2f;
+    /* color: #2f2f2f; */
     background-color: #d1d1d1;
     opacity: 1;
     margin: 0 2px !important;
@@ -63,18 +102,31 @@
   }
 }
 @media screen and (max-height: 720px) {
-  table {
-    font-size: 11px;
-  }
-  table th,
-  table td {
-    height: 25px;
-  }
-  .fontlist {
-    font-size: 12px;
+  .title {
+    margin-top: 70px;
   }
 }
+table {
+  font-size: 11px;
+}
+table th,
+table td {
+  height: 25px;
+}
+.fontlist {
+  font-size: 12px;
+}
+
 @media screen and (max-height: 660px) {
+  .StartMenu {
+    top: 6%;
+  }
+  .title {
+    margin-top: 50px;
+  }
+  .title h3 {
+    margin-top: -5px;
+  }
   .content h3 {
     font-size: 20px;
     margin-bottom: 10px;
@@ -96,8 +148,14 @@
 }
 
 @media screen and (max-height: 600px) {
-  h2 {
-    margin-top: 80px;
+  .StartMenu {
+    top: 5%;
+  }
+  .title {
+    margin-top: 40px;
+  }
+  .title h3 {
+    margin-top: -10px;
   }
   table {
     font-size: 11px;
@@ -120,6 +178,9 @@
 }
 
 @media screen and (max-height: 565px) {
+  .title {
+    margin-top: 35px;
+  }
   .StartMenu {
     top: 0%;
   }
@@ -157,10 +218,6 @@
   }
 }
 @media screen and (max-height: 540px) {
-  h2 {
-    margin-top: 60px;
-    margin-bottom: 5px;
-  }
   .StartMenu {
     top: 0%;
   }
@@ -181,6 +238,9 @@
   }
 }
 @media screen and (max-height: 530px) {
+  .title {
+    margin-top: 30px;
+  }
   .content h3 {
     margin: -5px;
     margin-bottom: 0px;
