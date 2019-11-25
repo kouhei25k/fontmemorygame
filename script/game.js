@@ -233,7 +233,7 @@ var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
       "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
     const ClientKey = "dummy";
     var ncmb = new NCMB(ApplicationKey, ClientKey);
-    var ScoreClass = ncmb.DataStore("NewScore");
+    var ScoreClass = ncmb.DataStore("ProductionScore");
     var score = new ScoreClass();
     score
       .set("name", PlayerName)
@@ -302,7 +302,7 @@ var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
             "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
           const ClientKey = "aaaaaa";
           var ncmb = new NCMB(ApplicationKey, ClientKey);
-          var highScore = ncmb.DataStore("HighScore");
+          var highScore = ncmb.DataStore("ProductionScore");
           highScore
             .order("score")
             .order("name")

@@ -48,7 +48,7 @@ window.onload = function getRanking() {
     "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
   const ClientKey = "aaaaaaaaaaa";
   var ncmb = new NCMB(ApplicationKey, ClientKey);
-  var highScore = ncmb.DataStore("HighScore");
+  var highScore = ncmb.DataStore("ProductionScore");
   highScore
     .order("score")
     .order("name")
