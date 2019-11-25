@@ -59,6 +59,10 @@
   .card-container {
     margin: 2.5px;
   }
+  #ModalLevel {
+    font-size: 26px;
+    
+  }
 }
 @media screen and (max-width: 331px) {
   .tab li {
@@ -76,7 +80,7 @@
     margin-bottom: -5px;
   }
   #ModalLevel {
-    font-size: 28px;
+    font-size: 25px;
     margin-top: -15px;
   }
   #ModalExplanation {
@@ -100,7 +104,7 @@
   }
 
   #ModalLevel {
-    font-size: 25px;
+    font-size: 24px;
   }
 }
 
