@@ -5,7 +5,9 @@
 html.wf-active {
   visibility: visible;
 } */
-
+html {
+  user-select: none;
+}
 body {
   background-color: rgb(246, 246, 246);
   font-size: 20px;
