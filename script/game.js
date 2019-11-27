@@ -289,7 +289,7 @@ var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
           // var level = "フォント達人級";
           var tweetPnMs = `&text=${PlayerName}さんは${level}！%0aタイム：${myScore}`;
           var tweethrefurl =
-            " href=http://twitter.com/share?url=https://www.google.com"; //https://aoyamafont.yu-nagi.com/
+            " href=http://twitter.com/share?url=https://www.play-font.com"; 
           var rel = ` rel="noopener noreferrer"`;
           var tweetContents = `<a class="tweetbotton"${tweethrefurl}${tweetPnMs}%0aフォント神経衰弱WEB%0a&hashtags=フォント神経衰弱WEB${rel}>結果を共有</a>`;
           var tweethtml = document.getElementById("tweetbotton");
