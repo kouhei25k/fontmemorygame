@@ -490,6 +490,10 @@ table td {
 .td1 {
   width: 20%;
 }
+.th2,
+.td2 {
+  width: 50%;
+}
 
 .ranking {
   position: absolute;

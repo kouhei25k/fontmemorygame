@@ -65,7 +65,7 @@ window.onload = function getRanking() {
           var number = Math.floor(i / 10) + 1;
           var rankingNumber = "ranking" + number;
           var UlRanking = document.getElementById(rankingNumber);
-          var rankingli = `<tr><td class ='td1'>${rank}</td><td>${rankingName}</td><td>${rankingScore}</td></tr>`;
+          var rankingli = `<tr><td class ='td1'>${rank}</td><td class ='td2'>${rankingName}</td><td>${rankingScore}</td></tr>`;
           UlRanking.insertAdjacentHTML("beforeend", rankingli);
           // console.log(rank + ": " + rankingName + "-" + rankingScore);
           // console.log(number)
