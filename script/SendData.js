@@ -2,7 +2,7 @@ function SetName() {
   var PlayerName = document.getElementById("IdPlayerName").value;
   if (PlayerName != "") {
     var title = document.title;
-    if (title == "フォント神経衰弱WEB TOP") {
+    if (title == "フォント神経衰弱WEB") {
       location.href = "game.html?name=" + encodeURIComponent(PlayerName);
     }
   } else {
