@@ -1,4 +1,9 @@
 var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
+const ApplicationKey =
+  "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
+const ClientKey = "aaaaaa";
+var ncmb = new NCMB(ApplicationKey, ClientKey);
+var highScore = ncmb.DataStore("HighScore");
 (function() {
   "use strict";
 
@@ -47,7 +52,7 @@ var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
     { fontname: "方眼K500", fontcss: "ta-hougan-k500" }
   ];
   //カードの枚数
-  var pairs = 12;
+  var pairs = 1;
   var sheet = pairs * 2;
   var cards = [];
 
@@ -172,11 +177,6 @@ var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
         case i:
           font = fonts[halfi]["fontname"];
           fontscss = fonts[halfi]["fontcss"];
-          // console.log(i)
-          // console.log(typenumberi)
-          // console.log(font)
-          // console.log(fontscss)
-
           $(function() {
             $(typenumberi).css("font-family", fontscss);
           });
@@ -210,7 +210,8 @@ var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
     });
   }
 
-  window.onload = function modal2() {
+  //スタートモーダル
+  window.addEventListener("DOMContentLoaded", function modal2() {
     var btn = document.getElementById("btn");
     var modal2 = document.getElementById("modal2");
     modal2.style.display = "block";
@@ -222,121 +223,214 @@ var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
       startTime = Date.now();
       runTimer(); //タイマースタート
     });
-  };
+  });
+
+  //usrIDを生成
+  function RondamString() {
+    var l = 8;
+    // 生成する文字列に含める文字セット
+    var c = "abcdefghijklmnopqrstuvwxyz0123456789";
+    var cl = c.length;
+    var userId = "";
+    for (var i = 0; i < l; i++) {
+      userId += c[Math.floor(Math.random() * cl)];
+    }
+    return userId;
+  }
+  var userId = RondamString();
+
   //send date to DB
   function SendData() {
     var urlPN = location.search.split("=").pop();
     var PlayerName = decodeURIComponent(urlPN);
-    var myScore = document.getElementById("score").textContent;
+    var myScore = Number(document.getElementById("score").textContent);
+    var storageUserId = localStorage.getItem("UserId");
+    var storagePlayerName = localStorage.getItem("PlayerName");
 
-    const ApplicationKey =
-      "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
-    const ClientKey = "dummy";
-    var ncmb = new NCMB(ApplicationKey, ClientKey);
-    var ScoreClass = ncmb.DataStore("ProductionScore");
-    var score = new ScoreClass();
-    score
-      .set("name", PlayerName)
-      .set("score", Number(myScore))
-      .save()
-      .then(function(score) {
-        //alert(PlayerName);
-        ScoreClass.lessThan("score", Number(myScore))
+    //今回のランキング取得
+    function getMySocer() {
+      //今回のスコア
+      (function() {
+        highScore
+          .lessThan("score", myScore)
           .count() // 件数を結果に含める
           .fetchAll()
           .then(function(scores) {
-            tweet();
             var rank =
               scores.count !== undefined ? parseInt(scores.count) + 1 : 1;
             var ModalPlayerRank = document.getElementById("ModalPlayerRank");
             ModalPlayerRank.innerHTML = rank;
           });
+      })();
+      //最高ランキングを取得
+      (function() {
+        highScore
+          .equalTo("userID", storageUserId)
+          .equalTo("name", storagePlayerName)
+          .fetchAll()
+          .then(function(results) {
+            console.log("以前のネームのデータがあります");
+            var newhighScore = results[0];
+            highScore
+              .lessThan("score", Number(newhighScore.score))
+              .count() // 件数を結果に含める
+              .fetchAll()
+              .then(function(scores) {
+                //順位
+                var rank =
+                  scores.count !== undefined ? parseInt(scores.count) + 1 : 1;
+                var ModalBestPlayerRank = document.getElementById(
+                  "ModalBestPlayerRank"
+                );
+                ModalBestPlayerRank.innerHTML = rank;
+                //タイム
+                var BestMytime = document.getElementById("ModalBestscore");
+                BestMytime.innerHTML = Number(newhighScore.score);
+              });
+          });
+      })();
 
-        var ModalPlayerName = document.getElementById("ModalPlayerName");
-        ModalPlayerName.innerHTML = PlayerName;
-
-        if (myScore < 15) {
-          var level = "【フォント達人級】";
-          var levelExplanation =
-            "すでに達人の域に達しています。<br>もう見上げるものは何もありません。";
-        } else if (myScore < 20) {
-          level = "【フォントプロ級】";
-          levelExplanation = "素晴らしい！<br>文句なしのプロ級です。";
-        } else if (myScore < 25) {
-          level = "【フォント上級者級】";
-          levelExplanation =
-            "かなりの実力をお持ちですね。<br>更なる高みを目指しましょう。";
-        } else if (myScore < 40) {
-          level = "【フォント中級者級】";
-          levelExplanation =
-            "そこそこの力を持っています。<br>まだまだ伸びしろがありますよ。";
-        } else if (myScore < 60) {
-          level = "【フォント初心者級】";
-          levelExplanation =
-            "太字のフォントや変わった形の<br>フォントから見つけるのがコツです。";
-        } else {
-          level = "【フォント新人級】";
-          levelExplanation =
-            "ゆっくりと見比べて見てください。<br>色々な違いを見つけられるはずです";
-        }
-
-        var Modallevel = document.getElementById("ModalLevel");
-        Modallevel.innerHTML = level;
-        var ModalExplanation = document.getElementById("ModalExplanation");
-        ModalExplanation.innerHTML = levelExplanation;
-
-        function tweet() {
-          // var level = "フォント達人級";
-          var tweetPnMs = `&text=${PlayerName}さんは${level}！%0aタイム：${myScore}`;
-          var tweethrefurl =
-            "href=http://twitter.com/share?url=https://www.play-font.com"; 
-          var rel = `rel="noopener noreferrer"`;
-          var tweetContents = `<a class="tweetbotton"${tweethrefurl}${tweetPnMs}%0aフォント神経衰弱WEB%0a&hashtags=フォント神経衰弱WEB${rel}>結果を共有</a>`;
-          var tweethtml = document.getElementById("tweetbotton");
-          console.log(tweetContents);
-          tweethtml.innerHTML = tweetContents;
-        }
-
-        function getRanking() {
-          const ApplicationKey =
-            "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
-          const ClientKey = "aaaaaa";
-          var ncmb = new NCMB(ApplicationKey, ClientKey);
-          var highScore = ncmb.DataStore("ProductionScore");
-          highScore
-            .order("score")
-            .order("name")
-            .limit(100)
-            .fetchAll()
-            .then(function(results) {
-              //ランキング取得後の処理
-              if (results.length > 0) {
-                for (var i = 0; i < results.length; i++) {
-                  var ranking = results[i];
-                  var rank = i + 1;
-                  var rankingScore = ranking.score;
-                  var rankingName = ranking.name;
-                  var rankingScore = ranking.score;
-                  var rankingName = ranking.name;
-                  var number = Math.floor(i / 10) + 1;
-                  var rankingNumber = `ranking${number}`;
-                  var UlRanking = document.getElementById(rankingNumber);
-                  var rankingli = `<tr><td class ='td1'>${rank}</td><td class ='td2'>${rankingName}</td><td>${rankingScore}</td></tr>`;
-                  UlRanking.insertAdjacentHTML("beforeend", rankingli);
-
-                  //console.log(`${rank} : ${rankingName} - ${rankingScore}`);
-                }
-              } else {
-                console.log("スコアデータがありません");
+      (function getRanking() {
+        highScore
+          .order("score")
+          .order("name")
+          .limit(100)
+          .fetchAll()
+          .then(function(results) {
+            //ランキング取得後の処理
+            if (results.length > 0) {
+              for (var i = 0; i < results.length; i++) {
+                var ranking = results[i];
+                var rank = i + 1;
+                var rankingScore = ranking.score;
+                var rankingName = ranking.name;
+                var rankingScore = ranking.score;
+                var rankingName = ranking.name;
+                var number = Math.floor(i / 10) + 1;
+                var rankingNumber = `ranking${number}`;
+                var UlRanking = document.getElementById(rankingNumber);
+                var rankingli = `<tr><td class ='td1'>${rank}</td><td class ='td2'>${rankingName}</td><td>${rankingScore}</td></tr>`;
+                UlRanking.insertAdjacentHTML("beforeend", rankingli);
               }
-            })
-            .catch(function(err) {
-              //エラー時の処理
-              console.log(err);
-            });
-        }
-        getRanking();
-      });
+            } else {
+              console.log("スコアデータがありません");
+            }
+          })
+          .catch(function(err) {
+            //エラー時の処理
+            console.log(err);
+          });
+      })();
+    }
+
+    if (!storageUserId) {
+      //stirageにuserIDがない場合(初回)
+      console.log("初回プレイです");
+      var newscore = new highScore();
+      newscore
+        .set("name", PlayerName)
+        .set("score", Number(myScore))
+        .set("userID", userId)
+        .save()
+        .then(function(score) {
+          localStorage.setItem("UserId", userId);
+          getMyRank();
+        });
+    } else {
+      //stirageにuserIDが存在(2回目以降)
+      console.log("2回目以降です");
+      console.log(storageUserId);
+      console.log(storagePlayerName);
+      highScore
+        .equalTo("userID", storageUserId)
+        .equalTo("name", storagePlayerName)
+        .fetchAll()
+        .then(function(results) {
+          if (results.length > 0) {
+            //同じ名前のデータがある
+            console.log("以前のネームのデータがあります");
+            var newhighScore = results[0];
+            console.log(newhighScore.score);
+            console.log(myScore);
+            //最高スコアか判定
+            if (myScore < Number(newhighScore.score)) {
+              newhighScore
+                .set("score", myScore)
+                .update()
+                .then(function(results) {
+                  console.log("データを上書きしました");
+                  getMySocer();
+                });
+            } else {
+              console.log("最高スコアではありません");
+              getMySocer();
+            }
+          } else {
+            //同じ名前のデータがない→新規登録
+            console.log("以前のネームのデータがありません");
+            var newscore = new highScore();
+            newscore
+              .set("name", PlayerName)
+              .set("score", Number(myScore))
+              .set("userID", storageUserId)
+              .save()
+              .then(function(score) {
+                getMySocer();
+              });
+          }
+          console.log("検索成功");
+        })
+        .catch(function(err) {
+          console(err);
+        });
+    }
+
+    var ModalPlayerName = document.getElementById("ModalPlayerName");
+    ModalPlayerName.innerHTML = PlayerName;
+
+    if (myScore < 15) {
+      var level = "【フォント達人級】";
+      var levelExplanation =
+        "すでに達人の域に達しています。<br>もう見上げるものは何もありません。";
+    } else if (myScore < 20) {
+      level = "【フォントプロ級】";
+      levelExplanation = "素晴らしい！<br>文句なしのプロ級です。";
+    } else if (myScore < 25) {
+      level = "【フォント上級者級】";
+      levelExplanation =
+        "かなりの実力をお持ちですね。<br>更なる高みを目指しましょう。";
+    } else if (myScore < 40) {
+      level = "【フォント中級者級】";
+      levelExplanation =
+        "そこそこの力を持っています。<br>まだまだ伸びしろがありますよ。";
+    } else if (myScore < 60) {
+      level = "【フォント初心者級】";
+      levelExplanation =
+        "太字のフォントや変わった形の<br>フォントから見つけるのがコツです。";
+    } else {
+      level = "【フォント新人級】";
+      levelExplanation =
+        "ゆっくりと見比べて見てください。<br>色々な違いを見つけられるはずです";
+    }
+
+    var Modallevel = document.getElementById("ModalLevel");
+    Modallevel.innerHTML = level;
+    var ModalExplanation = document.getElementById("ModalExplanation");
+    ModalExplanation.innerHTML = levelExplanation;
+
+    function tweet() {
+      // var level = "フォント達人級";
+      var tweetPnMs = `&text=${PlayerName}さんは${level}！%0aタイム：${myScore}`;
+      var tweethrefurl =
+        "href=http://twitter.com/share?url=https://www.play-font.com";
+      var rel = `rel="noopener noreferrer"`;
+      var tweetContents = `<a class="tweetbotton"${tweethrefurl}${tweetPnMs}%0aフォント神経衰弱WEB%0a&hashtags=フォント神経衰弱WEB${rel}>結果を共有</a>`;
+      var tweethtml = document.getElementById("tweetbotton");
+      // console.log(tweetContents);
+      tweethtml.innerHTML = tweetContents;
+    }
+
+    tweet();
   }
   init();
 

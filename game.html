@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta property="og:type" content="article" />
-    <link rel="index" href="https://www.play-font.com" /> 
+    <link rel="index" href="https://www.play-font.com" />
     <title>フォント神経衰弱WEB</title>
     <script
       src="https://code.jquery.com/jquery-3.4.1.js"
@@ -53,18 +53,22 @@
         s.parentNode.insertBefore(tk, s);
       })(document);
     </script>
-    
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
-       <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153529736-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-153529736-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'UA-153529736-1');
-</script>
-
+      gtag("config", "UA-153529736-1");
+    </script>
   </head>
 
   <body>
@@ -78,9 +82,7 @@
           Time
           <span id="score">0.00</span>
         </div>
-        <div id="stage">
-          
-        </div>
+        <div id="stage"></div>
       </div>
 
       <div class="botton_wapper">
@@ -103,11 +105,31 @@
                   </p>
                   <p id="ModalLevel"></p>
                   <p id="ModalExplanation"></p>
-                  <div class="resultRank">
-                    <p>順位&nbsp;&nbsp;<span id="ModalPlayerRank"></span>位</p>
-                  </div>
-                  <div class="resultTime">
-                    <p>タイム&nbsp;&nbsp;<span id="scoreResult">0.00</span></p>
+                  <div class="myreult">
+                    <div class="thistimeReult">
+                      <div class="resultRank">
+                        <p>
+                          順位&nbsp;&nbsp;<span id="ModalPlayerRank"></span>位
+                        </p>
+                      </div>
+                      <div class="resultTime">
+                        <p>
+                          タイム&nbsp;&nbsp;<span id="scoreResult">0.00</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="bestReult">
+                      <p class="reultP">ベストスコア</p>
+                      <div class="BestresultRank">
+                        <p>
+                          順位&nbsp;&nbsp;<span id="ModalBestPlayerRank"></span
+                          >位&nbsp;&nbsp;タイム&nbsp;&nbsp;<span
+                            id="ModalBestscore"
+                            >0.00</span
+                          >
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
                   <div class="twitter">
@@ -207,6 +229,7 @@
       src="https://platform.twitter.com/widgets.js"
       charset="utf-8"
     ></script>
+    <script type="text/javascript" src="script\jquery.cookie.js"></script>
     <script src="script\game.js"></script>
   </body>
 </html>

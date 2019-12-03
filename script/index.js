@@ -1,4 +1,11 @@
 var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
+
+window.addEventListener("DOMContentLoaded", function() {
+  var setPlayerName = localStorage.getItem("PlayerName");
+
+  document.getElementById("IdPlayerName").value = setPlayerName;
+});
+
 (function() {
   const modalArea = document.getElementById("modalArea");
   const openModal = document.getElementById("openModal");
@@ -26,29 +33,23 @@ $(function() {
     //コンテンツを一度すべて非表示にし、
     $(".content li").css("display", "none");
     //クリックされたタブと同じ順番のコンテンツを表示します。
-
-    // $('#rainkingtop').addClass('hide');
     $(".content li")
       .eq(index)
       .css("display", "block");
     $("#rainkingtop").removeClass("hide2");
-    // $('.swiper-pagination-bullet').css('width', '17px');
-    // $('.swiper-pagination-bullet').css('height', '17px');
-
     //一度タブについているクラスselectを消し、
     $(".tab li").removeClass("select");
-
     //クリックされたタブのみにクラスselectをつけます。
     $(this).addClass("select");
   });
 });
 
-window.onload = function getRanking() {
+window.addEventListener("DOMContentLoaded", function getRanking() {
   const ApplicationKey =
     "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
   const ClientKey = "aaaaaaaaaaa";
   var ncmb = new NCMB(ApplicationKey, ClientKey);
-  var highScore = ncmb.DataStore("ProductionScore");
+  var highScore = ncmb.DataStore("HighScore");
   highScore
     .order("score")
     .order("name")
@@ -79,7 +80,8 @@ window.onload = function getRanking() {
       //エラー時の処理
       console.log(err);
     });
-};
+});
+
 $(function() {
   var swiper = new Swiper(".swiper-container", {
     pagination: {

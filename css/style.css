@@ -400,7 +400,7 @@ h2 {
 .content h3 {
   text-align: center;
   margin: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   line-height: 30px;
 }
 
@@ -418,15 +418,30 @@ h2 {
 #ModalExplanation {
   font-size: 13px;
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   margin-left: 25px;
   margin-right: 25px;
   text-align: center;
 }
+.thistimeReult,
+.bestReult {
+  text-align: center;
+}
+.BestresultRank {
+  font-size: 20px;
+}
+.BestresultRank p {
+  margin: 0px;
+}
+.reultP {
+  font-size: 18px;
+  margin: 0px;
+  margin-bottom: -10px;
+}
 .resultTime p,
 .resultRank p {
   font-size: 23px;
-  margin-top: -10px;
+  margin-top: -20px;
   margin-bottom: 0px;
   text-align: center;
 }

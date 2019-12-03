@@ -61,7 +61,6 @@
   }
   #ModalLevel {
     font-size: 26px;
-    
   }
 }
 @media screen and (max-width: 331px) {
@@ -85,7 +84,7 @@
   }
   #ModalExplanation {
     font-size: 11px !important;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     line-height: 20px;
   }
 }
@@ -121,7 +120,7 @@
 @media screen and (max-height: 660px) {
   .content h3 {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   table {
     font-size: 12px;
@@ -133,10 +132,13 @@
   table td {
     height: 25px;
   }
+  #modalLevel {
+    margin-top: 15px;
+  }
   #ModalExplanation {
     font-size: 12px;
-    margin-top: 0;
-    margin-bottom: 15px;
+    margin-top: -5px;
+    margin-bottom: 5px;
     margin-left: 25px;
     margin-right: 25px;
     text-align: center;
@@ -145,8 +147,21 @@
   .resultRank p {
     font-size: 20px;
     margin-top: -10px;
-    margin-bottom: 0px;
+    margin-bottom: -5px;
     text-align: center;
+  }
+  .BestresultRank {
+    font-size: 18px;
+  }
+  .reultP {
+    font-size: 16px;
+  }
+  .twitter {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .tweetbotton {
+    padding: 0px;
   }
 }
 
@@ -185,6 +200,10 @@
     font-size: 19px;
     margin-top: -10px;
   }
+  .modalBottons {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }
 
 @media screen and (max-height: 565px) {
@@ -193,12 +212,31 @@
   }
   .content h3 {
     margin: 0px;
-    margin-bottom: 5px;
     line-height: 25px;
     font-size: 19px;
   }
   table {
     font-size: 10px;
+  }
+  #ModalBottons {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .twitter {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .tweetbotton {
+    border: 0px;
+    font-size: 18px;
+  }
+  .modalBottons {
+    margin-top: 3px;
+  }
+  .modalRestart,
+  .returnTop {
+    font-size: 16px;
+    line-height: 30px;
   }
   .swiper-pagination {
     bottom: 4px !important;
@@ -212,12 +250,6 @@
   }
 }
 @media screen and (max-height: 540px) {
-  .content h3 {
-    margin: 0px;
-    margin-bottom: 5px;
-    line-height: 25px;
-    font-size: 18px;
-  }
   .resultName {
     font-size: 16px;
     margin-bottom: -5px;
@@ -236,19 +268,31 @@
     font-size: 17px;
     margin-top: -10px;
   }
-  .tweetbotton {
-    padding: 2px 0px;
-  }
 }
 .swiper-container {
   height: 85% !important;
 }
 @media screen and (max-height: 530px) {
-  .content h3 {
-    margin: -5px;
-    margin-bottom: 0px;
-    line-height: 25px;
-    font-size: 18px;
+  #ModalLevel {
+    margin-top: -16px;
+    margin-bottom: -6px;
+  }
+  .BestresultRank {
+    font-size: 16px;
+  }
+  .reultP {
+    font-size: 15px;
+  }
+  .tweetbotton {
+    font-size: 17px;
+  }
+  .modalRestart,
+  .returnTop {
+    font-size: 15px;
+    line-height: 28px;
+  }
+  .modalBottons {
+    margin-top: 0px;
   }
   .swiper-container {
     height: 87% !important;

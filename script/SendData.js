@@ -4,6 +4,7 @@ function SetName() {
     var title = document.title;
     if (title == "フォント神経衰弱WEB") {
       location.href = "game.html?name=" + encodeURIComponent(PlayerName);
+      localStorage.setItem("PlayerName", PlayerName);
     }
   } else {
     alert("名前を入力してください");
