@@ -2,7 +2,7 @@ var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
 
 window.addEventListener("DOMContentLoaded", function() {
   var setPlayerName = localStorage.getItem("PlayerName");
-
+  localStorage.setItem("GameMode", 0);
   document.getElementById("IdPlayerName").value = setPlayerName;
 });
 
@@ -82,8 +82,10 @@ window.addEventListener("DOMContentLoaded", function getRanking() {
     });
 });
 
+//swiper
+
 $(function() {
-  var swiper = new Swiper(".swiper-container", {
+  var swiper = new Swiper(".swiper-ranking", {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -93,3 +95,41 @@ $(function() {
     }
   });
 });
+
+// $(function() {
+var mySwiper = new Swiper(".swiper-gamemode", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  loop: true,
+  on: {
+    slideChange: function() {
+      // changeGameMode();
+      console.log(mySwiper.realIndex);
+      if (mySwiper.realIndex == 0) {
+        changeMincho();
+        localStorage.setItem("GameMode", 0);
+      } else if (mySwiper.realIndex == 1) {
+        changeGameMode();
+        localStorage.setItem("GameMode", 1);
+      }
+    }
+  }
+});
+// });
+
+function changeGameMode() {
+  var color = "#color,#IdPlayerName,#startButton,#openModal";
+  $(color).addClass("color-block");
+  $("#backgroundcolor").addClass("backgroundcolor-block");
+  // $(color).removeClass("color-green");
+  console.log("change!");
+}
+function changeMincho() {
+  var color = "#color,#IdPlayerName,#startButton,#openModal";
+  $(color).removeClass("color-block");
+  $("#backgroundcolor").removeClass("backgroundcolor-block");
+  // $(color).addClass("color-green");
+  console.log("change!");
+}

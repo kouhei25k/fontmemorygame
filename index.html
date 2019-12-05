@@ -12,11 +12,11 @@
     <meta property="og:description" content="見えているフォント神経衰弱です。フォントが同じでも文字が違うペアを探してスコアを競うゲームです。フォントを見極める力を鍛えてみてください。" />
     <meta property="og:url" content="https://www.play-font.com" />
     <link rel="index" href="https://www.play-font.com" />
+    <link rel="stylesheet" href="css\top.css">
+    <link rel="stylesheet" href="css/top-responsive.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    <script src="script/SendData.js" defer="defer"></script>
-    <script type="text/javascript" src="script/ncmb.min.js" charset="utf-8"></script>
+
     <script>
         (function(d) {
             var config = {
@@ -49,10 +49,7 @@
         })(document);
     </script>
 
-    <link rel="stylesheet" href="css\top.css">
-    <link rel="stylesheet" href="css/top-responsive.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
 
        <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153529736-1"></script>
@@ -69,31 +66,35 @@
 
 <body>
 <div class="title">
-        <h2><span class="smalltitle">見えてる</span><br>フォント神経衰弱WEB</h2>
+        <h2><span class="smalltitle" id="backgroundcolor">見えてる</span><br>フォント神経衰弱WEB</h2>
         <h3>v1.10b</h3>
 </div>
+<div class="gameMode">
+        <div class="swiper-container swiper-gamemode">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide ">ランダム</div>
+                  <div class="swiper-slide ">明朝体</div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
 
-
-
+</div>
     <div class="container">
         <div class="StartMenu">
-            <div class="PlayerName">
+            <div class="PlayerName color-green" id="color">
                 <p>Name</p>
-                <div class="InputPlayerName">
+                <div class="InputPlayerName" id="color">
                     <input type="text" id="IdPlayerName" maxlength='10' value="">
                 </div>
             </div>
             <div class="startButton">
-                <button id="startButton" type="button" name="startButton" onclick="SetName();">スタート</button>
+                <button class="a" id="startButton" type="button" name="startButton" onclick="SetName();">スタート</button>
             </div>
             <div class="exButton">
-                <button id="openModal">遊び方</button>
+                <button class="a" id="openModal">遊び方</button>
             </div>
-            <!-- ランキングボタン
-              <div class="rankingButton">
-                <button id="openRanking" onclick="getRanking();">ランキング</button>
-            </div>
-          -->
+
         </div>
     </div>
 
@@ -178,7 +179,7 @@
                                 </tr>
                             </table>
                             <!-- Swiper -->
-                            <div class="swiper-container">
+                            <div class="swiper-container swiper-ranking">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <table class="ranking" id="ranking1">
@@ -246,9 +247,11 @@
 
     </section>
 
-
-
-<script type="text/javascript" src="script/index.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script/SendData.js" defer="defer"></script>
+    <script type="text/javascript" src="script/ncmb.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/index.js" charset="utf-8"></script>
 </body>
 
 </html>

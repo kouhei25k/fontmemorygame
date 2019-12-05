@@ -7,21 +7,9 @@
     <meta property="og:type" content="article" />
     <link rel="index" href="https://www.play-font.com" />
     <title>フォント神経衰弱WEB</title>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="css\style.css" />
     <link rel="stylesheet" href="css/style-responsive.css" />
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    <script
-      type="text/javascript"
-      src="script/ncmb.min.js"
-      charset="utf-8"
-    ></script>
-
-    <script src="script/SendData.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
     <script>
       (function(d) {
         var config = {
@@ -53,8 +41,37 @@
         s.parentNode.insertBefore(tk, s);
       })(document);
     </script>
-
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+    <script>
+      (function(d) {
+        var config = {
+            kitId: "wek3vws",
+            scriptTimeout: 3000,
+            async: true
+          },
+          h = d.documentElement,
+          t = setTimeout(function() {
+            h.className =
+              h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function() {
+          a = this.readyState;
+          if (f || (a && a != "complete" && a != "loaded")) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+    </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
@@ -89,8 +106,8 @@
         <a href="" id="restart" class="inactive">リスタート</a>
       </div>
     </div>
-    <!-- モーダルエリアここから -->
 
+    <!-- モーダルエリアここから -->
     <div id="modal" class="modal">
       <div id="modalBg" class="modalBg"></div>
       <div class="topmodal">
@@ -223,13 +240,14 @@
         </div>
       </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script
-      async
-      src="https://platform.twitter.com/widgets.js"
+      type="text/javascript"
+      src="script/ncmb.min.js"
       charset="utf-8"
     ></script>
-    <script type="text/javascript" src="script\jquery.cookie.js"></script>
+    <script src="script\fonts.js"></script>
     <script src="script\game.js"></script>
   </body>
 </html>

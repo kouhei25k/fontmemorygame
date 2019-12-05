@@ -4,6 +4,7 @@ const ApplicationKey =
 const ClientKey = "aaaaaa";
 var ncmb = new NCMB(ApplicationKey, ClientKey);
 var highScore = ncmb.DataStore("HighScore");
+
 (function() {
   "use strict";
 
@@ -36,23 +37,35 @@ var highScore = ncmb.DataStore("HighScore");
     "なめこの味噌汁"
   ];
 
-  const fonts = [
-    0,
-    { fontname: "マティスM", fontcss: "fot-matisse-pron" },
-    { fontname: "源ノ明朝B", fontcss: "source-han-serif-japanese" },
-    { fontname: "中ゴシックBBB", fontcss: "a-otf-gothic-bbb-pr6n" },
-    { fontname: "見出しゴMB31", fontcss: "a-otf-midashi-go-mb31-pr6n" },
-    { fontname: "筑紫A丸ゴシックR", fontcss: "fot-tsukuardgothic-std" },
-    { fontname: "シネマ丸ゴシックM", fontcss: "tbcinergothic-std" },
-    { fontname: "ペンジェントルB", fontcss: "vdl-pengentle" },
-    { fontname: "漢字タイポス415", fontcss: "kan415typos-std" },
-    { fontname: "ぶらっしゅ", fontcss: "ro-brush-std" },
-    { fontname: "ロゴjrブラック", fontcss: "vdl-logojrblack" },
-    { fontname: "ラインG", fontcss: "vdl-lineg" },
-    { fontname: "方眼K500", fontcss: "ta-hougan-k500" }
-  ];
+  // const fonts = [
+  //   0,
+  //   { fontname: "マティスM", fontcss: "fot-matisse-pron" },
+  //   { fontname: "源ノ明朝B", fontcss: "source-han-serif-japanese" },
+  //   { fontname: "中ゴシックBBB", fontcss: "a-otf-gothic-bbb-pr6n" },
+  //   { fontname: "見出しゴMB31", fontcss: "a-otf-midashi-go-mb31-pr6n" },
+  //   { fontname: "筑紫A丸ゴシックR", fontcss: "fot-tsukuardgothic-std" },
+  //   { fontname: "シネマ丸ゴシックM", fontcss: "tbcinergothic-std" },
+  //   { fontname: "ペンジェントルB", fontcss: "vdl-pengentle" },
+  //   { fontname: "漢字タイポス415", fontcss: "kan415typos-std" },
+  //   { fontname: "ぶらっしゅ", fontcss: "ro-brush-std" },
+  //   { fontname: "ロゴjrブラック", fontcss: "vdl-logojrblack" },
+  //   { fontname: "ラインG", fontcss: "vdl-lineg" },
+  //   { fontname: "方眼K500", fontcss: "ta-hougan-k500" }
+  // ];
+  var fonts;
+  var storagegamemode = localStorage.getItem("GameMode");
+  if (storagegamemode == 0) {
+    fonts = fontsRandomArray;
+  } else {
+    fonts = fontsMinchoArray;
+  }
+
+  // const fonts = fontsMinchoArray;
+  // var fontRandom = fontRandom();
+  console.log(fonts);
+
   //カードの枚数
-  var pairs = 1;
+  var pairs = 12;
   var sheet = pairs * 2;
   var cards = [];
 
@@ -334,7 +347,7 @@ var highScore = ncmb.DataStore("HighScore");
         .save()
         .then(function(score) {
           localStorage.setItem("UserId", userId);
-          getMyRank();
+          getMySocer();
         });
     } else {
       //stirageにuserIDが存在(2回目以降)
