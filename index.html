@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="css\top.css">
     <link rel="stylesheet" href="css/top-responsive.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="prerender" href="game.html">
+    <link rel="preload" href="game.html" />
+    <link rel="prefetch" href="game.html" />
 
 
     <script>
@@ -66,33 +69,33 @@
 
 <body>
 <div class="title">
-        <h2><span class="smalltitle" id="backgroundcolor">見えてる</span><br>フォント神経衰弱WEB</h2>
-        <h3>v1.10b</h3>
+        <h2 id="color"><span class="smalltitle" id="backgroundcolor">見えてる</span><br>フォント神経衰弱WEB</h2>
+        <h3 id="color">v1.10b</h3>
 </div>
 <div class="gameMode">
-        <div class="swiper-container swiper-gamemode">
+        <div class="swiper-container swiper-gamemode" >
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide ">ランダム</div>
-                  <div class="swiper-slide ">明朝体</div>
+                  <div class="swiper-slide">ランダム</div>
+                  <div class="swiper-slide" id="color"><font color="#ff3a13">絶望の明朝体</font></div>
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-              </div>
+        </div>
 
 </div>
     <div class="container">
         <div class="StartMenu">
-            <div class="PlayerName color-green" id="color">
+            <div class="PlayerName" id="color">
                 <p>Name</p>
                 <div class="InputPlayerName" id="color">
                     <input type="text" id="IdPlayerName" maxlength='10' value="">
                 </div>
             </div>
             <div class="startButton">
-                <button class="a" id="startButton" type="button" name="startButton" onclick="SetName();">スタート</button>
+                <button class="" id="startButton" type="button" name="startButton" onclick="SetName();">スタート</button>
             </div>
             <div class="exButton">
-                <button class="a" id="openModal">遊び方</button>
+                <button class="" id="openModal">遊び方</button>
             </div>
 
         </div>

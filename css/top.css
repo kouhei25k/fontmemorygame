@@ -12,6 +12,9 @@ body {
   margin: auto;
   color: #2f2f2f;
 }
+input {
+  background: transparent;
+}
 .title {
   text-align: center;
   margin-top: 100px;
@@ -157,7 +160,7 @@ body {
   border-radius: 5px;
   transition: 0.4s;
   margin-bottom: 15px;
-  background-color: #fff;
+  background-color: transparent;
   font-size: 20px;
 }
 
@@ -174,13 +177,14 @@ body {
   font-size: 19px;
   border: solid 1px hsl(157, 84%, 46%);
   line-height: normal;
+  text-align: center;
 }
 
 #IdPlayerName {
   border: none;
   box-sizing: border-box;
   height: 100%;
-  width: 100%;
+  width: 99%;
   font-size: 19px;
   line-height: normal;
 }
@@ -196,7 +200,7 @@ body {
   border-radius: 5px;
   transition: 0.4s;
   margin-bottom: 15px;
-  background-color: #fff;
+  background-color: transparent;
   font-size: 20px;
   box-sizing: border-box;
   font-family: vdl-megamaru;
@@ -219,7 +223,7 @@ body {
   border-radius: 5px;
   transition: 0.4s;
   margin-bottom: 15px;
-  background-color: #fff;
+  background-color: transparent;
   font-size: 20px;
   box-sizing: border-box;
   font-family: vdl-megamaru;
@@ -362,7 +366,7 @@ table td {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  /* background: #fff; */
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -404,15 +408,21 @@ table td {
     height: 10%;
 } */
 /* color */
-.color-block {
-  color: #2f2f2f !important;
-  border-color: #2f2f2f !important;
-  transition: 0.5s;
-}
-.backgroundcolor-block {
+.color-baw {
+  color: #fff !important;
+  border-color: #fff !important;
   background-color: #2f2f2f !important;
   transition: 0.5s;
 }
+.color-baw2 {
+  color: #2f2f2f !important;
+  background-color: #fff !important;
+  transition: 0.5s;
+}
+.bgc-block {
+  background-color: #2f2f2f !important;
+}
+
 /* .color-green {
   color: #13d88c !important;
   transition: 0.5s;

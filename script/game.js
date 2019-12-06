@@ -37,28 +37,47 @@ var highScore = ncmb.DataStore("HighScore");
     "なめこの味噌汁"
   ];
 
-  // const fonts = [
-  //   0,
-  //   { fontname: "マティスM", fontcss: "fot-matisse-pron" },
-  //   { fontname: "源ノ明朝B", fontcss: "source-han-serif-japanese" },
-  //   { fontname: "中ゴシックBBB", fontcss: "a-otf-gothic-bbb-pr6n" },
-  //   { fontname: "見出しゴMB31", fontcss: "a-otf-midashi-go-mb31-pr6n" },
-  //   { fontname: "筑紫A丸ゴシックR", fontcss: "fot-tsukuardgothic-std" },
-  //   { fontname: "シネマ丸ゴシックM", fontcss: "tbcinergothic-std" },
-  //   { fontname: "ペンジェントルB", fontcss: "vdl-pengentle" },
-  //   { fontname: "漢字タイポス415", fontcss: "kan415typos-std" },
-  //   { fontname: "ぶらっしゅ", fontcss: "ro-brush-std" },
-  //   { fontname: "ロゴjrブラック", fontcss: "vdl-logojrblack" },
-  //   { fontname: "ラインG", fontcss: "vdl-lineg" },
-  //   { fontname: "方眼K500", fontcss: "ta-hougan-k500" }
-  // ];
   var fonts;
+  var fontkitId;
   var storagegamemode = localStorage.getItem("GameMode");
+
   if (storagegamemode == 0) {
+    fontkitId = "bpz7hqo";
     fonts = fontsRandomArray;
   } else {
+    fontkitId = "wek3vws";
     fonts = fontsMinchoArray;
   }
+
+  (function(d) {
+    var config = {
+        kitId: fontkitId,
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function() {
+        h.className =
+          h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function() {
+      a = this.readyState;
+      if (f || (a && a != "complete" && a != "loaded")) return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config);
+      } catch (e) {}
+    };
+    s.parentNode.insertBefore(tk, s);
+  })(document);
 
   // const fonts = fontsMinchoArray;
   // var fontRandom = fontRandom();
@@ -91,6 +110,7 @@ var highScore = ncmb.DataStore("HighScore");
     for (i = 1; i <= sheet; i++) {
       typeNumber.push(i);
       cards.push(createCard(words[i]));
+
       // fontSet();
     }
     while (cards.length) {

@@ -121,15 +121,17 @@ var mySwiper = new Swiper(".swiper-gamemode", {
 
 function changeGameMode() {
   var color = "#color,#IdPlayerName,#startButton,#openModal";
-  $(color).addClass("color-block");
-  $("#backgroundcolor").addClass("backgroundcolor-block");
-  // $(color).removeClass("color-green");
+  $(color).addClass("color-baw");
+  $("body").addClass("bgc-block");
+  $("#backgroundcolor").addClass("color-baw2");
+
   console.log("change!");
 }
 function changeMincho() {
   var color = "#color,#IdPlayerName,#startButton,#openModal";
-  $(color).removeClass("color-block");
-  $("#backgroundcolor").removeClass("backgroundcolor-block");
+  $(color).removeClass("color-baw");
+  $("body").removeClass("bgc-block");
+  $("#backgroundcolor").removeClass("color-baw2");
   // $(color).addClass("color-green");
   console.log("change!");
 }
