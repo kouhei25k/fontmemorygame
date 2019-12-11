@@ -1,4 +1,38 @@
 var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
+const ApplicationKey =
+  "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
+const ClientKey = "aaaaaaaaaaa";
+var ncmb = new NCMB(ApplicationKey, ClientKey);
+var highScore = ncmb.DataStore("HighScore");
+
+var mySwiper = new Swiper(".swiper-gamemode", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  loop: true,
+  on: {
+    slideChange: function() {
+      console.log(mySwiper.realIndex);
+      if (mySwiper.realIndex == 0) {
+        highScore = ncmb.DataStore("HighScore");
+        changeGameMode();
+        getRanking();
+        localStorage.setItem("GameMode", 0);
+      } else if (mySwiper.realIndex == 1) {
+        highScore = ncmb.DataStore("MinchoScore");
+        changeMincho();
+        getRanking();
+        localStorage.setItem("GameMode", 1);
+      } else if (mySwiper.realIndex == 2) {
+        highScore = ncmb.DataStore("DesignScore");
+        localStorage.setItem("GameMode", 2);
+        changeDesign();
+        getRanking();
+      }
+    }
+  }
+});
 
 window.addEventListener("DOMContentLoaded", function() {
   var setPlayerName = localStorage.getItem("PlayerName");
@@ -44,12 +78,23 @@ $(function() {
   });
 });
 
-window.addEventListener("DOMContentLoaded", function getRanking() {
-  const ApplicationKey =
-    "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
-  const ClientKey = "aaaaaaaaaaa";
-  var ncmb = new NCMB(ApplicationKey, ClientKey);
-  var highScore = ncmb.DataStore("HighScore");
+function getRanking() {
+  $(".ranking").empty();
+  var storageGameMode = localStorage.getItem("GameMode");
+  switch (storageGameMode) {
+    case 0:
+      highScore = ncmb.DataStore("HighScore");
+      console.log("ランダムだよー");
+      break;
+    case 1:
+      highScore = ncmb.DataStore("MinchoScore");
+      console.log("明朝だよー");
+      break;
+    case 2:
+      highScore = ncmb.DataStore("DesignScore");
+      console.log("デザインだよー");
+      break;
+  }
   highScore
     .order("score")
     .order("name")
@@ -80,7 +125,8 @@ window.addEventListener("DOMContentLoaded", function getRanking() {
       //エラー時の処理
       console.log(err);
     });
-});
+}
+getRanking();
 
 //swiper
 
@@ -96,42 +142,32 @@ $(function() {
   });
 });
 
-// $(function() {
-var mySwiper = new Swiper(".swiper-gamemode", {
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  },
-  loop: true,
-  on: {
-    slideChange: function() {
-      // changeGameMode();
-      console.log(mySwiper.realIndex);
-      if (mySwiper.realIndex == 0) {
-        changeMincho();
-        localStorage.setItem("GameMode", 0);
-      } else if (mySwiper.realIndex == 1) {
-        changeGameMode();
-        localStorage.setItem("GameMode", 1);
-      }
-    }
-  }
-});
 // });
 
-function changeGameMode() {
+function changeMincho() {
   var color = "#color,#IdPlayerName,#startButton,#openModal";
   $(color).addClass("color-baw");
   $("body").addClass("bgc-block");
-  $("#backgroundcolor").addClass("color-baw2");
-
-  console.log("change!");
+  $("#toplefticon").addClass("color-baw2");
+  $(color).removeClass("color-white");
+  $("body").removeClass("bgc-gra");
+  $("#toplefticon").removeClass("bac-white");
 }
-function changeMincho() {
+function changeGameMode() {
   var color = "#color,#IdPlayerName,#startButton,#openModal";
   $(color).removeClass("color-baw");
   $("body").removeClass("bgc-block");
-  $("#backgroundcolor").removeClass("color-baw2");
-  // $(color).addClass("color-green");
-  console.log("change!");
+  $("#toplefticon").removeClass("color-baw2");
+  $(color).removeClass("color-white");
+  $("body").removeClass("bgc-gra");
+  $("#toplefticon").removeClass("bac-white");
+}
+function changeDesign() {
+  var color = "#color,#IdPlayerName,#startButton,#openModal";
+  $(color).addClass("color-white");
+  $("body").addClass("bgc-gra");
+  $("#toplefticon").addClass("bac-white");
+  $(color).removeClass("color-baw");
+  $("body").removeClass("bgc-block");
+  $("#toplefticon").removeClass("color-baw2");
 }

@@ -20,11 +20,13 @@ input {
   margin-top: 100px;
 }
 .smalltitle {
+  box-sizing: border-box;
   font-size: 25px;
   color: #fff;
   background-color: #13d88c;
+  border: solid 2px #13d88c;
   border-radius: 10px;
-  padding: 5px;
+  padding: 3px;
 }
 .title h2 {
   font-size: 60px;
@@ -411,19 +413,46 @@ table td {
 .color-baw {
   color: #fff !important;
   border-color: #fff !important;
-  background-color: #2f2f2f !important;
+  /* background-color: #2f2f2f !important; */
   transition: 0.5s;
 }
 .color-baw2 {
   color: #2f2f2f !important;
   background-color: #fff !important;
+  border: solid 2px #fff;
   transition: 0.5s;
 }
 .bgc-block {
   background-color: #2f2f2f !important;
+  transition: 0.5s;
 }
+.color-white {
+  color: #fff !important;
+  border-color: #fff !important;
+  transition: 0.5s;
+}
+.bac-white {
+  background-color: transparent !important;
+  border: solid 2px #fff;
 
+  transition: 0.5s;
+}
 /* .color-green {
   color: #13d88c !important;
   transition: 0.5s;
 } */
+.bgc-gra {
+  background: #e96443; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right top,
+    #904e95,
+    #e96443
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right top,
+    #904e95,
+    #e96443
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  transition: 0.5s;
+}

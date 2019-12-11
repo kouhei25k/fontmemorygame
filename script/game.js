@@ -1,41 +1,41 @@
 var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
-const ApplicationKey =
-  "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
-const ClientKey = "aaaaaa";
-var ncmb = new NCMB(ApplicationKey, ClientKey);
-var highScore = ncmb.DataStore("HighScore");
 
 (function() {
   "use strict";
+  const ApplicationKey =
+    "dce6e6b709fdc7d434e873941cf8afa2f526d544c86520dc6dd5b9ffb963fe0b";
+  const ClientKey = "aaaaaa";
+  var ncmb = new NCMB(ApplicationKey, ClientKey);
+  // var highScore = ncmb.DataStore();
 
-  const words = [
-    "ピーマンの肉詰め",
-    "豚の生姜焼き",
-    "若鶏の唐揚げ",
-    "煮込みハンバーグ",
-    "牛肉のしぐれ煮",
-    "照り焼きチキン",
-    "チキン南蛮",
-    "豚ロースのソテー",
-    "さわらの幽庵焼き",
-    "まぐろの漬け丼",
-    "鯛のだし茶漬け",
-    "きのこの雑炊",
-    "松茸の混ぜご飯",
-    "ひじきの煮物",
-    "サバの味噌煮",
-    "アジの南蛮漬け",
-    "魚介のパエリア",
-    "白身魚のポワレ",
-    "あさりの酒蒸し",
-    "蛸のカルパッチョ",
-    "鮭のホイル焼き",
-    "洋野菜のマリネ",
-    "なすの田楽",
-    "根菜のリゾット",
-    "醤油ラーメン",
-    "なめこの味噌汁"
-  ];
+  // const words = [
+  //   "ピーマンの肉詰め",
+  //   "豚の生姜焼き",
+  //   "若鶏の唐揚げ",
+  //   "煮込みハンバーグ",
+  //   "牛肉のしぐれ煮",
+  //   "照り焼きチキン",
+  //   "チキン南蛮",
+  //   "豚ロースのソテー",
+  //   "さわらの幽庵焼き",
+  //   "まぐろの漬け丼",
+  //   "鯛のだし茶漬け",
+  //   "きのこの雑炊",
+  //   "松茸の混ぜご飯",
+  //   "ひじきの煮物",
+  //   "サバの味噌煮",
+  //   "アジの南蛮漬け",
+  //   "魚介のパエリア",
+  //   "白身魚のポワレ",
+  //   "あさりの酒蒸し",
+  //   "蛸のカルパッチョ",
+  //   "鮭のホイル焼き",
+  //   "洋野菜のマリネ",
+  //   "なすの田楽",
+  //   "根菜のリゾット",
+  //   "醤油ラーメン",
+  //   "なめこの味噌汁"
+  // ];
 
   var fonts;
   var fontkitId;
@@ -44,9 +44,18 @@ var highScore = ncmb.DataStore("HighScore");
   if (storagegamemode == 0) {
     fontkitId = "bpz7hqo";
     fonts = fontsRandomArray;
-  } else {
+    var highScore = ncmb.DataStore("HighScore");
+    // GameScore = "HighScore";
+  } else if (storagegamemode == 1) {
     fontkitId = "wek3vws";
     fonts = fontsMinchoArray;
+    var highScore = ncmb.DataStore("MinchoScore");
+    // GameScore = "MinchoScore";
+  } else if (storagegamemode == 2) {
+    fontkitId = "uzk0jbi";
+    fonts = fontsDesignArray;
+    // GameScore = "DesignScore";
+    var highScore = ncmb.DataStore("DesignScore");
   }
 
   (function(d) {
