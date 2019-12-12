@@ -65,20 +65,21 @@ var fontsMinchoArray = [
 
 var fontsGothicArray = [
   0,
-  { fontname: "TBカリグラゴシックE", fontcss: "tbcgothic-std" },
-  { fontname: "ぶらっしゅ", fontcss: "ro-brush-std" },
-  { fontname: "漢字タイポス415", fontcss: "kan415typos-std" },
-  { fontname: "クレー", fontcss: "fot-klee-pro" },
-  { fontname: "アドミーンR", fontcss: "vdl-admin" },
-  { fontname: "ギガ丸M", fontcss: "vdl-gigamaru" },
-  { fontname: "ロゴ", fontcss: "vdl-logojrblac" },
-  { fontname: "V7明朝M", fontcss: "vdl-v7mincho" },
-  { fontname: "貂明朝R", fontcss: "ten-mincho" },
-  { fontname: "凸版文久明朝R", fontcss: "toppan-bunkyu-mincho-pr6n" },
-  { fontname: "マティスM", fontcss: "fot-matisse-pron" },
-  { fontname: "源ノ明朝B", fontcss: "source-han-serif-japanese" },
-  { fontname: "りょうDisplayPlus", fontcss: "ryo-display-plusn" },
-  { fontname: "TBUD明朝", fontcss: "tbudmincho-std" }
+  { fontname: "小塚ゴシック", fontcss: "kozuka-gothic-pr6n" },
+  { fontname: "ちび丸ゴシック", fontcss: "tbchibirgothicplusk-pro" },
+  { fontname: "ちび丸ゴシック", fontcss: "tbcinergothic-std" },
+  { fontname: "見出ゴMB31", fontcss: "a-otf-midashi-go-mb31-pr6n" },
+  { fontname: "じゅん", fontcss: " a-otf-jun-pro" },
+  { fontname: "セザンヌ", fontcss: "fot-cezanne-pron" },
+  { fontname: "ロダン", fontcss: "fot-rodin-pron" },
+  { fontname: "スーラ", fontcss: " fot-seurat-pron" },
+  { fontname: "筑紫B丸ゴシック", fontcss: "fot-tsukubrdgothic-std" },
+  { fontname: "秀英角ゴシック金", fontcss: "dnp-shuei-gothic-kin-std" },
+  { fontname: "秀英丸ゴシック", fontcss: "dnp-shuei-mgothic-std" },
+  {
+    fontname: "凸版文久見出しゴシック",
+    fontcss: "toppan-bunkyu-midashi-go-std"
+  }
 ];
 
 var fontsDesignArray = [

@@ -56,6 +56,10 @@ var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
     fonts = fontsDesignArray;
     // GameScore = "DesignScore";
     var highScore = ncmb.DataStore("DesignScore");
+  } else if (storagegamemode == 3) {
+    fontkitId = "xes2mqe";
+    fonts = fontsGothicArray;
+    var highScore = ncmb.DataStore("GothicScore");
   }
 
   (function(d) {
@@ -93,7 +97,7 @@ var SIGNATURE_SERVER = "https://font-memorygame.herokuapp.com/sign";
   console.log(fonts);
 
   //カードの枚数
-  var pairs = 12;
+  var pairs = 1;
   var sheet = pairs * 2;
   var cards = [];
 

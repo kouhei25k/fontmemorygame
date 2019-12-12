@@ -29,6 +29,11 @@ var mySwiper = new Swiper(".swiper-gamemode", {
         localStorage.setItem("GameMode", 2);
         changeDesign();
         getRanking();
+      } else if (mySwiper.realIndex == 3) {
+        highScore = ncmb.DataStore("GothicScore");
+        localStorage.setItem("GameMode", 3);
+        // changeGothic();
+        getRanking();
       }
     }
   }
