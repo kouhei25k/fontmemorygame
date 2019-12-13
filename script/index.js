@@ -5,6 +5,12 @@ const ClientKey = "aaaaaaaaaaa";
 var ncmb = new NCMB(ApplicationKey, ClientKey);
 var highScore = ncmb.DataStore("HighScore");
 
+window.addEventListener("DOMContentLoaded", function() {
+  var setPlayerName = localStorage.getItem("PlayerName");
+  localStorage.setItem("GameMode", 0);
+  document.getElementById("IdPlayerName").value = setPlayerName;
+});
+
 var mySwiper = new Swiper(".swiper-gamemode", {
   navigation: {
     nextEl: ".swiper-button-next",
@@ -16,34 +22,41 @@ var mySwiper = new Swiper(".swiper-gamemode", {
       console.log(mySwiper.realIndex);
       if (mySwiper.realIndex == 0) {
         highScore = ncmb.DataStore("HighScore");
-        changeGameMode();
+        changeGamemodeColor("","","");
         getRanking();
         localStorage.setItem("GameMode", 0);
       } else if (mySwiper.realIndex == 1) {
         highScore = ncmb.DataStore("MinchoScore");
-        changeMincho();
+        changeGamemodeColor("color-baw","bgc-block","color-baw2");
         getRanking();
         localStorage.setItem("GameMode", 1);
       } else if (mySwiper.realIndex == 2) {
         highScore = ncmb.DataStore("DesignScore");
         localStorage.setItem("GameMode", 2);
-        changeDesign();
+        changeGamemodeColor("color-white","bgc-gra","bac-white");
         getRanking();
       } else if (mySwiper.realIndex == 3) {
         highScore = ncmb.DataStore("GothicScore");
         localStorage.setItem("GameMode", 3);
-        // changeGothic();
+        changeGamemodeColor("color-white","bacGothic","bac-white")
         getRanking();
       }
     }
   }
 });
 
-window.addEventListener("DOMContentLoaded", function() {
-  var setPlayerName = localStorage.getItem("PlayerName");
-  localStorage.setItem("GameMode", 0);
-  document.getElementById("IdPlayerName").value = setPlayerName;
-});
+function changeGamemodeColor(tc,bgc,sbgc){
+  var color = "#color,#IdPlayerName,#startButton,#openModal";
+  $(color).removeClass("color-baw color-white");
+  $("body").removeClass("bgc-block bgc-gra bacGothic");
+  $("#toplefticon").removeClass("color-baw2 bac-white");
+  $(color).addClass(tc);
+  $("body").addClass(bgc);
+  $("#toplefticon").addClass(sbgc);
+  
+  }
+
+
 
 (function() {
   const modalArea = document.getElementById("modalArea");
@@ -149,30 +162,30 @@ $(function() {
 
 // });
 
-function changeMincho() {
-  var color = "#color,#IdPlayerName,#startButton,#openModal";
-  $(color).addClass("color-baw");
-  $("body").addClass("bgc-block");
-  $("#toplefticon").addClass("color-baw2");
-  $(color).removeClass("color-white");
-  $("body").removeClass("bgc-gra");
-  $("#toplefticon").removeClass("bac-white");
-}
-function changeGameMode() {
-  var color = "#color,#IdPlayerName,#startButton,#openModal";
-  $(color).removeClass("color-baw");
-  $("body").removeClass("bgc-block");
-  $("#toplefticon").removeClass("color-baw2");
-  $(color).removeClass("color-white");
-  $("body").removeClass("bgc-gra");
-  $("#toplefticon").removeClass("bac-white");
-}
-function changeDesign() {
-  var color = "#color,#IdPlayerName,#startButton,#openModal";
-  $(color).addClass("color-white");
-  $("body").addClass("bgc-gra");
-  $("#toplefticon").addClass("bac-white");
-  $(color).removeClass("color-baw");
-  $("body").removeClass("bgc-block");
-  $("#toplefticon").removeClass("color-baw2");
-}
+// function changeMincho() {
+//   var color = "#color,#IdPlayerName,#startButton,#openModal";
+//   $(color).addClass("color-baw");
+//   $("body").addClass("bgc-block");
+//   $("#toplefticon").addClass("color-baw2");
+//   $(color).removeClass("color-white");
+//   $("body").removeClass("bgc-gra");
+//   $("#toplefticon").removeClass("bac-white");
+// }
+// function changeGameMode() {
+//   var color = "#color,#IdPlayerName,#startButton,#openModal";
+//   $(color).removeClass("color-baw");
+//   $("body").removeClass("bgc-block");
+//   $("#toplefticon").removeClass("color-baw2");
+//   $(color).removeClass("color-white");
+//   $("body").removeClass("bgc-gra");
+//   $("#toplefticon").removeClass("bac-white");
+// }
+// function changeDesign() {
+//   var color = "#color,#IdPlayerName,#startButton,#openModal";
+//   $(color).addClass("color-white");
+//   $("body").addClass("bgc-gra");
+//   $("#toplefticon").addClass("bac-white");
+//   $(color).removeClass("color-baw");
+//   $("body").removeClass("bgc-block");
+//   $("#toplefticon").removeClass("color-baw2");
+// }

@@ -483,7 +483,7 @@ table td {
     transition: 0.5s;
 }
 
-.bac-Gothic {
+.bacGothic {
     color: #fff;
     background: linear-gradient(90deg, #f8b62d 0%, #f8b62d 50%, #ffa713 50%, #ffa713 100%);
     transition: 0.5s;
