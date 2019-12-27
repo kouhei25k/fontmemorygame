@@ -1,6 +1,6 @@
 // function fontRandom() {
 
-const words = [
+const words1 = [
   "ピーマンの肉詰め",
   "豚の生姜焼き",
   "若鶏の唐揚げ",
@@ -26,6 +26,34 @@ const words = [
   "なすの田楽",
   "根菜のリゾット",
   "醤油ラーメン",
+  "なめこの味噌汁"
+];
+const words2 = [
+  "ピーマンの肉詰め",
+  "豚の香味焼き",
+  "若鶏の唐揚げ",
+  "煮込みハンバーグ",
+  "牛肉のしぐれ煮",
+  "照り焼きチキン",
+  "チキン南蛮",
+  "豚ロースのソテー",
+  "さわらの幽庵焼き",
+  "まぐろの漬け丼",
+  "だし茶漬け",
+  "きのこの雑炊",
+  "五目混ぜご飯",
+  "ひじきの煮物",
+  "サバのみそ煮",
+  "アジの南蛮漬け",
+  "魚介のパエリア",
+  "白身魚のポワレ",
+  "あさりの酒蒸し",
+  "鯛のカルパッチョ",
+  "サケのホイル焼き",
+  "洋野菜のマリネ",
+  "なすの田楽",
+  "根菜のリゾット",
+  "塩ラーメン",
   "なめこの味噌汁"
 ];
 
@@ -95,7 +123,7 @@ var fontsDesignArray = [
   { fontname: "方縦M500", fontcss: "ta-houdate-m500" },
   { fontname: "ルビー", fontcss: "ta-rb" },
   { fontname: "candy", fontcss: "ta-candy" },
-  { fontname: "ブロックライン", fontcss: "ta-f1blockline" }
+  { fontname: "サン", fontcss: "ro-san-std" }
 ];
 
 //   return fontsRandomArray;

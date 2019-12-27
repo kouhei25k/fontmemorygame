@@ -459,7 +459,7 @@ table td {
     color: #fff !important;
     border-color: #fff !important;
     /*  transition: 0.5s; */
-} 
+}
 
 .bac-white {
     background-color: transparent !important;
@@ -484,7 +484,7 @@ table td {
 }
 
 .bacGothic {
-    color: #fff;
-    background: linear-gradient(90deg, #f8b62d 0%, #f8b62d 50%, #ffa713 50%, #ffa713 100%);
+    /* color: #fff; */
+    background: linear-gradient(-60deg, #f8b62d 0%, #f8b62d 50%, #ffa713 50%, #ffa713 100%);
     /* transition: 0.5s; */
 }
