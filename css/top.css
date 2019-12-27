@@ -440,31 +440,31 @@ table td {
     color: #fff !important;
     border-color: #fff !important;
     /* background-color: #2f2f2f !important; */
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 
 .color-baw2 {
     color: #2f2f2f !important;
     background-color: #fff !important;
     border: solid 2px #fff;
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 
 .bgc-block {
     background-color: #2f2f2f !important;
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 
 .color-white {
     color: #fff !important;
     border-color: #fff !important;
-    transition: 0.5s;
-}
+    /*  transition: 0.5s; */
+} 
 
 .bac-white {
     background-color: transparent !important;
     border: solid 2px #fff;
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 
 
@@ -480,11 +480,11 @@ table td {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient( to right top, #904e95, #e96443);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 
 .bacGothic {
     color: #fff;
     background: linear-gradient(90deg, #f8b62d 0%, #f8b62d 50%, #ffa713 50%, #ffa713 100%);
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
