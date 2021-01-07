@@ -14,21 +14,21 @@
     <link rel="index" href="https://www.play-font.com" />
     <link rel="stylesheet" href="css\top.css">
     <link rel="stylesheet" href="css/top-responsive.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="prerender" href="game.html">
     <link rel="preload" href="game.html" />
     <link rel="prefetch" href="game.html" />
 
 
     <script>
-        (function(d) {
+        (function (d) {
             var config = {
-                    kitId: 'lpc4ask',
-                    scriptTimeout: 3000,
-                    async: true
-                },
+                kitId: 'lpc4ask',
+                scriptTimeout: 3000,
+                async: true
+            },
                 h = d.documentElement,
-                t = setTimeout(function() {
+                t = setTimeout(function () {
                     h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
                 }, config.scriptTimeout),
                 tk = d.createElement("script"),
@@ -38,7 +38,7 @@
             h.className += " wf-loading";
             tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
             tk.async = true;
-            tk.onload = tk.onreadystatechange = function() {
+            tk.onload = tk.onreadystatechange = function () {
                 a = this.readyState;
                 if (f || a &&
                     a != "complete" && a != "loaded") return;
@@ -46,7 +46,7 @@
                 clearTimeout(t);
                 try {
                     Typekit.load(config)
-                } catch (e) {}
+                } catch (e) { }
             };
             s.parentNode.insertBefore(tk, s)
         })(document);
@@ -54,37 +54,43 @@
 
 
 
-       <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153529736-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153529736-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'UA-153529736-1');
-</script>
+        gtag('config', 'UA-153529736-1');
+    </script>
 
 
 </head>
 
-<body class="" >
-<div class="title">
+<body class="">
+    <div class="title">
         <h2 id="color"><span class="smalltitle" id="toplefticon">見えてる</span><br>フォント神経衰弱WEB</h2>
         <h3 id="color">v1.10b</h3>
-</div>
-<div class="gameMode">
-        <div class="swiper-container swiper-gamemode" >
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">スタンダート</div>
-                  <div class="swiper-slide" id="color"><font color="#ff3a13">絶望の明朝体</font></div>
-                  <div class="swiper-slide"><font color="#fff">デザイン書体</font></div>
-                  <div class="swiper-slide"><font color="#fff">角&丸ゴシック</font></div>
+    </div>
+    <div class="gameMode">
+        <div class="swiper-container swiper-gamemode">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">スタンダート</div>
+                <div class="swiper-slide" id="color">
+                    <font color="#ff3a13">絶望の明朝体</font>
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="swiper-slide">
+                    <font color="#fff">デザイン書体</font>
+                </div>
+                <div class="swiper-slide">
+                    <font color="#fff">角&丸ゴシック</font>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
 
-</div>
+    </div>
     <div class="container">
         <div class="StartMenu">
             <div class="PlayerName" id="color">
@@ -180,7 +186,7 @@
                                 <tr>
                                     <th class="th1">順位</th>
                                     <th class="th2">名前</td>
-                                        <th>スコア</th>
+                                    <th>スコア</th>
                                 </tr>
                             </table>
                             <!-- Swiper -->
@@ -252,7 +258,7 @@
 
     </section>
 
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="script/swiper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script/SendData.js" defer="defer"></script>
     <script type="text/javascript" src="script/ncmb.min.js" charset="utf-8"></script>
