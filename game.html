@@ -1,192 +1,183 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta property="og:type" content="article" />
-    <link rel="index" href="https://www.play-font.com" />
-    <title>フォント神経衰弱WEB</title>
-    <link rel="stylesheet" href="css\style.css" />
-    <link rel="stylesheet" href="css/style-responsive.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-153529736-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta property="og:type" content="article" />
+  <link rel="index" href="https://www.play-font.com" />
+  <title>フォント神経衰弱WEB</title>
+  <link rel="stylesheet" href="css\style.css" />
+  <link rel="stylesheet" href="css/style-responsive.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
 
-      gtag("config", "UA-153529736-1");
-    </script>
-  </head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153529736-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  <body>
-    <!--<h2>フォント神経衰弱WEB α版</h2>-->
-    <div class="gamearea" id="gamearea">
-      <div class="container">
-        <div class="toptitle">
-          フォント神経衰弱WEB
-        </div>
-        <div class="time">
-          Time
-          <span id="score">0.00</span>
-        </div>
-        <div id="stage"></div>
+    gtag("config", "UA-153529736-1");
+  </script>
+</head>
+
+<body>
+  <!--<h2>フォント神経衰弱WEB α版</h2>-->
+  <div class="gamearea" id="gamearea">
+    <div class="container">
+      <div class="toptitle">
+        フォント神経衰弱WEB
       </div>
-
-      <div class="botton_wapper">
-        <a href="" id="restart" class="inactive">リスタート</a>
+      <div class="time">
+        Time
+        <span id="score">0.00</span>
       </div>
+      <div id="stage"></div>
     </div>
 
-    <!-- モーダルエリアここから -->
-    <div id="modal" class="modal">
-      <div id="modalBg" class="modalBg"></div>
-      <div class="topmodal">
-        <div class="modalWrapper">
-          <div class="modalContents">
-            <ul class="content">
-              <li class="result">
-                <h3>クリア</h3>
-                <div class="resultinfo">
-                  <p class="resultName">
-                    <span id="ModalPlayerName">あなた</span>さんは
-                  </p>
-                  <p id="ModalLevel"></p>
-                  <p id="ModalExplanation"></p>
-                  <div class="myreult">
-                    <div class="thistimeReult">
-                      <div class="resultRank">
-                        <p>
-                          順位&nbsp;&nbsp;<span id="ModalPlayerRank"></span>位
-                        </p>
-                      </div>
-                      <div class="resultTime">
-                        <p>
-                          タイム&nbsp;&nbsp;<span id="scoreResult">0.00</span>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="bestReult">
-                      <p class="reultP">ベストスコア</p>
-                      <div class="BestresultRank">
-                        <p>
-                          順位&nbsp;&nbsp;<span id="ModalBestPlayerRank"></span
-                          >位&nbsp;&nbsp;タイム&nbsp;&nbsp;<span
-                            id="ModalBestscore"
-                            >0.00</span
-                          >
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+    <div class="botton_wapper">
+      <a href="" id="restart" class="inactive">リスタート</a>
+    </div>
+  </div>
 
-                  <div class="twitter">
-                    <span id="tweetbotton">結果を共有</span>
+  <!-- モーダルエリアここから -->
+  <div id="modal" class="modal">
+    <div id="modalBg" class="modalBg"></div>
+    <div class="topmodal">
+      <div class="modalWrapper">
+        <div class="modalContents">
+          <ul class="content">
+            <li class="result">
+              <h3>クリア</h3>
+              <div class="resultinfo">
+                <p class="resultName">
+                  <span id="ModalPlayerName">あなた</span>さんは
+                </p>
+                <p id="ModalLevel"></p>
+                <p id="ModalExplanation"></p>
+                <div class="myreult">
+                  <div class="thistimeReult">
+                    <div class="resultRank">
+                      <p>
+                        順位&nbsp;&nbsp;<span id="ModalPlayerRank"></span>位
+                      </p>
+                    </div>
+                    <div class="resultTime">
+                      <p>
+                        タイム&nbsp;&nbsp;<span id="scoreResult">0.00</span>
+                      </p>
+                    </div>
                   </div>
-                  <div class="modalBottons">
-                    <a href="" id="modalRestart" class="modalRestart">
-                      リスタート
-                    </a>
-                    <a href="index.html" id="returnTop" class="returnTop">
-                      トップ</a
-                    >
+                  <div class="bestReult">
+                    <p class="reultP">ベストスコア</p>
+                    <div class="BestresultRank">
+                      <p>
+                        順位&nbsp;&nbsp;<span id="ModalBestPlayerRank"></span>位&nbsp;&nbsp;タイム&nbsp;&nbsp;<span
+                          id="ModalBestscore">0.00</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </li>
-              <li class="hide2" id="rainkingtop">
-                <h3>ランキング</h3>
-                <table>
-                  <tr>
-                    <th class="th1">順位</th>
-                    <th class="th2">名前</th>
-                    <th>スコア</th>
-                  </tr>
-                </table>
 
-                <!-- Swiper -->
-                <div class="swiper-container">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <table class="ranking" id="ranking1"></table>
-                    </div>
-                    <div class="swiper-slide">
-                      <table class="ranking" id="ranking2"></table>
-                    </div>
-                    <div class="swiper-slide">
-                      <table class="ranking" id="ranking3"></table>
-                    </div>
-                    <div class="swiper-slide">
-                      <table class="ranking" id="ranking4"></table>
-                    </div>
-                    <div class="swiper-slide">
-                      <table class="ranking" id="ranking5"></table>
-                    </div>
-                    <div class="swiper-slide">
-                      <table class="ranking" id="ranking6"></table>
-                    </div>
-                    <div class="swiper-slide">
-                      <table class="ranking" id="ranking7"></table>
-                    </div>
-                    <div class="swiper-slide">
-                      <table class="ranking" id="ranking8"></table>
-                    </div>
-                    <div class="swiper-slide">
-                      <table class="ranking" id="ranking9"></table>
-                    </div>
-                    <div class="swiper-slide">
-                      <table class="ranking" id="ranking10"></table>
-                    </div>
-                  </div>
-                  <!-- Add Pagination -->
-
-                  <div class="swiper-pagination"></div>
+                <div class="twitter">
+                  <span id="tweetbotton">結果を共有</span>
                 </div>
-              </li>
-            </ul>
-          </div>
+                <div class="modalBottons">
+                  <a href="" id="modalRestart" class="modalRestart">
+                    リスタート
+                  </a>
+                  <a href="index.html" id="returnTop" class="returnTop">
+                    トップ</a>
+                </div>
+              </div>
+            </li>
+            <li class="hide2" id="rainkingtop">
+              <h3>ランキング</h3>
+              <table>
+                <tr>
+                  <th class="th1">順位</th>
+                  <th class="th2">名前</th>
+                  <th>スコア</th>
+                </tr>
+              </table>
 
-          <!-- <input type="button " id="closeBtn " value="close">-->
-          <div id="closeBtn" class="closeModal">
-            ×
-          </div>
-        </div>
-        <div class="modalTab">
-          <ul class="tab">
-            <li id="tab1" class="select">スコア</li>
-            <li id="tab2">ランキング</li>
+              <!-- Swiper -->
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <table class="ranking" id="ranking1"></table>
+                  </div>
+                  <div class="swiper-slide">
+                    <table class="ranking" id="ranking2"></table>
+                  </div>
+                  <div class="swiper-slide">
+                    <table class="ranking" id="ranking3"></table>
+                  </div>
+                  <div class="swiper-slide">
+                    <table class="ranking" id="ranking4"></table>
+                  </div>
+                  <div class="swiper-slide">
+                    <table class="ranking" id="ranking5"></table>
+                  </div>
+                  <div class="swiper-slide">
+                    <table class="ranking" id="ranking6"></table>
+                  </div>
+                  <div class="swiper-slide">
+                    <table class="ranking" id="ranking7"></table>
+                  </div>
+                  <div class="swiper-slide">
+                    <table class="ranking" id="ranking8"></table>
+                  </div>
+                  <div class="swiper-slide">
+                    <table class="ranking" id="ranking9"></table>
+                  </div>
+                  <div class="swiper-slide">
+                    <table class="ranking" id="ranking10"></table>
+                  </div>
+                </div>
+                <!-- Add Pagination -->
+
+                <div class="swiper-pagination"></div>
+              </div>
+            </li>
           </ul>
         </div>
+
+        <!-- <input type="button " id="closeBtn " value="close">-->
+        <div id="closeBtn" class="closeModal">
+          ×
+        </div>
+      </div>
+      <div class="modalTab">
+        <ul class="tab">
+          <li id="tab1" class="select">スコア</li>
+          <li id="tab2">ランキング</li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div id="modal2" class="modal2">
-      <div class="topmodal2">
-        <div class="modalWrapper2">
-          <div class="content2">
-            <h3>フォント神経衰弱WEB</h3>
-            <div class="startBtn">
-              <p id="startBtn">スタート</p>
-            </div>
+  <div id="modal2" class="modal2">
+    <div class="topmodal2">
+      <div class="modalWrapper2">
+        <div class="content2">
+          <h3>フォント神経衰弱WEB</h3>
+          <div class="startBtn">
+            <p id="startBtn">スタート</p>
           </div>
         </div>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    <script
-      type="text/javascript"
-      src="script/ncmb.min.js"
-      charset="utf-8"
-    ></script>
-    <script src="script\fonts.js"></script>
-    <script src="script\game.js"></script>
-  </body>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <script type="text/javascript" src="js/ncmb.min.js" charset="utf-8"></script>
+  <script src="script\fonts.js"></script>
+  <script src="script\game.js"></script>
+</body>
+
 </html>
